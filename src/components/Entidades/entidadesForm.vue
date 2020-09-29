@@ -1,0 +1,146 @@
+<template>
+  <div style="height: calc(100vh - 210px)">
+    <q-card>
+        <q-form @submit="updateRecord" @keyup.esc="$emit('close')">
+          <q-card-section  class="q-pt-none q-pl-xs q-pr-xs">
+            <div class="row q-mb-sm">
+              <q-input outlined v-model="recordToSubmit.id" label="Id" class="col-xs-4 col-sm-3" />
+              <q-select outlined label="Empresa" class="col-xs-8 col-sm-9"
+                v-model="recordToSubmit.codEmpresa"
+                :options="listaEmpresas"
+                option-value="codElemento"
+                option-label="valor1"
+                emit-value
+                map-options
+              />
+            </div>
+            <q-input class="row q-mb-sm" autofocus outlined v-model="recordToSubmit.nombre" label="Nombre"/>
+            <q-input class="row q-mb-sm" outlined v-model="recordToSubmit.carpetaDrive" label="Nombre en OneDrive"/>
+            <q-input class="row q-mb-sm" outlined v-model="recordToSubmit.direccion" label="Direccion"/>
+            <div class="row q-mb-sm">
+              <q-input class="col-xs-6 col-sm-6" outlined v-model="recordToSubmit.cpostal" label="Cod.Postal"/>
+              <q-input class="col-xs-6 col-sm-6" outlined v-model="recordToSubmit.poblacion" label="Población"/>
+            </div>
+            <div class="row q-mb-sm">
+              <q-input class="col-xs-6 col-sm-6" outlined v-model="recordToSubmit.provincia" label="Provincia"/>
+              <q-input class="col-xs-6 col-sm-6" outlined v-model="recordToSubmit.pais" label="Pais"/>
+            </div>
+            <q-input class="row q-mb-sm" outlined v-model="recordToSubmit.cif" label="CIF"/>
+            <q-input class="row q-mb-sm" outlined v-model="recordToSubmit.cuentaCorriente" label="IBAN"/>
+            <q-input class="row q-mb-sm" outlined v-model="recordToSubmit.logo" label="logo" />
+            <q-select
+                class="row q-mb-sm"
+                label="Tipo Entidad"
+                v-model="recordToSubmit.tipoEntidad"
+                :options="listaTipoEntidad"
+                option-value="codElemento"
+                option-label="codElemento"
+                emit-value
+            />
+            <q-input class="row q-mb-sm" outlined v-model="recordToSubmit.web" label="Web" />
+            <q-input class="row q-mb-sm" outlined v-model="recordToSubmit.comentarios" label="Comentarios"
+                type="textarea"
+                counter
+                @keyup.enter.stop />
+            <q-tabs
+              v-model="tab"
+              dense
+              class="text-grey"
+              active-color="primary"
+              indicator-color="primary"
+              align="justify"
+              narrow-indicator
+            >
+              <q-tab name="contacto1" label="Contacto" />
+              <q-tab name="contacto2" label="Contacto2" />
+              <q-tab name="contacto3" label="Contacto3" />
+            </q-tabs>
+
+            <q-separator />
+
+            <q-tab-panels v-model="tab" animated>
+              <q-tab-panel name="contacto1">
+                <q-input class="row q-mb-sm" outlined v-model="recordToSubmit.personaContacto" label="Persona Contacto" />
+                <q-input class="row q-mb-sm" outlined v-model="recordToSubmit.cargo" label="Cargo" />
+                <q-input class="row q-mb-sm" outlined v-model="recordToSubmit.telefono" label="Telefono" />
+                <q-input class="row q-mb-sm" outlined v-model="recordToSubmit.email" label="Email" />
+              </q-tab-panel>
+              <q-tab-panel name="contacto2">
+                <q-input class="row q-mb-sm" outlined v-model="recordToSubmit.persona2" label="Persona Contacto" />
+                <q-input class="row q-mb-sm" outlined v-model="recordToSubmit.cargo2" label="Cargo" />
+                <q-input class="row q-mb-sm" outlined v-model="recordToSubmit.telefono2" label="Telefono" />
+                <q-input class="row q-mb-sm" outlined v-model="recordToSubmit.email2" label="Email" />
+              </q-tab-panel>
+              <q-tab-panel name="contacto3">
+                <q-input class="row q-mb-sm" outlined v-model="recordToSubmit.persona3" label="Persona Contacto" />
+                <q-input class="row q-mb-sm" outlined v-model="recordToSubmit.cargo3" label="Cargo" />
+                <q-input class="row q-mb-sm" outlined v-model="recordToSubmit.telefono3" label="Telefono" />
+                <q-input class="row q-mb-sm" outlined v-model="recordToSubmit.email3" label="Email" />
+              </q-tab-panel>
+            </q-tab-panels>
+          </q-card-section>
+          <q-card-actions align=center >
+              <q-btn type="submit" label="Guardar"  style="width: 150px" color="primary"/>
+          </q-card-actions>
+        </q-form>
+    </q-card>
+  </div>
+</template>
+
+<script>
+import { mapState, mapActions } from 'vuex'
+export default {
+  props: ['value', 'id', 'keyValue'],
+  data () {
+    return {
+      title: 'Entidades',
+      tab: 'contacto1',
+      listaEntidadesFilter: [],
+      recordToSubmit: {
+        id: -1,
+        nombre: '',
+        codEmpresa: '01'
+      } // inicializamos los campos, sino no funciona bien
+    }
+  },
+  computed: {
+    ...mapState('tablasAux', ['listaEmpresas', 'listaTipoEntidad'])
+  },
+  methods: {
+    ...mapActions('tablasAux', ['loadTipoEntidad']),
+    updateRecord () {
+      return this.$axios.put(`entidades/bd_entidades.php/findEntidadesFilter/${this.recordToSubmit.id}`, this.recordToSubmit)
+        .then(response => {
+          this.$q.dialog({ title: 'Aviso', message: 'Se ha actualizado registro', ok: true, persistent: true })
+          this.$emit('close')
+        })
+        .catch(error => {
+          this.$q.dialog({ title: 'Error', message: error })
+        })
+    }
+  },
+  mounted () {
+    this.loadTipoEntidad() // carga tabla auxiliar
+    // Object.assign(this.recordToSubmit, this.value) // v-model: en 'value' podemos leer el valor del v-model
+    // no voy a usar el anterior, prefiero buscar de nuevo en la BD
+    var objFilter = {
+      id: this.value.id
+    }
+    this.$axios.get(`entidades/bd_entidades.php/findEntidadesFilter/${objFilter.id}`, { params: objFilter })
+      .then(response => {
+        this.recordToSubmit = response.data[0]
+      })
+      .catch(error => {
+        this.$q.dialog({ title: 'Error', message: error })
+      })
+  },
+  destroyed () {
+    this.$emit('input', this.recordToSubmit) // v-model: para devolver el valor a atributo 'value', evento input
+    this.$emit('changeTab', { idTab: this.value.idTab, filterRecord: {}, registrosSeleccionados: Object.assign({}, this.recordToSubmit) }) // para conservar valores cuando vuelva a selec tab
+  }
+}
+</script>
+
+<style>
+
+</style>
