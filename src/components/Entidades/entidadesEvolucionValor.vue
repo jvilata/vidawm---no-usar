@@ -1,4 +1,28 @@
 <template>
+  <div>
+    <q-card flat >
+        <q-card-section   class="q-pa-xs">
+          <q-item class="q-pa-xs bg-indigo-1 text-grey-8">
+            <!-- cabecera de formulario. Botón de busqueda y cierre de tab -->
+            <q-item-section avatar>
+                <q-btn  icon="edit" flat/>
+            </q-item-section>
+            <q-item-section>
+              <q-item-label class="text-h6">
+                {{ value.nombre }}
+              </q-item-label>
+            </q-item-section>
+            <q-item-section side>
+              <q-btn
+              @click="$emit('close')"
+              flat
+              round
+              dense
+              icon="close"/>
+            </q-item-section>
+          </q-item>
+      </q-card-section>
+    </q-card>
   <div class="row">
     <div class="col" >
       <q-item class="q-ma-md q-pa-xs bg-indigo-1 text-grey-8">
@@ -12,6 +36,7 @@
         </q-item-section>
       </q-item>
     </div>
+  </div>
   </div>
 </template>
 <script>

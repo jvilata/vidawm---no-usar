@@ -54,7 +54,7 @@ export default {
   methods: {
     // accedo a VUEX al store/store-login a la action doLogin y aqui la podemos invocar como this.doLogin
     ...mapActions('login', ['doLogin']),
-    ...mapActions('tablasAux', ['loadTablasAux']),
+    ...mapActions('tablasAux', ['loadEmpresas']),
     loginSubmit () {
       this.user.nomEmpresa = this.listaEmpresas.find(emp => emp.codElemento === this.user.codEmpresa).valor1 // nombre de empresa
       this.doLogin(this.user)
@@ -62,7 +62,7 @@ export default {
   },
   mounted () {
     // inicializar datos de stores
-    this.loadTablasAux()
+    this.loadEmpresas()
     this.user.email = this.$q.localStorage.getItem('email')
     this.user.password = (this.$q.localStorage.getItem('password')) // from base64 to string
   }

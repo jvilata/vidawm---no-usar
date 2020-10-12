@@ -1,4 +1,28 @@
 <template>
+  <div>
+    <q-card flat v-if="value.nombre">
+      <q-card-section   class="q-pa-xs">
+            <q-item class="q-pa-xs bg-indigo-1 text-grey-8">
+              <!-- cabecera de formulario. Botón de busqueda y cierre de tab -->
+              <q-item-section avatar>
+                <q-icon name="edit" />
+              </q-item-section>
+              <q-item-section>
+                <q-item-label class="text-h6">
+                  {{ value.nombre }}
+                </q-item-label>
+              </q-item-section>
+              <q-item-section side>
+                <q-btn
+                @click="$emit('close')"
+                flat
+                round
+                dense
+                icon="close"/>
+              </q-item-section>
+            </q-item>
+      </q-card-section>
+    </q-card>
   <q-item class="row">
     <!-- GRID. en row-key ponemos la columna del json que sea la id unica de la fila -->
     <q-table
@@ -10,13 +34,55 @@
       row-key="id"
       :data="registrosSeleccionados"
       :columns="columns"
-      table-style="max-height: 70vh; max-width: 93vw"
+      table-style="max-height: 66vh; max-width: 93vw"
     >
 
       <template v-slot:header="props">
         <!-- CABECERA DE LA TABLA -->
         <q-tr :props="props">
           <q-th>
+            <q-btn icon="more_vert"  class="q-ma-xs" color="primary" dense>
+              <q-menu ref="menu1">
+                <q-list dense>
+                  <q-item key="new1" clickable v-close-popup @click.native="addRecord" >
+                    <q-item-section avatar>
+                      <q-icon name="add" />
+                    </q-item-section>
+                    <q-item-section>Añadir Registro</q-item-section>
+                  </q-item>
+                  <q-item
+                    v-for="(opcion, index) in listaOpciones"
+                    :key="index"
+                    clickable
+                    @click.native="ejecutarOpcion(opcion)"
+                    >
+                    <q-item-section avatar>
+                      <q-icon :name="opcion.icon" />
+                    </q-item-section>
+                    <q-item-section>{{opcion.title}}</q-item-section>
+                    <q-item-section avatar v-if="opcion.children.length>0">
+                      <q-icon name="keyboard_arrow_right" />
+                    </q-item-section>
+                      <q-menu v-if="opcion.children.length>0" anchor="top right" self="top left">
+                        <q-list dense>
+                          <q-item
+                            v-for="(opcion1, index1) in opcion.children"
+                            :key="index1"
+                            clickable
+                            v-close-popup
+                            @click.native="ejecutarOpcion(opcion1)"
+                            >
+                            <q-item-section avatar>
+                              <q-icon :name="opcion1.icon" />
+                            </q-item-section>
+                            <q-item-section>{{opcion1.title}}</q-item-section>
+                          </q-item>
+                        </q-list>
+                    </q-menu>
+                  </q-item>
+                </q-list>
+              </q-menu>
+            </q-btn>
           </q-th>
 
           <q-th
@@ -144,11 +210,12 @@
       <sendMail :value="recordSendMail" @close="visibleSendMail=false"/>
     </q-dialog>
   </q-item>
+  </div>
 </template>
 
 <script>
 import { mapState, mapActions } from 'vuex'
-import { date } from 'quasar'
+import { date, openURL } from 'quasar'
 import { openBlobFile } from 'boot/cordova.js'
 import sendMail from 'components/SendMail/sendMail.vue'
 
@@ -184,7 +251,19 @@ export default {
         { name: 'user', align: 'left', label: 'user', field: 'user', sortable: true },
         { name: 'ts', align: 'left', label: 'ts', field: 'ts', sortable: true }
       ],
-      pagination: { rowsPerPage: 0 }
+      pagination: { rowsPerPage: 0 },
+      listaOpciones: [
+        {
+          name: 'accionesDrive',
+          title: 'Acciones Drive',
+          icon: 'cloud',
+          function: '',
+          children: [
+            { name: 'cargarFacturas', title: 'Cargar Facturas', icon: 'backup', function: 'cargarFacturas', children: [] },
+            { name: 'cargarFacturas', title: 'Enviar Facturas', icon: 'email', function: 'enviarFacturas', children: [] }
+          ]
+        }
+      ]
     }
   },
   computed: {
@@ -268,6 +347,12 @@ export default {
     mostrarDatosPieTabla () {
       return this.registrosSeleccionados.length + ' Filas'
     },
+    ejecutarOpcion (opcion) {
+      if (opcion.children.length === 0) {
+        this[opcion.function](this.selectedRowID)
+        this.$refs.menu1.hide()
+      }
+    },
     imprimir (selected) {
       var paramRecord = {
         id: selected.id,
@@ -324,6 +409,35 @@ export default {
         .catch(error => {
           this.$q.dialog({ title: 'Error', message: error })
         })
+    },
+    cargarFacturas () {
+      var host = this.$axios.defaults.baseURL // 'https://vidawm.com/privado/php/'
+      var strUrl = host + 'onedrive/recorrerCarpeta.php?codEmpresa=' + this.user.codEmpresa + '&empresa=' +
+          this.user.nomEmpresa + '&tipo=FACTURAS&carpeta=FACTURAS&estado='
+      if (window.cordova === undefined) { // desktop
+        /* const link = document.createElement('a')
+        link.href = host + 'onedrive/recorrerCarpeta.php?codEmpresa=' + this.user.codEmpresa + '&empresa=' +
+          this.user.nomEmpresa + '&tipo=FACTURAS&carpeta=FACTURAS&estado='
+        link.target = '_blank'
+        document.body.appendChild(link)
+        link.click() */
+        openURL(strUrl)
+      } else { // dispositivo movil
+        window.cordova.InAppBrowser.open(strUrl, '_system') // openURL
+      }
+    },
+    enviarFacturas () {
+      this.recordSendMail = {
+        destino: 'rus@prifiscal.es',
+        destinoCopia: 'jvilata@edicom.es',
+        asunto: 'Te adjunto facturas de ' + this.user.nomEmpresa,
+        texto: 'Hola,<br>Le adjuntamos facturas de la empresa:' + this.user.nomEmpresa + ' en este enlace de OnDrive:%enlace%' +
+          '<br>Atentamente,<br>VILATA DARDER HOLDING SL<br>' +
+          '<img src="http://vidawm.com/img/VIDA_color.jpg"  width="100">',
+        url: 'onedrive/moverElementosCarpeta.php?codEmpresa=' + this.user.codEmpresa + '&empresa=' + this.user.nomEmpresa +
+          '&tipo=FACTURAS&carpeta=FACTURAS&estado='
+      }
+      this.visibleSendMail = true
     }
   },
   components: {

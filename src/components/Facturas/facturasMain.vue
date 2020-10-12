@@ -41,31 +41,6 @@
         fromFacturasMain=true
         :key="refreshKey"
         />
-
-      <div class="absolute-bottom bg-white q-gutter-xs" align="center">
-        <q-btn dense label="Acciones OneDrive" color="primary" icon="cloud">
-          <q-menu>
-            <q-list dense style="min-width: 100px">
-              <q-item clickable @click="cargarFacturas()">
-                <q-item-section avatar>
-                  <q-icon name="backup" />
-                </q-item-section>
-                <q-item-section>Cargar Facturas Pendientes</q-item-section>
-              </q-item>
-              <q-item clickable @click="enviarFacturas()">
-                <q-item-section avatar>
-                  <q-icon name="email" />
-                </q-item-section>
-                <q-item-section>Enviar Facturas Pendientes</q-item-section>
-              </q-item>
-            </q-list>
-          </q-menu>
-        </q-btn>
-      </div>
-
-      <q-dialog v-model="visibleSendMail"  >
-        <sendMail :value="recordSendMail" @close="visibleSendMail=false"/>
-      </q-dialog>
     </div>
 </template>
 
@@ -73,8 +48,6 @@
 import { mapState, mapActions } from 'vuex'
 import facturasFilter from 'components/Facturas/facturasFilter.vue'
 import facturasGrid from 'components/Facturas/facturasGrid.vue'
-import sendMail from 'components/SendMail/sendMail.vue'
-import { openURL } from 'quasar'
 export default {
   props: ['value', 'id', 'keyValue'], // se pasan como parametro desde mainTabs. value = { registrosSeleccionados: [], filterRecord: {} }
   data () {
@@ -84,9 +57,7 @@ export default {
       visible: '',
       filterRecord: {},
       nomFormulario: 'Facturas',
-      registrosSeleccionados: [],
-      recordSendMail: {},
-      visibleSendMail: false
+      registrosSeleccionados: []
     }
   },
   computed: {
@@ -101,36 +72,6 @@ export default {
       Object.assign(this.filterRecord, filter)
       this.refreshKey++
       this.expanded = false
-    },
-    cargarFacturas () {
-      console.log(this.$axios.defaults)
-      var host = this.$axios.defaults.baseURL // 'https://vidawm.com/privado/php/'
-      var strUrl = host + 'onedrive/recorrerCarpeta.php?codEmpresa=' + this.user.codEmpresa + '&empresa=' +
-          this.user.nomEmpresa + '&tipo=FACTURAS&carpeta=FACTURAS&estado='
-      if (window.cordova === undefined) { // desktop
-        /* const link = document.createElement('a')
-        link.href = host + 'onedrive/recorrerCarpeta.php?codEmpresa=' + this.user.codEmpresa + '&empresa=' +
-          this.user.nomEmpresa + '&tipo=FACTURAS&carpeta=FACTURAS&estado='
-        link.target = '_blank'
-        document.body.appendChild(link)
-        link.click() */
-        openURL(strUrl)
-      } else { // dispositivo movil
-        window.cordova.InAppBrowser.open(strUrl, '_system') // openURL
-      }
-    },
-    enviarFacturas () {
-      this.recordSendMail = {
-        destino: 'rus@prifiscal.es',
-        destinoCopia: 'jvilata@edicom.es',
-        asunto: 'Te adjunto facturas de ' + this.user.nomEmpresa,
-        texto: 'Hola,<br>Le adjuntamos facturas de la empresa:' + this.user.nomEmpresa + ' en este enlace de OnDrive:%enlace%' +
-          '<br>Atentamente,<br>VILATA DARDER HOLDING SL<br>' +
-          '<img src="http://vidawm.com/img/VIDA_color.jpg"  width="100">',
-        url: 'onedrive/moverElementosCarpeta.php?codEmpresa=' + this.user.codEmpresa + '&empresa=' + this.user.nomEmpresa +
-          '&tipo=FACTURAS&carpeta=FACTURAS&estado='
-      }
-      this.visibleSendMail = true
     }
   },
   mounted () {
@@ -149,8 +90,7 @@ export default {
   },
   components: {
     facturasFilter: facturasFilter,
-    facturasGrid: facturasGrid,
-    sendMail: sendMail
+    facturasGrid: facturasGrid
   }
 }
 </script>

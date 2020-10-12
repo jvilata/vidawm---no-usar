@@ -55,11 +55,11 @@
           option-label="codElemento"
           emit-value
         />
-        <q-input class="col-xs-7 col-sm-4" outlined stack-label v-model="recordToSubmit.urlinfo" label="Carpeta Drive"/>
+        <q-input class="col-xs-7 col-sm-4" outlined stack-label v-model="recordToSubmit.carpeta" label="Carpeta Drive"/>
       </div>
       <div class="row">
         <q-input class="col-xs-6 col-sm-3" outlined stack-label v-model="recordToSubmit.base" label="Base"/>
-        <q-input class="col-xs-2 col-sm-2" outlined stack-label v-model="recordToSubmit.por_retencion" label="%Retención"/>
+        <q-input class="col-xs-2 col-sm-2" outlined stack-label v-model="recordToSubmit.por_retencion" label="%Retención" @blur="$emit('calculartotalesfac', recordToSubmit)"/>
         <q-input class="col-xs-4 col-sm-2" outlined stack-label v-model="recordToSubmit.retencion" label="Retención"/>
         <q-input class="col-xs-6 col-sm-2" outlined stack-label v-model="recordToSubmit.totalIva" label="Total Iva"/>
         <q-input class="col-xs-6 col-sm-3" outlined stack-label v-model="recordToSubmit.totalFactura" label="Total Factura"/>
@@ -72,10 +72,21 @@ import { mapState } from 'vuex'
 import { date, openURL } from 'quasar'
 import wgDate from 'components/General/wgDate.vue'
 export default {
-  props: ['value'], // value es el objeto con los campos de filtro que le pasa accionesMain con v-model
+  props: ['value', 'colorBotonSave', 'hasChanges'], // value es el objeto con los campos de filtro que le pasa accionesMain con v-model
   data () {
     return {
-      recordToSubmit: {},
+      recordToSubmit: {
+        tipoFactura: '',
+        idCliente: '',
+        fecha: '',
+        archivoDrive: '',
+        estadoFactura: '',
+        base: '',
+        por_retencion: '',
+        retencion: '',
+        totalIva: '',
+        totalFactura: ''
+      },
       listaEntidadesFilter: this.listaEntidades,
       listaActivosFilter: []
     }
@@ -127,6 +138,14 @@ export default {
   mounted () {
     this.listaEntidadesFilter = this.listaEntidades
     this.recordToSubmit = Object.assign({}, this.value) // asignamos valor del parametro por si viene de otro tab
+  },
+  watch: {
+    recordToSubmit: { // detecta cambios en las propiedades de este objeto (tienen que estar inicializadas en data())
+      handler (val) {
+        this.$emit('hasChanges', { hasChanges: true, colorBotonSave: 'red' })
+      },
+      deep: true
+    }
   },
   destroyed () {
     // guardamos valor en tabs por si despus queremos recuperarlo

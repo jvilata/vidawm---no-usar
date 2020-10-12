@@ -12,13 +12,30 @@
       :data="arrayTreeObj"
       :columns="columns"
       :sort-method="customSort"
-      table-style="max-height: 70vh; max-width: 93vw"
+      table-style="max-height: 66vh; max-width: 93vw"
     >
 
       <template v-slot:header="props">
         <!-- CABECERA DE LA TABLA -->
         <q-tr :props="props">
           <q-th>
+            <q-btn icon="more_vert"  class="q-ma-xs" color="primary" dense>
+              <q-menu ref="menu1">
+                <q-list dense>
+                  <q-item
+                    v-for="(opcion, index) in listaOpciones"
+                    :key="index"
+                    clickable
+                    @click.native="ejecutarOpcion(opcion)"
+                    >
+                    <q-item-section avatar>
+                      <q-icon :name="opcion.icon" />
+                    </q-item-section>
+                    <q-item-section>{{opcion.title}}</q-item-section>
+                  </q-item>
+                </q-list>
+              </q-menu>
+            </q-btn>
             Tipo Activo
           </q-th>
           <q-th
@@ -53,6 +70,14 @@
             <div :style="col.style"  @click="clickColumn(col.name, props.row)">
               {{ col.value }}
             </div>
+            <q-popup-edit v-if="props.row.children.length===0 && ['importe'].includes(col.name)"
+              v-model="props.row[col.name]"
+              max-height="600px"
+              buttons
+              @save="updateRecord(props.row)">
+              <!-- aqui definimos las ediciones especificas para cada columna -->
+              <q-input v-model="props.row[col.name]" />
+            </q-popup-edit>
           </q-td>
         </q-tr>
       </template>
@@ -64,14 +89,23 @@
       </template>
 
     </q-table>
+    <q-dialog v-model="visibleGenerar"  >
+      <valoracionesGenerar :value="recordGenerar" @close="visibleGenerar=false" @generarValoraciones="record => generarValoraciones(record)"/>
+    </q-dialog>
+    <q-dialog v-model="visibleBorrar"  >
+      <valoracionesBorrar :value="recordGenerar" @close="visibleBorrar=false"
+        @borrarValoraciones="record => efectuarBorrarValoraciones(record)"/>
+    </q-dialog>
   </q-item>
 </template>
 
 <script>
 import { date } from 'quasar'
-import { mapActions } from 'vuex'
+import { mapActions, mapState } from 'vuex'
+import valoracionesGenerar from 'components/Valoraciones/valoracionesGenerar.vue'
+import valoracionesBorrar from 'components/Valoraciones/valoracionesBorrar.vue'
 export default {
-  props: ['value'], // en 'value' tenemos la tabla de datos del grid
+  props: ['value', 'filter'], // en 'value' tenemos la tabla de datos del grid
   data () {
     return {
       rowId: '',
@@ -97,9 +131,9 @@ export default {
           align: 'right',
           field: b => {
             var res = 0
-            var newValue = parseFloat(b.importe) + parseFloat(b.facturado) + parseFloat(b.impcobropago) - (parseFloat(b.minval_importe) + parseFloat(b.impcompvent))
-            if (newValue !== 0 && (parseFloat(b.minval_importe) + parseFloat(b.impcompras)) !== 0) {
-              res = newValue * 100 / (parseFloat(b.minval_importe) + parseFloat(b.impcompras))
+            var newValue = parseFloat(b.importe) + parseFloat(b.facturado) + parseFloat(b.impcobropago) - (parseFloat(b.minval_importe === null ? 0 : b.minval_importe) + parseFloat(b.impcompvent))
+            if (newValue !== 0 && (parseFloat(b.minval_importe === null ? 0 : b.minval_importe) + parseFloat(b.impcompras)) !== 0) {
+              res = newValue * 100 / (parseFloat(b.minval_importe === null ? 0 : b.minval_importe) + parseFloat(b.impcompras))
             }
             return res
           },
@@ -107,16 +141,42 @@ export default {
         },
         { name: 'impcompras', align: 'right', label: 'Imp.Compras', field: 'impcompras', sortable: true, format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
         { name: 'rentabilidadEsperada', align: 'right', label: '%Rent.Esper', field: 'rentabilidadEsperada', sortable: true },
+        { name: 'revalorizacion2Y', align: 'right', label: 'Reval.2Y', field: row => parseFloat(row.importe) + parseFloat(row.facturado2Y) + parseFloat(row.impcobropago2Y) - (parseFloat(row.cval2Y_importe === null ? 0 : row.cval2Y_importe) + parseFloat(row.impcompvent2Y)), sortable: true, format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
+        {
+          name: 'rentabAcum2Y',
+          required: true,
+          label: '%Rentab2Y',
+          align: 'right',
+          field: b => {
+            var res = 0
+            var newValue = b.importe + parseFloat(b.facturado2Y === null ? 0 : b.facturado2Y) + parseFloat(b.impcobropago2Y === null ? 0 : b.impcobropago2Y) - (parseFloat(b.cval2Y_importe === null ? 0 : b.cval2Y_importe) + parseFloat(b.impcompvent2Y === null ? 0 : b.impcompvent2Y))
+            if (newValue !== 0 && (parseFloat(b.cval2Y_importe === null ? 0 : b.cval2Y_importe) + parseFloat(b.impcompvent2Y === null ? 0 : b.impcompvent2Y)) !== 0) {
+              res = newValue * 100 / (parseFloat(b.cval2Y_importe === null ? 0 : b.cval2Y_importe) + parseFloat(b.impcompvent2Y === null ? 0 : b.impcompvent2Y))
+            }
+            return res
+          },
+          format: val => parseFloat(val).toFixed(2)
+        },
         { name: 'user', align: 'left', label: 'user', field: 'user' },
         { name: 'ts', align: 'left', label: 'ts', field: 'ts' }
       ],
       pagination: { rowsPerPage: 0 },
       selectedRowID: {},
       isExpanded: true,
-      itemId: null
+      itemId: null,
+      listaOpciones: [
+        { name: 'generarValoracion', title: 'Generar Valoración', icon: 'add', function: 'mostrarGenerarValoraciones' },
+        { name: 'exportarExcel', title: 'Exportar Excel', icon: 'table_view', function: 'exportarExcel' },
+        { name: 'borrarValoracion', title: 'Borrar Valoración', icon: 'add', function: 'mostrarBorrarValoraciones' }
+      ],
+      visibleGenerar: false,
+      visibleBorrar: false,
+      recordGenerar: { mes: '', fecha: '', idEntidad: '' }
     }
   },
   computed: {
+    ...mapState('login', ['user']),
+    ...mapState('tablasAux', ['listaMeses']),
     arrayTreeObj () {
       const vm = this
       var newObj = []
@@ -126,9 +186,110 @@ export default {
   },
   methods: {
     ...mapActions('tabs', ['addTab']),
+    ...mapActions('tablasAux', ['loadListaMeses']),
     mostrarDatosPieTabla () {
       return this.value.length + ' Filas'
     },
+    updateRecord (record) {
+      record.user = this.user.user.email
+      record.ts = date.formatDate(new Date(), 'YYYY-MM-DD HH:mm:ss')
+      var updated = {
+        id: record.id,
+        importe: record.importe,
+        user: record.user,
+        ts: record.ts
+      }
+      return this.$axios.put(`movimientos/bd_movimientos.php/findcMovimientosComparado/${updated.id}`, JSON.stringify(updated))
+        .then(response => {
+        })
+        .catch(error => {
+          this.$q.dialog({ title: 'Error', message: error })
+        })
+    },
+    ejecutarOpcion (opcion) {
+      this[opcion.function](this.selectedRowID)
+      this.$refs.menu1.hide()
+    },
+    mostrarGenerarValoraciones () {
+      this.visibleGenerar = true
+    },
+    mostrarBorrarValoraciones () {
+      this.visibleBorrar = true
+    },
+    efectuarBorrarValoraciones (record) {
+      this.borrarValoraciones(record)
+        .then(response => {
+          var vfilter = this.filter
+          vfilter.mes = date.formatDate(this.recordGenerar.fecha, 'MM/YYYY')
+          this.$emit('getRecords', vfilter)
+          this.loadListaMeses()
+        })
+    },
+    efectuarGenerarValoraciones () {
+      var paramRecord = {
+        codEmpresa: this.user.codEmpresa,
+        mes: this.recordGenerar.mes,
+        fecha: this.recordGenerar.fecha,
+        idEntidad: this.recordGenerar.idEntidad,
+        user: this.user.user.email,
+        ts: date.formatDate(new Date(), 'YYYY-MM-DD HH:mm:ss')
+      }
+      var formData = new FormData()
+      for (var key in paramRecord) {
+        formData.append(key, paramRecord[key])
+      }
+      this.$axios.post('movimientos/bd_movimientos.php/generarValoraciones/', formData)
+        .then(response => {
+          var vfilter = this.filter
+          vfilter.mes = date.formatDate(this.recordGenerar.fecha, 'MM/YYYY')
+          this.loadListaMeses()
+          this.$emit('getRecords', vfilter) // recarga grid
+        })
+        .catch(error => {
+          this.$q.dialog({ title: 'Error', message: error })
+        })
+    },
+    generarValoraciones (record) {
+      this.recordGenerar = record
+      this.visibleGenerar = false
+      var venc = this.listaMeses.find(row => row.mes === date.formatDate(this.recordGenerar.fecha, 'MM/YYYY'))
+      if (venc !== undefined) {
+        this.$q.dialog({
+          title: 'ATENCIÓN',
+          message: 'Ya existen valoraciones para ese mes. Desea borrar primero las valoraciones de este tipo del destino?',
+          ok: true,
+          cancel: true,
+          persistent: true
+        }).onOk(() => {
+          this.borrarValoraciones()
+            .then(response => {
+              this.efectuarGenerarValoraciones()
+            })
+        })
+      } else {
+        this.efectuarGenerarValoraciones()
+      }
+    },
+    borrarValoraciones (record) {
+      this.recordGenerar = record
+      this.visibleBorrar = false
+      var paramRecord = {
+        codEmpresa: this.user.codEmpresa,
+        fecha: this.recordGenerar.fecha,
+        idEntidad: this.recordGenerar.idEntidad,
+        user: this.user.user.email,
+        ts: date.formatDate(new Date(), 'YYYY-MM-DD HH:mm:ss')
+      }
+      var formData = new FormData()
+      for (var key in paramRecord) {
+        formData.append(key, paramRecord[key])
+      }
+      return this.$axios.post('movimientos/bd_movimientos.php/borrarValoraciones/', formData)
+    },
+    exportarExcel () {
+      this.$emit('exportarExcel')
+    },
+    // METODOS DEL ARBOL DEL GRID
     customSort (rows, sortBy, descending) {
       const data = [...rows]
       if (sortBy) {
@@ -209,6 +370,10 @@ export default {
         this.$set(this.selectedRowID, 'id', item.id)
       }
     }
+  },
+  components: {
+    valoracionesGenerar: valoracionesGenerar,
+    valoracionesBorrar: valoracionesBorrar
   }
 }
 </script>

@@ -1,4 +1,28 @@
 <template>
+  <div>
+  <q-card flat>
+      <q-card-section   class="q-pa-xs">
+            <q-item class="q-pa-xs bg-indigo-1 text-grey-8">
+              <!-- cabecera de formulario. Botón de busqueda y cierre de tab -->
+              <q-item-section avatar>
+                <q-icon name="edit" />
+              </q-item-section>
+              <q-item-section>
+                <q-item-label class="text-h6">
+                  {{ value.nombre }}
+                </q-item-label>
+              </q-item-section>
+              <q-item-section side>
+                <q-btn
+                @click="$emit('close')"
+                flat
+                round
+                dense
+                icon="close"/>
+              </q-item-section>
+            </q-item>
+      </q-card-section>
+  </q-card>
   <q-item class="row">
     <!-- GRID. en row-key ponemos la columna del json que sea la id unica de la fila -->
     <q-table
@@ -17,6 +41,18 @@
         <!-- CABECERA DE LA TABLA -->
         <q-tr :props="props">
           <q-th>
+            <q-btn icon="more_vert"  class="q-ma-xs" color="primary" dense>
+              <q-menu ref="menu1">
+                <q-list dense>
+                  <q-item key="new1" clickable v-close-popup @click.native="addRecord(value.id)" >
+                    <q-item-section avatar>
+                      <q-icon name="add" />
+                    </q-item-section>
+                    <q-item-section>Añadir Registro</q-item-section>
+                  </q-item>
+                </q-list>
+              </q-menu>
+            </q-btn>
           </q-th>
 
           <q-th
@@ -97,6 +133,7 @@
 
     </q-table>
   </q-item>
+  </div>
 </template>
 
 <script>

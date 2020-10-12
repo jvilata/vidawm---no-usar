@@ -10,13 +10,25 @@
       row-key="id"
       :data="value"
       :columns="columns"
-      table-style="max-height: 70vh; max-width: 93vw"
+      table-style="max-height: 66vh; max-width: 93vw"
     >
 
       <template v-slot:header="props">
         <!-- CABECERA DE LA TABLA -->
         <q-tr :props="props">
           <q-th>
+            <q-btn icon="more_vert"  class="q-ma-xs" color="primary" dense>
+              <q-menu ref="menu1">
+                <q-list dense>
+                  <q-item key="new1" clickable v-close-popup @click.native="addRecord" >
+                    <q-item-section avatar>
+                      <q-icon name="add" />
+                    </q-item-section>
+                    <q-item-section>Añadir Registro</q-item-section>
+                  </q-item>
+                </q-list>
+              </q-menu>
+            </q-btn>
           </q-th>
 
           <q-th
@@ -135,7 +147,7 @@ export default {
         codEmpresa: this.user.codEmpresa,
         tipoActivo: 'CAJA',
         nombre: 'Nuevo activo',
-        computa: '0',
+        computa: '1',
         estadoActivo: 'EN ESTUDIO',
         user: this.user.user.email,
         ts: date.formatDate(new Date(), 'YYYY-MM-DD HH:mm:ss')

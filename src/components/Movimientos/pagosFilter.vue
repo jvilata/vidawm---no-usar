@@ -6,76 +6,46 @@
     </q-card-section>
 
     <q-form @submit="getRecords" class="q-gutter-y-xs">
+      <q-input outlined clearable label="Id" stack-label v-model="filterR.id" />
       <q-select
         outlined
         clearable
-        label="Tipo Activo"
-        stack-label
-        v-model="filterR.tipoActivo"
-        :options="listaTiposActivo"
-        option-value="codElemento"
-        option-label="codElemento"
-        emit-value
-      />
-      <q-select
-        outlined
-        clearable
-        label="Tipo Producto"
-        stack-label
-        v-model="filterR.tipoProducto"
-        :options="listaTiposProducto"
-        option-value="codElemento"
-        option-label="codElemento"
-        emit-value
-        multiple
-        use-chips
-      />
-      <q-select
-        outlined
-        clearable
-        label="Gestor/Arrend"
+        label="Entidad"
         stack-label
         v-model="filterR.idEntidad"
-        :options="listaEntidadesFilter"
+        :options="listaEntidades"
         option-value="id"
         option-label="nombre"
         emit-value
         map-options
-        @filter="filterEntidades"
-        use-input
-        hide-selected
-        fill-input
-        input-debounce="0"
       />
-      <q-input outlined clearable label="Nombre" stack-label v-model="filterR.nombre" />
-      <q-input outlined clearable label="Fecha Desde" stack-label :value="formatDate(filterR.fechaDesde)" @input="val => filterR.fechaDesde=val" >
+      <q-input outlined clearable label="Fecha" stack-label :value="formatDate(filterR.fecha)" @input="val => filterR.fecha=val" >
         <template v-slot:append>
             <q-icon name="event" class="cursos-pointer">
-              <q-popup-proxy>
-                <wgDate v-model="filterR.fechaDesde" />
+              <q-popup-proxy ref="fecha">
+                <wgDate v-model="filterR.fecha" @input="$refs.fecha.hide()"/>
               </q-popup-proxy>
             </q-icon>
         </template>
       </q-input>
-      <q-input outlined clearable label="Fecha Hasta" stack-label :value="formatDate(filterR.fechaHasta)" @input="val => filterR.fechaHasta=val" >
+      <q-input outlined clearable label="Fecha Desde" stack-label :value="formatDate(filterR.fechaGeneracionGT)" @input="val => filterR.fechaGeneracionGT=val" >
         <template v-slot:append>
             <q-icon name="event" class="cursos-pointer">
-              <q-popup-proxy>
-                <wgDate v-model="filterR.fechaHasta" />
+              <q-popup-proxy ref="fechaGeneracionGT">
+                <wgDate v-model="filterR.fechaGeneracionGT" @input="$refs.fechaGeneracionGT.hide()"/>
               </q-popup-proxy>
             </q-icon>
         </template>
       </q-input>
-      <q-select
-        outlined
-        label="Mes"
-        stack-label
-        v-model="filterR.mes"
-        :options="listaMeses"
-        option-value="mes"
-        option-label="mes"
-        emit-value
-      />
+      <q-input outlined clearable label="Fecha Hasta" stack-label :value="formatDate(filterR.fechaGeneracionLT)" @input="val => filterR.fechaGeneracionLT=val" >
+        <template v-slot:append>
+            <q-icon name="event" class="cursos-pointer">
+              <q-popup-proxy ref="fechaGeneracionLT">
+                <wgDate v-model="filterR.fechaGeneracionLT" @input="$refs.fechaGeneracionLT.hide()"/>
+              </q-popup-proxy>
+            </q-icon>
+        </template>
+      </q-input>
        <q-select
         label="Tipo Operación"
         stack-label
@@ -88,28 +58,12 @@
         emit-value
         map-options
       />
-      <!-- en q-select multiple los valores estan en un array, como en nuestro caso estan en un string separados por comas
-          hay que crear un array con los valores en el columns format (split) y aqui volver a convertir el array a string (join) -->
       <q-select
-        label="Estado Activo"
+        label="Generar"
         stack-label
         outlined
         clearable
-        v-model="filterR.estadoActivo"
-        multiple
-        :options="listaEstadosActivo"
-        option-value="codElemento"
-        option-label="valor1"
-        emit-value
-        map-options
-        use-chips
-      />
-      <q-select
-        label="Computa"
-        stack-label
-        outlined
-        clearable
-        v-model="filterR.computa"
+        v-model="filterR.generar"
         :options="listaSINO"
         option-value="id"
         option-label="desc"
@@ -132,8 +86,7 @@ export default {
   props: ['value'], // value es el objeto con los campos de filtro que le pasa accionesMain con v-model
   data () {
     return {
-      filterR: {},
-      listaEntidadesFilter: []
+      filterR: {}
     }
   },
   computed: {
@@ -142,12 +95,6 @@ export default {
   },
   methods: {
     ...mapActions('entidades', ['loadEntidades']),
-    filterEntidades (val, update, abort) {
-      update(() => {
-        const needle = val.toLowerCase()
-        this.listaEntidadesFilter = this.listaEntidades.filter(v => v.nombre.toLowerCase().indexOf(needle) > -1)
-      })
-    },
     getRecords () {
       this.$emit('getRecords', this.filterR) // lo captura accionesMain
     },

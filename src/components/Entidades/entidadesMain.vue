@@ -1,6 +1,6 @@
   <!-- componente principal de definicion de formularios. Se apoya en otros 2 componentes: Filter y Grid -->
   <template>
-    <div style="height: 100vh">
+    <div style="height: calc(100vh - 105px)">
       <q-item clickable v-ripple @click="expanded = !expanded" class="q-ma-md q-pa-xs bg-indigo-1 text-grey-8">
         <!-- cabecera de formulario. Botón de busqueda y cierre de tab -->
         <q-item-section avatar>

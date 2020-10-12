@@ -10,7 +10,7 @@
       row-key="id"
       :data="value"
       :columns="columns"
-      table-style="max-height: 70vh; max-width: 93vw"
+      table-style="max-height: 66vh; max-width: 93vw"
     >
 
       <template v-slot:header="props">
@@ -33,9 +33,9 @@
         <q-tr :props="props" :key="`m_${props.row.id}`" @mouseover="rowId=`m_${props.row.id}`">
           <q-td>
             <!-- columna de acciones: editar, borrar, etc -->
-            <div style="max-width: 20px">
+            <div v-if="rowId===`m_${props.row.id}`" style="max-width: 20px">
             <!--edit icon . Decomentamos si necesitamos accion especifica de edicion -->
-            <q-btn flat v-if="rowId===`m_${props.row.id}`"
+            <q-btn flat
               @click.stop="editRecord(props.row, props.row.id)"
               round
               dense
@@ -44,7 +44,7 @@
               icon="edit">
               <q-tooltip>Editar</q-tooltip>
             </q-btn>
-            <q-btn flat v-if="rowId===`m_${props.row.id}`"
+            <q-btn flat
               @click.stop="deleteRecord(props.row.id)"
               round
               dense
@@ -82,6 +82,22 @@
         </div>
         <div>
           {{ value.length }} Filas
+        </div>
+      </template>
+      <template v-slot:no-data>
+        <div class="absolute-bottom q-mb-sm" style="left: 45vw">
+          <q-btn
+            @click.stop="addRecord"
+            round
+            dense
+            color="primary"
+            size="20px"
+            icon="add">
+            <q-tooltip>Añadir</q-tooltip>
+          </q-btn>
+        </div>
+        <div>
+          No hay registros, pulse el botón + para añadir
         </div>
       </template>
 

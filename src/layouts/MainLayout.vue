@@ -49,7 +49,7 @@
         @mouseout="miniState = true"
         :breakpoint="767"
         :width="220">
-      <q-scroll-area style="height: calc(100vh - 170px); margin-top: 210px; border-right: 1px solid #ddd">
+      <q-scroll-area style="height: calc(100vh - 210px); margin-top: 210px; border-right: 1px solid #ddd">
         <q-list>
           <q-item v-for="link in menuItems" :key="link.title"
             clickable
@@ -67,8 +67,24 @@
           </q-item>
         </q-list>
       </q-scroll-area>
-      <q-img class="absolute-top" src="~assets/VIDA_color.jpg" >
-      </q-img>
+      <q-img class="absolute-top" src="~assets/VIDA_color.jpg" />
+      <div class="absolute-bottom" style="margin-bottom: 50px;">
+        <q-list>
+          <q-item
+            clickable
+            @click.native="openClassic"
+            exact
+            class="text-grey-8"  >
+            <q-item-section avatar>
+              <q-icon name="mobile_off" />
+            </q-item-section>
+
+            <q-item-section>
+              <q-item-label>App Clásica</q-item-label>
+            </q-item-section>
+          </q-item>
+        </q-list>
+      </div>
     </q-drawer>
     <q-footer>
       <!-- podemos poner tabs en el pie para dispositivos moviles pero quita pantalla y no me gusta
@@ -90,6 +106,7 @@
 
 <script>
 import { mapState, mapActions } from 'vuex'
+import { openURL } from 'quasar'
 export default {
   name: 'MainLayout',
 
@@ -151,6 +168,14 @@ export default {
             name: 'Acciones',
             label: 'Acciones'
           }
+        },
+        {
+          title: 'Pagos',
+          icon: 'payments',
+          link: {
+            name: 'Pagos',
+            label: 'Pagos'
+          }
         }
       ]
     }
@@ -163,6 +188,14 @@ export default {
     ...mapActions('login', ['desconectarLogin']),
     openForm (link) {
       this.addTab([link.name, link.label, {}, 1])
+    },
+    openClassic () {
+      var strUrl = 'https://vidawm.com/privado/index_sencha.html'
+      if (window.cordova === undefined) { // desktop
+        openURL(strUrl)
+      } else { // estamos en un disp movil
+        window.cordova.InAppBrowser.open(strUrl, '_system') // openURL
+      }
     },
     desconectar () {
       this.desconectarLogin()

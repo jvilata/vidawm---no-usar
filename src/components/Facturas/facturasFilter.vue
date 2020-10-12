@@ -27,8 +27,8 @@
       <q-input outlined clearable label="Fecha Desde" stack-label :value="formatDate(filterR.fechainicial)" @input="val => filterR.fechainicial=val" >
         <template v-slot:append>
             <q-icon name="event" class="cursos-pointer">
-              <q-popup-proxy>
-                <wgDate v-model="filterR.fechainicial" />
+              <q-popup-proxy ref="fechainicial">
+                <wgDate v-model="filterR.fechainicial" @input="$refs.fechainicial.hide()" />
               </q-popup-proxy>
             </q-icon>
         </template>
@@ -36,8 +36,8 @@
       <q-input outlined clearable label="Fecha Hasta" stack-label :value="formatDate(filterR.fechafinal)" @input="val => filterR.fechafinal=val" >
         <template v-slot:append>
             <q-icon name="event" class="cursos-pointer">
-              <q-popup-proxy>
-                <wgDate v-model="filterR.fechafinal" />
+              <q-popup-proxy ref="fechafinal" >
+                <wgDate v-model="filterR.fechafinal" @input="$refs.fechafinal.hide()"/>
               </q-popup-proxy>
             </q-icon>
         </template>

@@ -48,6 +48,8 @@ const actions = {
     }
     if (!state.tabs[tab.params.id]) {
       commit('addTab', tab)
+    } else {
+      this.dispatch('tabs/updateTabData', [tab, defaultValue])
     }
     if (tab.params.id !== this.$router.app._route.params.id) {
       this.$router.push(state.tabs[tab.params.id])
@@ -58,11 +60,11 @@ const actions = {
   },
   removeTab ({ commit }, tab) {
     const keys = Object.keys(state.tabs)
-    var i = keys.findIndex(key => key === tab.params.id) // busco el tab anterior a este
-    if (i < 0) i = 0
-    commit('removeTab', tab)
+    let i = keys.findIndex(key => key === tab.params.id) // busco el tab anterior a este
+    if (i - 1 < 0) i = 2
     if (keys.length > 1) this.$router.push(state.tabs[keys[i - 1]]) // this.$router.push(state.tabs[keys[0]])
     else this.$router.push('/sinTabs')
+    commit('removeTab', tab)
   },
   removeAllTabs ({ commit }) {
     commit('removeAllTabs')

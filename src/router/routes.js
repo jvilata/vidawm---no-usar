@@ -15,9 +15,8 @@ const routes = [
         path: 'mainTabs',
         component: () => import('components/MainTabs/mainTabs.vue'),
         children: [
-          { path: 'TaskForm/:id', name: 'TaskForm', component: () => import('components/Tasks/TaskForm.vue'), props: true },
-          { path: 'TaskList', name: 'TaskList', component: () => import('components/Tasks/TaskList.vue'), props: true },
           { path: 'Acciones', name: 'Acciones', component: () => import('components/Acciones/accionesMain.vue'), props: true },
+          { path: 'Pagos', name: 'Pagos', component: () => import('components/Movimientos/pagosMain.vue'), props: true },
           { path: 'Activos', name: 'Activos', component: () => import('components/Activos/activosMain.vue'), props: true },
           {
             path: 'ActivosFormMain/:id',

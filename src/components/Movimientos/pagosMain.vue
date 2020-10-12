@@ -12,7 +12,7 @@
           </q-item-label>
           <q-item-label>
             <!-- poner un campo de fiterRecord que exista en este filtro -->
-            <small>{{ Object.keys(filterRecord).length > 1 ? filterRecord : 'Pulse para definir filtro' }}</small>
+            <small>{{ Object.keys(filterRecord).length > 0 ? filterRecord : 'Pulse para definir filtro' }}</small>
           </q-item-label>
         </q-item-section>
         <q-item-section side>
@@ -27,7 +27,7 @@
 
       <q-dialog v-model="expanded"  >
         <!-- formulario con campos de filtro -->
-        <activosFilter
+        <pagosFilter
           :value="filterRecord"
           @input="(value) => Object.assign(filterRecord, value)"
           @getRecords="getRecords"
@@ -36,16 +36,17 @@
       </q-dialog>
 
       <!-- formulario tabla de resultados de busqueda -->
-      <activosGrid
+      <pagosGrid
         v-model="registrosSeleccionados"
+        @generarArbol = "getRecords(filterRecord)"
         />
     </div>
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex'
-import activosFilter from 'components/Activos/activosFilter.vue'
-import activosGrid from 'components/Activos/activosGrid.vue'
+import { mapState } from 'vuex'
+import pagosFilter from 'components/Movimientos/pagosFilter.vue'
+import pagosGrid from 'components/Movimientos/movimientosPagosGrid.vue'
 export default {
   props: ['value', 'id', 'keyValue'], // se pasan como parametro desde mainTabs. value = { registrosSeleccionados: [], filterRecord: {} }
   data () {
@@ -53,24 +54,51 @@ export default {
       expanded: false,
       visible: '',
       filterRecord: {},
-      nomFormulario: 'Activos',
+      nomFormulario: 'Pagos/Cobros',
       registrosSeleccionados: []
     }
   },
   computed: {
-    ...mapState('login', ['user']), // importo state.user desde store-login
-    ...mapState('entidades', ['listaEntidades'])
+    ...mapState('login', ['user']) // importo state.user desde store-login
   },
   methods: {
-    ...mapActions('entidades', ['loadEntidades']),
+    generarArbol () {
+      // ordenar el array por tipoActivo
+      this.registrosSeleccionados.sort((a, b) => (a.generar <= b.generar ? -1 : 1))
+      var arr = []
+      var antGenerar = 'x'
+      var obj = {}
+      this.registrosSeleccionados.forEach(row => {
+        // si tipoActivo != antTipoActivo  Insertamos 'obj' en arr como cabecera tipoActivo
+        if (row.generar !== antGenerar) {
+          obj = {
+            id: -Math.floor((Math.random() * 999999) + 999999),
+            generar: row.generar,
+            // nombre: '',
+            expend: true,
+            importe: 0,
+            children: []
+          }
+          arr.push(obj)
+          antGenerar = row.generar
+        }
+        row.children = []
+        obj.tipoOperacion = row.tipoOperacion
+        obj.importe += parseFloat(row.importe)
+        obj.nombre = (obj.generar === 0 ? 'NO GENERAR (' : 'GENERAR (') + (obj.children.length + 1) + ' activos)'
+        obj.children.push(row)
+      })
+      this.registrosSeleccionados = arr
+    },
     getRecords (filter) {
       // hago la busqueda de registros segun condiciones del formulario Filter que ha lanzado el evento getRecords
       Object.assign(this.filterRecord, filter) // no haría falta pero así obliga a refrescar el componente para que visulice el filtro
       var objFilter = Object.assign({}, filter)
-      // objFilter.estadoActivo = (objFilter.estadoActivo !== null ? objFilter.estadoActivo.join() : null) // paso de array a concatenacion de strings (join)
-      return this.$axios.get('activos/bd_activos.php/findActivosFilter', { params: objFilter })
+      return this.$axios.get('movimientos/bd_movimientos.php/cpagoscobros', { params: objFilter })
         .then(response => {
           this.registrosSeleccionados = response.data
+          // this.registrosSeleccionados.splice(0, 0, { id: -1, tipoActivo: 'CAP.RIESGO', nombre: '' })
+          this.generarArbol()
           this.expanded = false
         })
         .catch(error => {
@@ -79,23 +107,27 @@ export default {
     }
   },
   mounted () {
-    if (this.listaEntidades.length <= 0) this.loadEntidades() // carga store listaEntidades
     if (this.value.registrosSeleccionados && Object.keys(this.value.registrosSeleccionados).length > 0) { // si ya hemos cargado previamente los recargo al volver a este tab
       this.expanded = false
+      this.registrosSeleccionados = Object.values(this.value.registrosSeleccionados) // v-model: en 'value' podemos leer el valor del v-model
       Object.assign(this.filterRecord, this.value.filterRecord)
-      // this.registrosSeleccionados = Object.values(this.value.registrosSeleccionados) // v-model: en 'value' podemos leer el valor del v-model
-      this.getRecords(this.filterRecord) // refresco la lista por si se han hecho cambios
     } else { // es la primera vez que entro, cargo valores po defecto
-      this.filterRecord = { codEmpresa: this.user.codEmpresa, computa: '1' }
-      this.getRecords(this.filterRecord)
+      this.$axios.get('movimientos/bd_movimientos.php/borrarMarcasPago', { params: { codEmpresa: this.user.codEmpresa } })
+        .then(response => {
+          this.filterRecord = { codEmpresa: this.user.codEmpresa, tipoOperacion: 'PAGO' }
+          this.getRecords(this.filterRecord)
+        })
+        .catch(error => {
+          this.$q.dialog({ title: 'Error', message: error })
+        })
     }
   },
   destroyed () {
-    this.$emit('changeTab', { idTab: this.value.idTab, filterRecord: Object.assign({}, this.filterRecord), registrosSeleccionados: Object.assign({}, this.registrosSeleccionados) })
+    this.$emit('changeTab', { id: this.value.id, filterRecord: Object.assign({}, this.filterRecord), registrosSeleccionados: Object.assign({}, this.registrosSeleccionados) })
   },
   components: {
-    activosFilter: activosFilter,
-    activosGrid: activosGrid
+    pagosFilter: pagosFilter,
+    pagosGrid: pagosGrid
   }
 }
 </script>

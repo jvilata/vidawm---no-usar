@@ -68,9 +68,11 @@ const actions = {
     this.dispatch('tablasAux/loadTablaAux', { codTabla: 3, mutation: 'loadEstadosActivo' })
     this.dispatch('tablasAux/loadTablaAux', { codTabla: 7, mutation: 'listaTiposFactura' })
     this.dispatch('tablasAux/loadTablaAux', { codTabla: 10, mutation: 'listaEstadosFactura' })
-    this.dispatch('tablasAux/loadTablaAux', { codTabla: 8, mutation: 'loadEmpresas' })
     this.dispatch('tablasAux/loadUsers')
     this.dispatch('tablasAux/loadListaMeses')
+  },
+  loadEmpresas ({ commit }) {
+    this.dispatch('tablasAux/loadTablaAux', { codTabla: 8, mutation: 'loadEmpresas' })
   },
   loadTipoEntidad ({ commit }) {
     this.dispatch('tablasAux/loadTablaAux', { codTabla: 2, mutation: 'loadTipoEntidad' })
