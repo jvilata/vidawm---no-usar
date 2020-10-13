@@ -139,7 +139,7 @@
 import { mapState } from 'vuex'
 import { date, openURL } from 'quasar'
 import wgDate from 'components/General/wgDate.vue'
-import { openBlobFile } from 'boot/cordova.js'
+import { openBlobFile } from 'components/General/cordova.js'
 import sendMail from 'components/SendMail/sendMail.vue'
 export default {
   props: ['value'], // en 'value' tenemos la tabla de datos del grid

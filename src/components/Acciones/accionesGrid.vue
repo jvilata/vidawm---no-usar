@@ -179,6 +179,7 @@
 import { mapState, mapActions } from 'vuex'
 import { date } from 'quasar'
 import wgDate from 'components/General/wgDate.vue'
+import { newPostWindow } from 'components/General/libGeneral.js'
 export default {
   props: ['value', 'idActivo', 'idEntidad'], // en 'value' tenemos la tabla de datos del grid, en idActivo en caso de que vengamos de ActivosFormMain
   data () {
@@ -287,44 +288,14 @@ export default {
       else if (record.tipoAccion === 'G.NOMINAS') this.generarNominas(record)
       else this.$q.dialog({ title: 'Aviso', message: record.tipoAccion })
     },
-    newPostWindow (url, nomP1, valP1, nomP2, valP2, nomListado, fieldSizes) {
-      var host = this.$axios.defaults.baseURL // 'https://vidawm.com/privado/php/'
-      var form = document.createElement('form')
-      form.setAttribute('method', 'post')
-      form.setAttribute('action', host + url)
-      form.setAttribute('target', 'view')
-      var hiddenField = document.createElement('input')
-      hiddenField.setAttribute('type', 'hidden')
-      hiddenField.setAttribute('name', nomP1)
-      hiddenField.setAttribute('value', valP1)
-      form.appendChild(hiddenField)
-      hiddenField = document.createElement('input')
-      hiddenField.setAttribute('type', 'hidden')
-      hiddenField.setAttribute('name', nomP2)
-      hiddenField.setAttribute('value', valP2)
-      form.appendChild(hiddenField)
-      hiddenField = document.createElement('input')
-      hiddenField.setAttribute('type', 'hidden')
-      hiddenField.setAttribute('name', 'nompdf')
-      hiddenField.setAttribute('value', nomListado)
-      form.appendChild(hiddenField)
-      hiddenField = document.createElement('input')
-      hiddenField.setAttribute('type', 'hidden')
-      hiddenField.setAttribute('name', 'fieldSizes')
-      hiddenField.setAttribute('value', fieldSizes)
-      form.appendChild(hiddenField)
-      document.body.appendChild(form)
-      window.open('', 'view')
-      form.submit()
-    },
     generarFactura (record) {
-      this.newPostWindow('facturas/bd_facturas.php/generarFactura', 'idObjeto', record.idObjeto, 'tipoObjeto', record.tipoObjeto)
+      newPostWindow('facturas/bd_facturas.php/generarFactura', 'idObjeto', record.idObjeto, 'tipoObjeto', record.tipoObjeto)
     },
     generarLiquidacion (record) {
-      this.newPostWindow('facturas/pdf_liquidacion.php/generaMovimientoPago', 'idObjeto', record.idObjeto, 'tipoObjeto', record.tipoObjeto)
+      newPostWindow('facturas/pdf_liquidacion.php/generaMovimientoPago', 'idObjeto', record.idObjeto, 'tipoObjeto', record.tipoObjeto)
     },
     generarNominas (record) {
-      this.newPostWindow('movimientos/bd_movimientos.php/generarNominas', 'idObjeto', record.idObjeto, 'tipoObjeto', record.tipoObjeto)
+      newPostWindow('movimientos/bd_movimientos.php/generarNominas', 'idObjeto', record.idObjeto, 'tipoObjeto', record.tipoObjeto)
     }
   },
   components: {

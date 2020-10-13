@@ -48,7 +48,7 @@
 <script>
 import { mapState } from 'vuex'
 import { date } from 'quasar'
-import { openBlobFile } from 'boot/cordova.js'
+import { openBlobFile } from 'components/General/cordova.js'
 import valoracionesFilter from 'components/Valoraciones/valoracionesFilter.vue'
 import valoracionesGrid from 'components/Valoraciones/valoracionesGrid.vue'
 export default {

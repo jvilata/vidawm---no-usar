@@ -58,11 +58,11 @@
         <q-input class="col-xs-7 col-sm-4" outlined stack-label v-model="recordToSubmit.carpeta" label="Carpeta Drive"/>
       </div>
       <div class="row">
-        <q-input class="col-xs-6 col-sm-3" outlined stack-label v-model="recordToSubmit.base" label="Base"/>
+        <q-input class="col-xs-6 col-sm-3" outlined readonly stack-label v-model="recordToSubmit.base" label="Base"/>
         <q-input class="col-xs-2 col-sm-2" outlined stack-label v-model="recordToSubmit.por_retencion" label="%Retención" @blur="$emit('calculartotalesfac', recordToSubmit)"/>
-        <q-input class="col-xs-4 col-sm-2" outlined stack-label v-model="recordToSubmit.retencion" label="Retención"/>
-        <q-input class="col-xs-6 col-sm-2" outlined stack-label v-model="recordToSubmit.totalIva" label="Total Iva"/>
-        <q-input class="col-xs-6 col-sm-3" outlined stack-label v-model="recordToSubmit.totalFactura" label="Total Factura"/>
+        <q-input class="col-xs-4 col-sm-2" outlined readonly stack-label v-model="recordToSubmit.retencion" label="Retención"/>
+        <q-input class="col-xs-6 col-sm-2" outlined readonly stack-label v-model="recordToSubmit.totalIva" label="Total Iva"/>
+        <q-input class="col-xs-6 col-sm-3" outlined readonly stack-label v-model="recordToSubmit.totalFactura" label="Total Factura"/>
       </div>
   </q-card>
 </template>
@@ -72,10 +72,11 @@ import { mapState } from 'vuex'
 import { date, openURL } from 'quasar'
 import wgDate from 'components/General/wgDate.vue'
 export default {
-  props: ['value', 'colorBotonSave', 'hasChanges'], // value es el objeto con los campos de filtro que le pasa accionesMain con v-model
+  props: ['value'], // value es el objeto con los campos de filtro que le pasa accionesMain con v-model
   data () {
     return {
       recordToSubmit: {
+        nroFactura: '',
         tipoFactura: '',
         idCliente: '',
         fecha: '',

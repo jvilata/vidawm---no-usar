@@ -2,7 +2,7 @@
   <div style="height: calc(100vh - 105px)">
           <q-tab-panels v-model="ltab" animated >
               <q-tab-panel v-for="(tab, index) in menuItems" :key="index" :name="tab.link.name"  class="q-pa-none">
-                <router-view @close="$emit('close')"/>
+                <router-view @getCounters="getCounters" @close="$emit('close')"/>
               </q-tab-panel>
           </q-tab-panels>
           <!-- podemos poner tabs en el pie para dispositivos moviles pero quita pantalla y no me gusta bg-primary text-white -->
@@ -55,15 +55,14 @@ export default {
       this.getNumMov()
     },
     getNumMov () {
-      this.numMov = this.value.nummov // no hace falta hacer la consulta porque ya me la pasa el backend
-      /* var objFilter = { tipoObjeto: 'F', idObjeto: this.value.id }
+      var objFilter = { tipoObjeto: 'F', idObjeto: this.value.id }
       return this.$axios.get('movimientos/bd_movimientos.php/movimientos', { params: objFilter })
         .then(response => {
           this.numMov = response.data.length
         })
         .catch(error => {
           console.log(error)
-        }) */
+        })
     }
   },
   mounted () {

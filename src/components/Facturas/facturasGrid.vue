@@ -216,7 +216,7 @@
 <script>
 import { mapState, mapActions } from 'vuex'
 import { date, openURL } from 'quasar'
-import { openBlobFile } from 'boot/cordova.js'
+import { openBlobFile } from 'components/General/cordova.js'
 import sendMail from 'components/SendMail/sendMail.vue'
 
 export default {
