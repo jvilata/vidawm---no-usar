@@ -1,6 +1,6 @@
-# Quasar App (awesome-todo)
+# vidawmApp (vidawm)
 
-A Quasar Framework app
+Vidawm Gest
 
 ## Install the dependencies
 ```bash

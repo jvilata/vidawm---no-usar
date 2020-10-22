@@ -8,6 +8,7 @@ import tabs from './store-tabs'
 import tablasAux from './store-tablasAux'
 import entidades from './store-entidades'
 import activos from './store-activos'
+import personal from './store-personal'
 import mensajeLog from './store-log'
 
 Vue.use(Vuex)
@@ -30,7 +31,8 @@ export default function (/* { ssrContext } */) {
       tablasAux,
       mensajeLog,
       entidades,
-      activos
+      activos,
+      personal
     },
 
     // enable strict mode (adds overhead!)

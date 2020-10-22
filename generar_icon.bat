@@ -1,0 +1,1 @@
+icongenie generate -i ./src/assets/VIDA_color300.png

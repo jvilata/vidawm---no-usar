@@ -155,8 +155,10 @@ export default {
         })
     },
     calculaTotalesFac (totales) { // cuando se guardan cambios en una linea de detalle
-      if (this.recordToSubmit.por_retencion === '') this.recordToSubmit.por_retencion = '0'
+      if (this.recordToSubmit.por_retencion === '' || this.recordToSubmit.por_retencion === null) this.recordToSubmit.por_retencion = '0'
       if (!totales.por_retencion) totales.por_retencion = this.recordToSubmit.por_retencion
+      totales.base = Math.round(parseFloat(totales.base) * 100.0) / 100
+      totales.totalIva = Math.round(parseFloat(totales.totalIva) * 100.0) / 100
       totales.retencion = Math.round(parseFloat(totales.base) * (parseFloat(totales.por_retencion) / 100.0) * 100.0) / 100
       totales.totalFactura = Math.round((parseFloat(totales.base) + parseFloat(totales.totalIva) - parseFloat(totales.retencion)) * 100.0) / 100
       Object.assign(this.valueTotales, totales) // para que no se pierdan los valores en el saveChanges

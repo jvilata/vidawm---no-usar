@@ -3,7 +3,7 @@
 
 // en los stores no se ha cargado todavía this.$axios con nuestra configuracion de boot/axios.js, por eso
 // lo importo y uso la variable especifica exportada en ese modulo axiosInstance
-import { axiosInstance } from 'boot/axios.js'
+import { axiosInstance, headerFormData } from 'boot/axios.js'
 
 // state: accesibles en lectura desde componentes a traves de ...mapState('tablasAux', ['listaSINO', 'listaUsers', 'listaTipoAcc'])
 const state = {
@@ -19,6 +19,9 @@ const state = {
   listaEstadosFactura: [],
   listaTipoEntidad: [],
   listaEmpresas: [],
+  listaTiposJornada: [],
+  listaEstadosJornada: [],
+  listaRoles: [],
   listaMeses: [] // meses de movimientos: {mes: 01/2020}, {mes: 02/2020}
 }
 // mutations: solo están accesibles a las actions a traves de commit, p.e., commit('loadUsers')
@@ -28,6 +31,9 @@ const mutations = {
   },
   loadTipoAcc (state, tiposAcc) {
     state.listaTipoAcc = tiposAcc
+  },
+  loadListaRoles (state, tiposAcc) {
+    state.listaRoles = tiposAcc
   },
   loadTiposActivo (state, tiposAcc) {
     state.listaTiposActivo = tiposAcc
@@ -55,6 +61,12 @@ const mutations = {
   },
   loadTipoEntidad (state, tiposEnt) {
     state.listaTipoEntidad = tiposEnt
+  },
+  loadTiposJornada (state, lista) {
+    state.listaTiposJornada = lista
+  },
+  loadEstadosJornada (state, lista) {
+    state.listaEstadosJornada = lista
   }
 }
 // actions: accesibles desde componentes a traves de ...mapActions('tablaAux', ['loadTablasAux'])
@@ -62,12 +74,15 @@ const mutations = {
 const actions = {
   loadTablasAux ({ commit }) {
     this.dispatch('tablasAux/loadTablaAux', { codTabla: 9, mutation: 'loadTipoAcc' })
+    this.dispatch('tablasAux/loadTablaAux', { codTabla: 1, mutation: 'loadListaRoles' })
     this.dispatch('tablasAux/loadTablaAux', { codTabla: 5, mutation: 'loadTipoOperacion' })
     this.dispatch('tablasAux/loadTablaAux', { codTabla: 4, mutation: 'loadTiposActivo' })
     this.dispatch('tablasAux/loadTablaAux', { codTabla: 6, mutation: 'loadTiposProducto' })
     this.dispatch('tablasAux/loadTablaAux', { codTabla: 3, mutation: 'loadEstadosActivo' })
     this.dispatch('tablasAux/loadTablaAux', { codTabla: 7, mutation: 'listaTiposFactura' })
     this.dispatch('tablasAux/loadTablaAux', { codTabla: 10, mutation: 'listaEstadosFactura' })
+    this.dispatch('tablasAux/loadTablaAux', { codTabla: 11, mutation: 'loadTiposJornada' })
+    this.dispatch('tablasAux/loadTablaAux', { codTabla: 12, mutation: 'loadEstadosJornada' })
     this.dispatch('tablasAux/loadUsers')
     this.dispatch('tablasAux/loadListaMeses')
   },
@@ -102,6 +117,19 @@ const actions = {
       .catch(error => {
         this.dispatch('mensajeLog/addMensaje', tabAux.mutation + error, { root: true })
       })
+  },
+  borrarTablaAux ({ commit }, id) {
+    return axiosInstance.delete(`tablaAuxiliar/bd_tablaAuxiliar.php/findTablaAuxFilter/${id}`, { params: { id: id } }, { withCredentials: true })
+  },
+  addTablaAux ({ commit }, record) {
+    var formData = new FormData()
+    for (var key in record) {
+      formData.append(key, record[key])
+    }
+    return axiosInstance.post('tablaAuxiliar/bd_tablaAuxiliar.php/guardarBD', formData, headerFormData)
+  },
+  actualizarTablaAux ({ commit }, record) {
+    return axiosInstance.put(`tablaAuxiliar/bd_tablaAuxiliar.php/findTablaAuxFilter/${record.id}`, record, { withCredentials: true })
   },
   loadListaMeses ({ commit }) {
     axiosInstance.get('movimientos/bd_movimientos.php/findMesesMovimientos/', {}, { withCredentials: true })

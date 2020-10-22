@@ -7,6 +7,24 @@
               <q-item-section avatar>
                 <div class="row">
                   <q-btn  icon="save"  class="q-ma-xs" :color="colorBotonSave" dense @click="updateRecord" />
+                  <q-btn icon="more_vert"  class="q-ma-xs" color="primary" dense>
+                    <q-menu ref="menu1">
+                      <q-list dense>
+                        <q-item
+                          v-for="(opcion, index) in listaOpciones"
+                          :key="index"
+                          clickable
+                          v-close-popup
+                          @click.native="ejecutarOpcion(opcion)"
+                          >
+                          <q-item-section avatar>
+                            <q-icon :name="opcion.icon" />
+                          </q-item-section>
+                          <q-item-section>{{opcion.title}}</q-item-section>
+                        </q-item>
+                      </q-list>
+                    </q-menu>
+                  </q-btn>
                 </div>
               </q-item-section>
               <q-item-section>
@@ -111,6 +129,8 @@
 
 <script>
 import { mapState, mapActions } from 'vuex'
+import { axiosInstance } from 'boot/axios.js'
+import { openURL } from 'quasar'
 export default {
   props: ['value', 'id', 'keyValue'],
   data () {
@@ -148,11 +168,15 @@ export default {
         cargo3: '',
         telefono3: '',
         email3: ''
-      } // inicializamos los campos, sino no funciona bien
+      }, // inicializamos los campos, sino no funciona bien
+      listaOpciones: [
+        { name: 'carpetaOneDrive', title: 'Carpeta OneDrive', icon: 'cloud', function: 'carpetaOneDrive' }
+      ]
     }
   },
   computed: {
-    ...mapState('tablasAux', ['listaEmpresas', 'listaTipoEntidad'])
+    ...mapState('tablasAux', ['listaEmpresas', 'listaTipoEntidad']),
+    ...mapState('login', ['user'])
   },
   methods: {
     ...mapActions('tablasAux', ['loadTipoEntidad']),
@@ -168,6 +192,22 @@ export default {
         .catch(error => {
           this.$q.dialog({ title: 'Error', message: error })
         })
+    },
+    ejecutarOpcion (opcion) {
+      this[opcion.function](this.value)
+      this.$refs.menu1.hide()
+    },
+    carpetaOneDrive () {
+      var url = axiosInstance.defaults.baseURL + 'onedrive/abrirCarpeta.php?empresa=' + this.user.nomEmpresa + '&tipo=ENTIDADES&carpeta=' +
+        this.recordToSubmit.carpetaDrive
+      this.openWindow(url)
+    },
+    openWindow (strUrl) {
+      if (window.cordova === undefined) { // desktop
+        openURL(strUrl)
+      } else { // estamos en un disp movil
+        window.cordova.InAppBrowser.open(strUrl, '_system') // openURL
+      }
     }
   },
   mounted () {

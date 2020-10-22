@@ -7,6 +7,24 @@
               <q-item-section avatar>
                 <div class="row">
                   <q-btn  icon="save"  class="q-ma-xs" :color="colorBotonSave" dense @click="updateRecord" />
+                  <q-btn icon="more_vert"  class="q-ma-xs" color="primary" dense>
+                    <q-menu ref="menu1">
+                      <q-list dense>
+                        <q-item
+                          v-for="(opcion, index) in listaOpciones"
+                          :key="index"
+                          clickable
+                          v-close-popup
+                          @click.native="ejecutarOpcion(opcion)"
+                          >
+                          <q-item-section avatar>
+                            <q-icon :name="opcion.icon" />
+                          </q-item-section>
+                          <q-item-section>{{opcion.title}}</q-item-section>
+                        </q-item>
+                      </q-list>
+                    </q-menu>
+                  </q-btn>
                 </div>
               </q-item-section>
               <q-item-section>
@@ -151,7 +169,8 @@
 
 <script>
 import { mapState } from 'vuex'
-import { headerFormData } from 'boot/axios.js'
+import { axiosInstance, headerFormData } from 'boot/axios.js'
+import { openURL } from 'quasar'
 export default {
   props: ['value', 'id', 'keyValue'],
   data () {
@@ -175,12 +194,16 @@ export default {
         idActivoOtra: '',
         urlinfo: '',
         comentarios: ''
-      } // inicializamos los campos, sino no funciona bien
+      }, // inicializamos los campos, sino no funciona bien
+      listaOpciones: [
+        { name: 'carpetaOneDrive', title: 'Carpeta OneDrive', icon: 'cloud', function: 'carpetaOneDrive' }
+      ]
     }
   },
   computed: {
     ...mapState('tablasAux', ['listaEmpresas', 'listaSINO', 'listaMonedas', 'listaTiposActivo', 'listaMeses', 'listaTiposProducto', 'listaEstadosActivo', 'listaMonedas']),
     ...mapState('entidades', ['listaEntidades']),
+    ...mapState('login', ['user']),
     listaEntidadesComp () {
       if (this.listaEntidadesFilter.length <= 0) return this.listaEntidades
       else return this.listaEntidadesFilter
@@ -193,8 +216,26 @@ export default {
         this.listaEntidadesFilter = this.listaEntidades.filter(v => v.nombre.toLowerCase().indexOf(needle) > -1)
       })
     },
-    openWindow (url) {
-      window.open(url, '_blank')
+    ejecutarOpcion (opcion) {
+      this[opcion.function](this.value)
+      this.$refs.menu1.hide()
+    },
+    carpetaOneDrive () {
+      var estado = this.listaEstadosActivo.find(v => v.codElemento === this.recordToSubmit.estadoActivo)
+      if (estado !== null) {
+        var url = axiosInstance.defaults.baseURL + 'onedrive/abrirCarpeta.php?empresa=' + this.user.nomEmpresa + '&tipo=ACTIVOS&carpeta=' +
+          this.recordToSubmit.carpetaDrive + '&estado=' + estado.valor1
+        this.openWindow(url)
+      } else {
+        this.$q.dialog({ title: 'Aviso', message: 'El activo debe tener ESTADO configurado' })
+      }
+    },
+    openWindow (strUrl) {
+      if (window.cordova === undefined) { // desktop
+        openURL(strUrl)
+      } else { // estamos en un disp movil
+        window.cordova.InAppBrowser.open(strUrl, '_system') // openURL
+      }
     },
     updateRecord () {
       if (this.recordToSubmit.tipoProducto !== null) this.recordToSubmit.tipoProducto = JSON.stringify(this.recordToSubmit.tipoProducto.split(',')) // convierto a array en JSON

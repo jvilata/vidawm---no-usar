@@ -189,7 +189,7 @@ export default {
     },
     getRecords () {
       // se reutiliza el grid de movimientos para el form de activos y de facturas
-      var objFilter = { tipoObjeto: (this.value.tipoFactura !== undefined ? 'F' : 'A'), idObjeto: this.value.id }
+      var objFilter = { tipoObjeto: (this.value.tipoFactura !== undefined ? 'F' : (this.value.tipoActivo !== undefined ? 'A' : 'N')), idObjeto: this.value.id }
       return this.$axios.get('movimientos/bd_movimientos.php/movimientos', { params: objFilter })
         .then(response => {
           this.registrosSeleccionados = response.data
@@ -203,8 +203,8 @@ export default {
       var record = {
         codEmpresa: this.user.codEmpresa,
         idObjeto: id,
-        tipoObjeto: (this.value.tipoFactura !== undefined ? 'F' : 'A'),
-        tipoOperacion: (this.value.tipoFactura !== undefined ? 'PAGO' : 'VALORACION'),
+        tipoObjeto: (this.value.tipoFactura !== undefined ? 'F' : (this.value.tipoActivo !== undefined ? 'A' : 'N')),
+        tipoOperacion: (this.value.tipoFactura !== undefined ? 'PAGO' : (this.value.tipoActivo !== undefined ? 'VALORACION' : 'NOMINA')),
         importe: (this.value.tipoFactura !== undefined ? this.value.totalFactura : 0),
         descripcion: (this.value.tipoFactura !== undefined ? 'FRA ' + this.value.nroFactura + ' - ' + this.value.archivoDrive : ''),
         fechaGeneracion: null,

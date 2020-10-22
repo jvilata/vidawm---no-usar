@@ -204,10 +204,7 @@ export default {
       }).onOk(() => {
         return this.$axios.delete(`movimientos/bd_movimientos.php/movimientos/${id}`, JSON.stringify({ id: id }))
           .then(response => {
-            var index = this.registrosSeleccionados.findIndex(function (record) { // busco elemento del array con este id
-              if (record.id === id) return true
-            })
-            this.registrosSeleccionados.splice(index, 1) // lo elimino del array
+            this.$emit('generarArbol')
           })
           .catch(error => {
             this.$q.dialog({ title: 'Error', message: error })
@@ -334,7 +331,7 @@ export default {
         destinoCopia: 'jvilata@edicom.es',
         asunto: (this.value[0].tipoOperacion === 'NOMINA' ? record.nombre + ', ' : '') + tmpAsunto,
         texto: str,
-        url: (this.value[0].tipoOperacion === 'NOMINA' ? 'onedrive/downloadNomina.php?empresa=' + this.user.nomEmpresa + '&nombrePDF=' + record.archivoDrive + '&carpeta=' + record.nombre
+        url: (this.value[0].tipoOperacion === 'NOMINA' ? 'onedrive/downloadNomina.php?empresa=' + this.user.nomEmpresa + '&nombrePDF=' + (record.archivoDrive === null ? '' : record.archivoDrive) + '&carpeta=' + record.nombre
           : 'lib/sendmail.php?accion=send')
       }
       this.visibleSendMail = true

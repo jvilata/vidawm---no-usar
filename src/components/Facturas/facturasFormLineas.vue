@@ -108,6 +108,7 @@
 import { mapState, mapActions } from 'vuex'
 import { date } from 'quasar'
 import facturasFormLinDetalle from 'components/Facturas/facturasFormLinDetalle'
+import wgDate from 'components/General/wgDate.vue'
 export default {
   props: ['value'], // en 'value' tenemos la tabla de datos del grid
   data () {
@@ -153,8 +154,8 @@ export default {
     addRecord () {
       var record = {
         idcabFactura: this.value.id,
-        descripcion: 'Nueva línea',
-        unidades: 0,
+        descripcion: 'Mes de ' + date.formatDate(new Date(), 'MMMM YYYY', { months: wgDate.data().myLocale.months }), // en español
+        unidades: 1,
         precio: 0,
         pdescuento: 0,
         neto: 0,

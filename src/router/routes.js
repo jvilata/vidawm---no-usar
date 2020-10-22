@@ -72,7 +72,21 @@ const routes = [
               { path: 'patrimonioComprometido', name: 'patrimonioComprometido', component: () => import('components/Dashboard/dashboardPatrimonioComprometido.vue'), props: true }
             ]
           },
-          { path: 'graficoPrueba', name: 'graficoPrueba', component: () => import('components/Graficos/grafico.vue'), props: true }
+          { path: 'tablasMain', name: 'tablasMain', component: () => import('components/TablasAuxiliar/tablasMain.vue'), props: true },
+          { path: 'fichajesMain', name: 'fichajesMain', component: () => import('components/Fichajes/fichajesMain.vue'), props: true },
+          { path: 'userMain', name: 'userMain', component: () => import('components/Users/userMain.vue'), props: true },
+          { path: 'notasMain', name: 'notasMain', component: () => import('components/Notas/notasMain.vue'), props: true },
+          { path: 'personalMain', name: 'personalMain', component: () => import('components/Personal/personalMain.vue'), props: true },
+          {
+            path: 'personalFormMain/:id',
+            name: 'personalFormMain',
+            component: () => import('components/Personal/personalFormMain.vue'),
+            props: true,
+            children: [
+              { path: 'personalForm', name: 'personalForm', component: () => import('components/Personal/personalForm.vue'), props: true },
+              { path: 'personalGridMovimientos', name: 'personalGridMovimientos', component: () => import('components/Movimientos/movimientosGrid.vue'), props: true }
+            ]
+          }
         ]
       },
       {

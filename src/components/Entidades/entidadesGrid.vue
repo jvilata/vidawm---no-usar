@@ -17,6 +17,18 @@
         <!-- CABECERA DE LA TABLA -->
         <q-tr :props="props">
           <q-th>
+            <q-btn icon="more_vert"  class="q-ma-xs" color="primary" dense>
+              <q-menu ref="menu1">
+                <q-list dense>
+                  <q-item key="new1" clickable v-close-popup @click.native="addRecord" >
+                    <q-item-section avatar>
+                      <q-icon name="add" />
+                    </q-item-section>
+                    <q-item-section>Añadir Registro</q-item-section>
+                  </q-item>
+                </q-list>
+              </q-menu>
+            </q-btn>
           </q-th>
 
           <q-th

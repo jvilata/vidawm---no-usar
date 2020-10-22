@@ -51,40 +51,44 @@
         :width="220">
       <q-scroll-area style="height: calc(100vh - 210px); margin-top: 210px; border-right: 1px solid #ddd">
         <q-list>
-          <q-item v-for="link in menuItems" :key="link.title"
-            clickable
-            @click.native="openForm(link.link)"
-            exact
-            class="text-grey-8"  >
-            <q-item-section v-if="link.icon" avatar>
-              <q-icon :name="link.icon" />
-            </q-item-section>
+          <div v-for="link in menuItemsFilter" :key="link.title">
+            <q-item
+              v-if="link.title !== 'Otros'"
+              clickable
+              @click.native="openForm(link.link)"
+              exact
+              class="text-grey-8"  >
+              <q-item-section v-if="link.icon" avatar>
+                <q-icon :name="link.icon" />
+              </q-item-section>
 
-            <q-item-section>
-              <q-item-label>{{ link.title }}</q-item-label>
-              <q-item-label v-if="link.caption">{{ link.caption }}</q-item-label>
-            </q-item-section>
-          </q-item>
+              <q-item-section>
+                <q-item-label>{{ link.title }}</q-item-label>
+                <q-item-label v-if="link.caption">{{ link.caption }}</q-item-label>
+              </q-item-section>
+            </q-item>
+            <q-expansion-item
+              class="text-grey-8"
+              v-else
+              icon="settings"
+              label="Otros" >
+              <div v-for="link in otros" :key="link.title">
+                <q-item clickable @click.native="openForm(link.link)" exact>
+                  <q-item-section><!--Títulos del DRAWER -->
+                    <q-item-label
+                      v-ripple
+                      clickable
+                      v-if="link.title" >
+                      {{ link.title  }}
+                    </q-item-label>
+                  </q-item-section>
+                </q-item>
+              </div>
+            </q-expansion-item>
+          </div>
         </q-list>
       </q-scroll-area>
       <q-img class="absolute-top" src="~assets/VIDA_color.jpg" />
-      <div class="absolute-bottom" style="margin-bottom: 50px;">
-        <q-list>
-          <q-item
-            clickable
-            @click.native="openClassic"
-            exact
-            class="text-grey-8"  >
-            <q-item-section avatar>
-              <q-icon name="mobile_off" />
-            </q-item-section>
-
-            <q-item-section>
-              <q-item-label>App Clásica</q-item-label>
-            </q-item-section>
-          </q-item>
-        </q-list>
-      </div>
     </q-drawer>
     <q-footer>
       <!-- podemos poner tabs en el pie para dispositivos moviles pero quita pantalla y no me gusta
@@ -109,7 +113,6 @@ import { mapState, mapActions } from 'vuex'
 import { openURL } from 'quasar'
 export default {
   name: 'MainLayout',
-
   data () {
     return {
       nomAplicacion: 'Wealth Management',
@@ -121,6 +124,7 @@ export default {
           title: 'Activos',
           // caption: 'github.com/quasarframework',
           icon: 'account_balance',
+          rol: '0',
           link: {
             name: 'Activos',
             label: 'Activos'
@@ -130,6 +134,7 @@ export default {
           title: 'Valoraciones',
           // caption: '',
           icon: 'euro_symbol',
+          rol: '1',
           link: {
             name: 'valoraciones',
             label: 'Valoraciones'
@@ -137,7 +142,7 @@ export default {
         },
         {
           title: 'Dashboard',
-          // caption: 'github.com/quasarframework',
+          rol: '1',
           icon: 'dashboard',
           link: {
             name: 'dashboard',
@@ -146,7 +151,7 @@ export default {
         },
         {
           title: 'Facturas',
-          // caption: 'github.com/quasarframework',
+          rol: '0',
           icon: 'description',
           link: {
             name: 'Facturas',
@@ -154,7 +159,17 @@ export default {
           }
         },
         {
+          title: 'Pagos',
+          rol: '1',
+          icon: 'payments',
+          link: {
+            name: 'Pagos',
+            label: 'Pagos'
+          }
+        },
+        {
           title: 'Entidades',
+          rol: '0',
           icon: 'business',
           link: {
             name: 'Entidades',
@@ -163,6 +178,7 @@ export default {
         },
         {
           title: 'Acciones',
+          rol: '0',
           icon: 'list',
           link: {
             name: 'Acciones',
@@ -170,24 +186,107 @@ export default {
           }
         },
         {
-          title: 'Pagos',
-          icon: 'payments',
+          title: 'Fichajes',
+          rol: '0',
+          icon: 'credit_card',
           link: {
-            name: 'Pagos',
-            label: 'Pagos'
+            name: 'fichajesMain',
+            label: 'Fichajes'
+          }
+        },
+        {
+          title: 'Otros',
+          rol: '1',
+          icon: 'chat',
+          link: {
+            name: 'otros',
+            label: 'Otros'
+          }
+        },
+        {
+          title: 'Ayuda',
+          rol: '0',
+          icon: 'help',
+          link: {
+            name: 'help',
+            label: 'Ayuda'
+          }
+        }
+      ],
+      otros: [
+        {
+          title: 'Personal',
+          icon: 'group',
+          link: {
+            name: 'personalMain',
+            label: 'Personal'
+          }
+        },
+        {
+          title: 'Notas de Gasto',
+          icon: 'euro_symbol',
+          link: {
+            name: 'notasMain',
+            label: 'Notas de Gasto'
+          }
+        },
+        {
+          title: 'Tablas Auxiliares',
+          icon: 'chat',
+          link: {
+            name: 'tablasMain',
+            label: 'Tablas Auxiliares'
+          }
+        },
+        {
+          title: 'Usuarios',
+          icon: 'login',
+          link: {
+            name: 'userMain',
+            label: 'Usuarios'
+          }
+        },
+        {
+          title: 'App Clásica',
+          icon: 'mobile_off',
+          link: {
+            name: 'openClassic',
+            label: 'App Clásica'
           }
         }
       ]
     }
   },
   computed: {
-    ...mapState('login', ['user'])
+    ...mapState('login', ['user']),
+    menuItemsFilter () {
+      var arr = []
+      this.menuItems.forEach(element => {
+        if ((this.user.pers.userRol === '2' && element.title === 'Fichajes') || // solo fichaje
+          (this.user.pers.userRol === '1') || // admin
+          (this.user.pers.userRol === '0' && element.rol === '0')) {
+          arr.push(element)
+        }
+      })
+      return arr
+    }
   },
   methods: {
     ...mapActions('tabs', ['addTab']),
     ...mapActions('login', ['desconectarLogin']),
     openForm (link) {
-      this.addTab([link.name, link.label, {}, 1])
+      if (link.name === 'help') {
+        var strUrl = 'https://vidawm.com/ayuda-gestion-activos/'
+        if (window.cordova === undefined) { // desktop
+          openURL(strUrl)
+        } else { // estamos en un disp movil
+          window.cordova.InAppBrowser.open(strUrl, '_system') // openURL
+        }
+      } else if (link.name === 'openClassic') {
+        this.openClassic()
+      } else {
+        this.addTab([link.name, link.label, {}, 1])
+      }
     },
     openClassic () {
       var strUrl = 'https://vidawm.com/privado/index_sencha.html'
@@ -200,17 +299,16 @@ export default {
     desconectar () {
       this.desconectarLogin()
     }
+  },
+  mounted () {
+    // llamo a la action->addTab del store->tabs y param: ['acciones','acciones',{},1]
+    if (this.user.pers.userRol !== '2') this.addTab(['Acciones', 'Acciones', {}, 1])
+    else this.addTab(['fichajesMain', 'Fichajes', {}, 1])
   }
 }
 </script>
 
 <style>
-  @media screen and (min-width: 768px) {
-    .q-footer {
-      display: none;
-    }
-  }
-
   .q-drawer .q-router-link--exact-active {
     color: white !important;
   }

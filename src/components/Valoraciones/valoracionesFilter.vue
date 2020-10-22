@@ -68,6 +68,7 @@
       </q-input>
       <q-select
         outlined
+        clearable
         label="Mes"
         stack-label
         v-model="filterR.mes"

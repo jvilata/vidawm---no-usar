@@ -1,26 +1,25 @@
 {
-  "name": "VIDA Gest",
+  "name": "vidawm",
   "version": "0.0.1",
-  "description": "VIDA Wealth Management ",
-  "productName": "VIDA WM",
-  "cordovaId": "org.cordova.vidawm.app",
-  "capacitorId": "",
-  "author": "",
+  "description": "Vidawm Gest",
+  "productName": "VIDAWM",
+  "author": "jvilata <jvilata@edicom.es>",
   "private": true,
   "scripts": {
-    "lint": "eslint --ext .js,.vue src",
+    "lint": "eslint --ext .js,.vue ./",
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
-    "@quasar/app": "^1.9.6",
-    "@quasar/extras": "^1.9.7",
-    "apexcharts": "^3.16.1",
+    "@quasar/extras": "^1.0.0",
+    "apexcharts": "^3.22.0",
     "axios": "^0.18.1",
+    "core-js": "^3.6.5",
     "numeral": "^2.0.6",
-    "quasar": "^1.14.1",
-    "vue-apexcharts": "^1.5.2"
+    "quasar": "^1.0.0",
+    "vue-apexcharts": "^1.6.0"
   },
   "devDependencies": {
+    "@quasar/app": "^2.0.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.0",
@@ -31,15 +30,20 @@
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^6.1.2"
   },
+  "browserslist": [
+    "last 10 Chrome versions",
+    "last 10 Firefox versions",
+    "last 4 Edge versions",
+    "last 7 Safari versions",
+    "last 8 Android versions",
+    "last 8 ChromeAndroid versions",
+    "last 8 FirefoxAndroid versions",
+    "last 10 iOS versions",
+    "last 5 Opera versions"
+  ],
   "engines": {
     "node": ">= 10.18.1",
     "npm": ">= 6.13.4",
     "yarn": ">= 1.21.1"
-  },
-  "browserslist": [
-    "last 1 version, not dead, ie >= 11"
-  ],
-  "resolutions": {
-    "@babel/parser": "7.7.5"
   }
 }

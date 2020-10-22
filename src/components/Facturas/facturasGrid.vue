@@ -246,6 +246,7 @@ export default {
         },
         { name: 'tipoFactura', align: 'right', label: 'Tipo', field: 'tipoFactura', sortable: true },
         { name: 'estadoFactura', align: 'left', label: 'Estado Factura', field: 'estadoFactura', sortable: true },
+        { name: 'archivoDrive', align: 'left', label: 'archivoDrive', field: 'archivoDrive', sortable: true, style: 'width: 130px; whiteSpace: normal' },
         { name: 'id', label: 'Id', align: 'left', field: 'id', sortable: true },
         { name: 'idCliente', align: 'left', label: 'idEntidad', field: 'idCliente', sortable: true },
         { name: 'user', align: 'left', label: 'user', field: 'user', sortable: true },
