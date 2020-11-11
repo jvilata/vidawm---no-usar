@@ -9,6 +9,7 @@ import Vue from 'vue'
 
 // state: accesibles en lectura desde componentes a traves de ...mapState('tabs', ['tabs'])
 const state = {
+  ltab: '', // tab actual
   tabs: {} // {name: 'nombre tab', params:{ id:'idtab', value: { tab data record } }}
 }
 // mutations: solo están accesibles a las actions a traves de commit, p.e., commit('addTab', tab)
@@ -21,9 +22,9 @@ const mutations = {
     state.tabs[tab.params.id].params.value.idTab = tab.params.id
   },
   updateTabData: (state, [tab, record]) => {
-    if (state.tabs[tab.params.id]) { // modificamos los datos locales de este tab
-      if (state.tabs[tab.params.id].params.value.idTab === record.idTab) { // params.value.id === record.id hago esta comprobacion porque en maintabs se mezclan eventos input entre tabs
-        Object.assign(state.tabs[tab.params.id].params.value, record)
+    if (state.tabs[state.ltab]) { // modificamos los datos locales de este tab
+      if (state.tabs[state.ltab].params.value.idTab === record.idTab) { // params.value.id === record.id hago esta comprobacion porque en maintabs se mezclan eventos input entre tabs
+        Object.assign(state.tabs[state.ltab].params.value, record)
       }
     }
   },
@@ -32,6 +33,9 @@ const mutations = {
   },
   removeAllTabs: (state) => {
     state.tabs = {}
+  },
+  setltab: (state, value) => {
+    state.ltab = value
   }
 }
 // actions: accesibles desde componentes a traves de ...mapActions('tabs', ['addTab'])
@@ -68,6 +72,9 @@ const actions = {
   },
   removeAllTabs ({ commit }) {
     commit('removeAllTabs')
+  },
+  setltab ({ commit }, value) {
+    commit('setltab', value)
   }
 }
 

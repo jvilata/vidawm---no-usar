@@ -116,6 +116,7 @@ export default {
         { name: 'tipoOperacion', align: 'left', label: 'Tipo', field: 'tipoOperacion' },
         { name: 'fecha', align: 'left', label: 'Fecha', field: 'fecha', format: val => (val !== undefined ? date.formatDate(date.extractDate(val, 'YYYY-MM-DD'), 'DD-MM-YYYY') : '') },
         { name: 'importe', align: 'right', label: 'Importe Neto', field: 'importe', sortable: true, format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
+        { name: 'comprometido', align: 'right', label: 'Compr.Rest', field: 'comprometido', sortable: true, format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
         { name: 'valant_fecha', align: 'left', label: 'F.Anterior', field: 'valant_fecha', format: val => (val !== undefined ? date.formatDate(date.extractDate(val, 'YYYY-MM-DD'), 'DD-MM-YYYY') : '') },
         { name: 'difanterior', align: 'right', label: 'Dif.Ant', field: row => parseFloat(row.importe) - parseFloat(row.valant_importe), sortable: true, format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
         { name: 'minval_fecha', align: 'left', label: 'F.Inicial', field: 'minval_fecha', format: val => (val !== undefined ? date.formatDate(date.extractDate(val, 'YYYY-MM-DD'), 'DD-MM-YYYY') : '') },

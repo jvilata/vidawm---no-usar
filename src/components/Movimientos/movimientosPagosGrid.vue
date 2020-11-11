@@ -156,10 +156,10 @@ export default {
         { name: 'tipoOperacion', align: 'left', label: 'Tipo', field: 'tipoOperacion', sortable: true },
         { name: 'fecha', align: 'left', label: 'Fecha', field: 'fecha', sortable: true, format: val => (val === null || val === undefined ? '' : date.formatDate(date.extractDate(val, 'YYYY-MM-DD'), 'DD-MM-YYYY')) },
         { name: 'importe', align: 'left', label: 'Importe', field: 'importe', sortable: true, format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
-        { name: 'descripcion', align: 'left', label: 'Descripcion', field: 'descripcion', sortable: true, style: 'width: 300px; whiteSpace: normal' },
-        { name: 'fechaGeneracion', align: 'left', label: 'F.Pag/Cob', field: 'fechaGeneracion', sortable: true, format: val => (val !== null && val !== undefined ? date.formatDate(date.extractDate(val, 'YYYY-MM-DD HH:mm:ss'), 'DD-MM-YYYY HH:mm:ss') : '') },
-        { name: 'archivoDrive', align: 'left', label: 'Archivo Drive', field: 'archivoDrive', sortable: true, style: 'width: 300px; whiteSpace: normal' },
+        { name: 'archivoDrive', align: 'left', label: 'Archivo Drive', field: 'archivoDrive', sortable: true, style: 'width: 200px; whiteSpace: normal' },
         { name: 'verDoc', align: 'left', label: 'Ver Doc.', field: 'verDoc' },
+        { name: 'descripcion', align: 'left', label: 'Descripcion', field: 'descripcion', sortable: true, style: 'width: 200px; whiteSpace: normal' },
+        { name: 'fechaGeneracion', align: 'left', label: 'F.Pag/Cob', field: 'fechaGeneracion', sortable: true, format: val => (val !== null && val !== undefined ? date.formatDate(date.extractDate(val, 'YYYY-MM-DD HH:mm:ss'), 'DD-MM-YYYY HH:mm:ss') : '') },
         { name: 'user', align: 'left', label: 'user', field: 'user', sortable: true },
         { name: 'ts', align: 'left', label: 'ts', field: 'ts', sortable: true }
       ],
@@ -238,7 +238,7 @@ export default {
       this[opcion](this.selectedRowID)
     },
     verDocumento (record) {
-      if (record.archivoDrive !== '') {
+      if (record.archivoDrive !== '' && record.archivoDrive !== null) { // se podría comprobar que record.tipoOperacion==='NOMINA' porque si es pago no suele haber doc
         var strUrl = 'https://vidawealth-my.sharepoint.com/personal/jvilata_vidawm_com/Documents/' +
           this.user.nomEmpresa + '/PERSONAL/' + record.nombre + '/' + record.archivoDrive
         if (window.cordova === undefined) { // desktop

@@ -90,6 +90,7 @@ export default {
             impcobropago2Y: 0,
             cval2Y_importe: 0,
             impcompvent2Y: 0,
+            comprometido: 0,
             children: []
           }
           arr.push(obj)
@@ -107,6 +108,7 @@ export default {
         obj.impcobropago2Y += parseFloat(row.impcobropago2Y)
         obj.cval2Y_importe += (row.cval2Y_importe === null ? 0 : parseFloat(row.cval2Y_importe))
         obj.impcompvent2Y += parseFloat(row.impcompvent2Y)
+        obj.comprometido += parseFloat(row.comprometido)
         obj.nombre = (obj.children.length + 1) + ' activos'
         obj.children.push(row)
       })
@@ -193,7 +195,7 @@ export default {
       this.getRecords(this.filterRecord)
     } else { // es la primera vez que entro, cargo valores po defecto
       this.filterRecord = { codEmpresa: '01', mes: date.formatDate(new Date(), 'MM/YYYY'), tipoOperacion: 'VALORACION', estadoActivo: ['1', '4'], computa: '1' }
-      this.getRecords(this.filterRecord)
+      // this.getRecords(this.filterRecord)
     }
   },
   destroyed () {

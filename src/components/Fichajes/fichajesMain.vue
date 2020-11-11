@@ -146,7 +146,8 @@ export default {
         })
     },
     registrarNuevo () {
-      this.recordToSubmit = this.registrosSeleccionados[0] // basado en el primer registro de la lista
+      if (this.registrosSeleccionados.length > 0) this.recordToSubmit = this.registrosSeleccionados[0] // basado en el primer registro de la lista
+      else this.recordToSubmit = {}
       this.recordToSubmit.registroNuevo = true
       this.expandedReg = true
     },
