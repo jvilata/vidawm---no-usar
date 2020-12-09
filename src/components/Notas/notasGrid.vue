@@ -31,10 +31,10 @@
                       <q-icon :name="opcion.icon" />
                     </q-item-section>
                     <q-item-section>{{opcion.title}}</q-item-section>
-                    <q-item-section avatar v-if="opcion.children.length>0">
+                    <q-item-section avatar v-if="opcion.children && opcion.children.length>0">
                       <q-icon name="keyboard_arrow_right" />
                     </q-item-section>
-                      <q-menu v-if="opcion.children.length>0" anchor="top right" self="top left">
+                      <q-menu v-if="opcion.children && opcion.children.length>0" anchor="top right" self="top left">
                         <q-list dense>
                           <q-item
                             v-for="(opcion1, index1) in opcion.children"
@@ -117,7 +117,7 @@
             <div :style="col.style" v-if="['verDoc'].includes(col.name) && props.row['archivoDrive'] !== undefined">
               <q-btn icon="open_in_browser" color="primary" style='width:50px' @click="verDocumento(props.row)"/>
             </div>
-              <q-popup-edit v-if="props.row.children.length===0 && !['estadoNota', 'nummov', 'verDoc', 'user','ts'].includes(col.name)"
+              <q-popup-edit v-if="props.row.children && props.row.children.length===0 && !['estadoNota', 'nummov', 'verDoc', 'user','ts'].includes(col.name)"
                 v-model="props.row[col.name]"
                 max-height="600px"
                 buttons
@@ -203,6 +203,7 @@ export default {
   computed: {
     ...mapState('login', ['user']),
     ...mapState('personal', ['listaPersonal']),
+    ...mapState('entidades', ['entidadSelf', 'entidadAsesor']),
     // campo de tabla en arbol
     arrayTreeObj () {
       const vm = this
@@ -222,7 +223,7 @@ export default {
       return this.registrosSeleccionados.length + ' Filas'
     },
     ejecutarOpcion (opcion) {
-      if (opcion.children.length === 0) {
+      if (opcion.children && opcion.children.length === 0) {
         this[opcion.function](this.selectedRowID)
         this.$refs.menu1.hide()
       }
@@ -308,12 +309,12 @@ export default {
     },
     enviarNotas () {
       this.recordSendMail = {
-        destino: 'rus@prifiscal.es',
-        destinoCopia: 'jvilata@edicom.es',
+        destino: this.entidadAsesor.email,
+        destinoCopia: this.entidadSelf.email,
         asunto: 'Te adjunto notas de gasto de ' + this.user.nomEmpresa,
         texto: 'Hola,<br>Le adjuntamos notas de gasto de la empresa:' + this.user.nomEmpresa + ' en este enlace de OnDrive:%enlace%' +
-          '<br>Atentamente,<br>VILATA DARDER HOLDING SL<br>' +
-          '<img src="http://vidawm.com/img/VIDA_color.jpg"  width="100">',
+          '<br>Atentamente,<br>' + this.entidadSelf.nombre + '<br>' +
+          (this.entidadSelf.logo !== '' ? '<img src="http://vidawm.com/img/' + this.entidadSelf.logo + '"  width="100">' : ''),
         url: 'onedrive/moverElementosCarpeta.php?codEmpresa=' + this.user.codEmpresa + '&empresa=' + this.user.nomEmpresa +
           '&tipo=NOTAS&carpeta=NOTAS&estado='
       }

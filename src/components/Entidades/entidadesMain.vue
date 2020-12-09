@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 import entidadesFilter from 'components/Entidades/entidadesFilter.vue'
 import entidadesGrid from 'components/Entidades/entidadesGrid.vue'
 export default {
@@ -61,6 +61,7 @@ export default {
     ...mapState('login', ['user'])
   },
   methods: {
+    ...mapActions('tablasAux', ['loadTipoEntidad']),
     getRecords (filter) {
       // hago la busqueda de registros segun condiciones del formulario Filter que ha lanzado el evento getRecords
       Object.assign(this.filterRecord, filter) // no haría falta pero así obliga a refrescar el componente para que visulice el filtro
@@ -77,6 +78,7 @@ export default {
     }
   },
   mounted () {
+    this.loadTipoEntidad() // carga tabla auxiliar
     if (this.value.registrosSeleccionados && Object.keys(this.value.registrosSeleccionados).length > 0) { // si ya hemos cargado previamente los recargo al volver a este tab
       this.expanded = false
       Object.assign(this.filterRecord, this.value.filterRecord)

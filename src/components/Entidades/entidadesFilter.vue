@@ -12,7 +12,15 @@
       <q-input outlined clearable label="Cargo" stack-label v-model="filterR.cargo" />
       <q-input outlined clearable label="Telefono" stack-label v-model="filterR.telefono" />
       <q-input outlined clearable label="Email" stack-label v-model="filterR.email" />
-      <q-input outlined clearable label="Tipo Entidad" stack-label v-model="filterR.tipoEntidad" />
+      <q-select outlined clearable
+            stack-label
+            label="Tipo Entidad"
+            v-model="filterR.tipoEntidad"
+            :options="listaTipoEntidad"
+            option-value="codElemento"
+            option-label="codElemento"
+            emit-value
+      />
       <q-input outlined clearable label="Pais" stack-label v-model="filterR.pais" />
       <q-card-actions align="right">
         <q-btn  flat type="submit" label="Buscar" color="primary"/>
@@ -24,6 +32,7 @@
 
 <script>
 import { date } from 'quasar'
+import { mapState } from 'vuex'
 export default {
   props: ['value'], // value es el objeto con los campos de filtro que le pasa accionesMain con v-model
   data () {
@@ -31,6 +40,9 @@ export default {
       filterR: {},
       listaEntidadesFilter: []
     }
+  },
+  computed: {
+    ...mapState('tablasAux', ['listaTipoEntidad'])
   },
   methods: {
     getRecords () {

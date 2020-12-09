@@ -179,6 +179,7 @@ export default {
   computed: {
     ...mapState('login', ['user']),
     ...mapState('tablasAux', ['listaTipoOperacion', 'listaSINO']),
+    ...mapState('entidades', ['entidadSelf', 'entidadAsesor']),
     // campo de tabla en arbol
     arrayTreeObj () {
       const vm = this
@@ -319,16 +320,16 @@ export default {
     callbackMail (indice, rows) {
       var record = rows[indice]
       var email = record.email
-      if (email === '') email = 'jvilata@edicom.es'
+      if (email === '') email = this.entidadSelf.email
       var strobjeto = 'factura'
       if (this.value[0].tipoOperacion === 'NOMINA') strobjeto = 'nómina'
       var tmpAsunto = this.user.nomEmpresa + ' ha ordenado el pago de su ' + strobjeto + ' de importe ' + this.$numeral(parseFloat(record.importe)).format('0,0.00') + '€'
-      var str = 'Hola,<br>En esta fecha, ' + tmpAsunto + ' y referencia ' + record.descripcion + ' en su cuenta ' + record.cuentaCorriente + '<br>Atentamente<br>VILATA DARDER HOLDING SL<br>' +
-          '<img src="http://vidawm.com/img/VIDA_color.jpg"  width="100">'
+      var str = 'Hola,<br>En esta fecha, ' + tmpAsunto + ' y referencia ' + record.descripcion + ' en su cuenta ' + record.cuentaCorriente + '<br>Atentamente<br>' + this.entidadSelf.nombre + '<br>' +
+          (this.entidadSelf.logo !== '' ? '<img src="http://vidawm.com/img/' + this.entidadSelf.logo + '"  width="100">' : '')
 
       this.recordSendMail = {
         destino: email,
-        destinoCopia: 'jvilata@edicom.es',
+        destinoCopia: this.entidadSelf.email,
         asunto: (this.value[0].tipoOperacion === 'NOMINA' ? record.nombre + ', ' : '') + tmpAsunto,
         texto: str,
         url: (this.value[0].tipoOperacion === 'NOMINA' ? 'onedrive/downloadNomina.php?empresa=' + this.user.nomEmpresa + '&nombrePDF=' + (record.archivoDrive === null ? '' : record.archivoDrive) + '&carpeta=' + record.nombre

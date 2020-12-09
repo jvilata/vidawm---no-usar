@@ -116,7 +116,8 @@ export default {
     }
   },
   computed: {
-    ...mapState('login', ['user']) // importo state.user desde store-login
+    ...mapState('login', ['user']), // importo state.user desde store-login
+    ...mapState('entidades', ['entidadSelf', 'entidadAsesor'])
   },
   methods: {
     cambiaDatos (record) {
@@ -232,12 +233,12 @@ export default {
     },
     enviarEmail (selected) {
       this.recordSendMail = {
-        destino: (selected.emailEntidad === '' ? 'jvilata@edicom.es' : selected.emailEntidad),
-        destinoCopia: 'jvilata@edicom.es',
+        destino: (selected.emailEntidad === '' ? this.entidadSelf.email : selected.emailEntidad),
+        destinoCopia: this.entidadSelf.email,
         asunto: 'Factura de ' + this.user.nomEmpresa + ' número: ' + selected.nroFactura,
         texto: 'Hola,<br>Le adjuntamos factura ' + selected.nroFactura + ' por los servicios prestados de la empresa:' +
-          this.user.nomEmpresa + '<br>Atentamente,<br>VILATA DARDER HOLDING SL<br>' +
-          '<img src="http://vidawm.com/img/VIDA_color.jpg"  width="100">',
+          this.user.nomEmpresa + '<br>Atentamente,<br>' + this.entidadSelf.nombre + '<br>' +
+          (this.entidadSelf.logo !== '' ? '<img src="http://vidawm.com/img/' + this.entidadSelf.logo + '"  width="100">' : ''),
         url: 'onedrive/downloadFactura.php?empresa=' + this.user.nomEmpresa + '&nombrePDF=' + selected.archivoDrive + '&carpeta=' + selected.carpeta
       }
       this.visibleSendMail = true

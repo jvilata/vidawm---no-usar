@@ -72,7 +72,7 @@ export default {
       var obj = {}
       this.registrosSeleccionados.forEach(row => {
         // si tipoActivo != antTipoActivo  Insertamos 'obj' en arr como cabecera tipoActivo
-        row.generar = row.nroNota + ' - ' + row.nomPersona.substring(0, 9)
+        row.generar = row.nroNota + ' - ' + (row.nomPersona ? row.nomPersona.substring(0, 9) : 'SIN ASIGN')
         if (row.generar !== antGenerar) {
           obj = {
             id: -Math.floor((Math.random() * 999999) + 999999),

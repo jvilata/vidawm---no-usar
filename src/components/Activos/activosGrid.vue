@@ -148,7 +148,7 @@ export default {
         tipoActivo: 'CAJA',
         nombre: 'Nuevo activo',
         computa: '1',
-        estadoActivo: 'EN ESTUDIO',
+        estadoActivo: '2',
         user: this.user.user.email,
         ts: date.formatDate(new Date(), 'YYYY-MM-DD HH:mm:ss')
       }

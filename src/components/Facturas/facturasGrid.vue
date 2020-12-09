@@ -269,6 +269,7 @@ export default {
   },
   computed: {
     ...mapState('tablasAux', ['listaSINO']),
+    ...mapState('entidades', ['entidadSelf', 'entidadAsesor']),
     ...mapState('login', ['user'])
   },
   methods: {
@@ -392,12 +393,12 @@ export default {
     },
     enviarEmail (selected) {
       this.recordSendMail = {
-        destino: (selected.emailEntidad === '' ? 'jvilata@edicom.es' : selected.emailEntidad),
-        destinoCopia: 'jvilata@edicom.es',
+        destino: (selected.emailEntidad === '' ? this.entidadSelf.email : selected.emailEntidad),
+        destinoCopia: this.entidadSelf.email, // jvilata@
         asunto: 'Factura de ' + this.user.nomEmpresa + ' número: ' + selected.nroFactura,
         texto: 'Hola,<br>Le adjuntamos factura ' + selected.nroFactura + ' por los servicios prestados de la empresa:' +
-          this.user.nomEmpresa + '<br>Atentamente,<br>VILATA DARDER HOLDING SL<br>' +
-          '<img src="http://vidawm.com/img/VIDA_color.jpg"  width="100">',
+          this.user.nomEmpresa + '<br>Atentamente,<br>' + this.entidadSelf.nombre + '<br>' +
+          (this.entidadSelf.logo !== '' ? '<img src="http://vidawm.com/img/' + this.entidadSelf.logo + '"  width="100">' : ''),
         url: 'onedrive/downloadFactura.php?empresa=' + this.user.nomEmpresa + '&nombrePDF=' + selected.archivoDrive + '&carpeta=' + selected.carpeta
       }
       this.visibleSendMail = true
@@ -429,12 +430,12 @@ export default {
     },
     enviarFacturas () {
       this.recordSendMail = {
-        destino: 'rus@prifiscal.es',
-        destinoCopia: 'jvilata@edicom.es',
+        destino: this.entidadAsesor.email, // 'rus@prifiscal.es'
+        destinoCopia: this.entidadSelf.email, // 'jvilata@edicom.es',
         asunto: 'Te adjunto facturas de ' + this.user.nomEmpresa,
         texto: 'Hola,<br>Le adjuntamos facturas de la empresa:' + this.user.nomEmpresa + ' en este enlace de OnDrive:%enlace%' +
-          '<br>Atentamente,<br>VILATA DARDER HOLDING SL<br>' +
-          '<img src="http://vidawm.com/img/VIDA_color.jpg"  width="100">',
+          '<br>Atentamente,<br>' + this.entidadSelf.nombre + '<br>' +
+          (this.entidadSelf.logo !== '' ? '<img src="http://vidawm.com/img/' + this.entidadSelf.logo + '"  width="100">' : ''),
         url: 'onedrive/moverElementosCarpeta.php?codEmpresa=' + this.user.codEmpresa + '&empresa=' + this.user.nomEmpresa +
           '&tipo=FACTURAS&carpeta=FACTURAS&estado='
       }
