@@ -26,6 +26,12 @@
                     </q-item-section>
                     <q-item-section>Añadir Registro</q-item-section>
                   </q-item>
+                  <q-item key="gene1" clickable v-close-popup @click.native="generarRentab" >
+                    <q-item-section avatar>
+                      <q-icon name="brightness_5" />
+                    </q-item-section>
+                    <q-item-section>Generar Rentabilidades ejercicio</q-item-section>
+                  </q-item>
                 </q-list>
               </q-menu>
             </q-btn>
@@ -188,6 +194,29 @@ export default {
     },
     editRecord (rowChanges, id) { // no lo uso aqui pero lod ejo como demo
       this.addTab(['activosFormMain', 'Activo-' + rowChanges.id, rowChanges, rowChanges.id])
+    },
+    generarRentab () {
+      this.$q.dialog({
+        title: 'Confirmar',
+        message: '¿ Ejercicio a generar ?',
+        prompt: {
+          model: date.formatDate(new Date(), 'YYYY'),
+          type: 'text' // optional
+        },
+        cancel: true,
+        persistent: true
+      }).onOk(data => {
+        var record = {
+          codEmpresa: this.user.codEmpresa,
+          ejercicio: data
+        }
+        return this.$axios.get('activos/bd_act_rentabEspAnual.php/duplicarRentabAnual', { params: record })
+          .then(response => {
+          })
+          .catch(error => {
+            this.$q.dialog({ title: 'Error', message: error })
+          })
+      })
     },
     mostrarDatosPieTabla () {
       return this.value.length + ' Filas'

@@ -100,7 +100,7 @@
             />
             <q-input outlined v-model="recordToSubmit.idActivoOtra" label="Id Activo" class="col-xs-4 col-sm-4" />
         </div>
-        <q-input class="row q-mb-sm" autofocus outlined v-model="recordToSubmit.nombre" label="Nombre"/>
+        <q-input class="row q-mb-sm" autofocus outlined v-model="recordToSubmit.nombre" label="Nombre" @blur="recordToSubmit.carpetaDrive =recordToSubmit.nombre" />
         <q-input class="row q-mb-sm" outlined v-model="recordToSubmit.carpetaDrive" label="Nombre en OneDrive"/>
         <q-input class="row q-mb-sm" outlined v-model="recordToSubmit.descripcion" label="Descripción"
             type="textarea"
