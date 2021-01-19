@@ -141,6 +141,16 @@ export default {
           }
         },
         {
+          title: 'Alternativos',
+          // caption: '',
+          icon: 'api',
+          rol: '1',
+          link: {
+            name: 'alternativos',
+            label: 'Alternativos'
+          }
+        },
+        {
           title: 'Dashboard',
           rol: '1',
           icon: 'dashboard',

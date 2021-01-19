@@ -124,20 +124,14 @@ export default {
         { name: 'impcompvent', align: 'right', label: 'Comp/Vent.Año', field: 'impcompvent', sortable: true, format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
         { name: 'factuInteres', align: 'right', label: 'Factur/Inter', field: row => parseFloat(row.impcobropago) + parseFloat(row.facturado), sortable: true, format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
         { name: 'revalorizacion', align: 'right', label: 'Revalorización', field: b => parseFloat(b.importe) + parseFloat(b.facturado) + parseFloat(b.impcobropago) - (parseFloat(b.minval_importe) + parseFloat(b.impcompvent)), sortable: true, format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
-        { name: 'peso', align: 'right', label: '%Peso', field: 'peso', sortable: true, format: val => (val !== undefined ? this.$numeral(parseFloat(val)).format('0.00%') : '') },
+        { name: 'peso', align: 'right', label: '%Peso', field: 'peso', sortable: true, format: val => (val !== undefined ? parseFloat(val).toFixed(2) : '') },
         {
           name: 'rentabAcum',
           required: true,
           label: '%Real',
           align: 'right',
-          field: b => {
-            var res = 0
-            var newValue = parseFloat(b.importe) + parseFloat(b.facturado) + parseFloat(b.impcobropago) - (parseFloat(b.minval_importe === null ? 0 : b.minval_importe) + parseFloat(b.impcompvent))
-            if (newValue !== 0 && (parseFloat(b.minval_importe === null ? 0 : b.minval_importe) + parseFloat(b.impcompras)) !== 0) {
-              res = newValue * 100 / (parseFloat(b.minval_importe === null ? 0 : b.minval_importe) + parseFloat(b.impcompras))
-            }
-            return res
-          },
+          field: 'rentabAcum',
+          sortable: true,
           format: val => parseFloat(val).toFixed(2)
         },
         { name: 'impcompras', align: 'right', label: 'Imp.Compras', field: 'impcompras', sortable: true, format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
@@ -314,8 +308,7 @@ export default {
             strX = x.tipoActivo + this.$numeral(parseFloat(x[sortBy])).format('0000000000000.00')
             strY = y.tipoActivo + this.$numeral(parseFloat(y[sortBy])).format('0000000000000.00')
           }
-
-          return (strX > strY) ? 1 : (strX < strY) ? -1 : 0
+          return strX.localeCompare(strY) // > strY) ? 1 : (strX < strY) ? -1 : 0
         })
       }
       return data

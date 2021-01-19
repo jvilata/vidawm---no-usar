@@ -184,12 +184,9 @@ export default {
       registrosSeleccionados: [],
       rowId: '',
       columns: [
-        { name: 'tipoOperacion', align: 'left', label: 'Tipo', field: 'tipoOperacion', sortable: true },
+        // { name: 'tipoOperacion', align: 'left', label: 'Tipo', field: 'tipoOperacion', sortable: true },
         { name: 'fecha', align: 'left', label: 'Fecha', field: 'fecha', sortable: true, format: val => date.formatDate(date.extractDate(val, 'YYYY-MM-DD'), 'DD-MM-YYYY') },
-        { name: 'participaciones', align: 'left', label: 'NºParticip.', field: 'participaciones', sortable: true, format: val => this.$numeral(parseFloat(val)).format('0,0.000') },
-        { name: 'precioUnitario', align: 'left', label: 'Prec.Unit.', field: 'precioUnitario', sortable: true, format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
         { name: 'importe', align: 'left', label: 'Importe', field: 'importe', sortable: true, format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
-        { name: 'retencion', align: 'left', label: 'Retención', field: 'retencion', sortable: true, format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
         { name: 'descripcion', align: 'left', label: 'Descripcion', field: 'descripcion', sortable: true, style: 'width: 300px; whiteSpace: normal' },
         { name: 'fechaGeneracion', align: 'left', label: 'F.Pag/Cob', field: 'fechaGeneracion', sortable: true, format: val => (val !== null ? date.formatDate(date.extractDate(val, 'YYYY-MM-DD HH:mm:ss'), 'DD-MM-YYYY HH:mm:ss') : '') },
         { name: 'archivoDrive', align: 'left', label: 'Archivo Drive', field: 'archivoDrive', sortable: true, style: 'width: 300px; whiteSpace: normal' },
@@ -200,33 +197,21 @@ export default {
     }
   },
   computed: {
-    ...mapState('login', ['user']),
-    ...mapState('tablasAux', ['listaTipoOperacion'])
+    ...mapState('login', ['user'])
   },
   methods: {
     formatDate (pdate) {
       return date.formatDate(date.extractDate(pdate, 'YYYY-MM-DD'), 'YYYY-MM-DD HH:mm:ss')
-    },
-    getRecords () {
-      // se reutiliza el grid de movimientos para el form de activos y de facturas
-      var objFilter = { tipoObjeto: (this.value.tipoFactura !== undefined ? 'F' : (this.value.tipoActivo !== undefined ? 'A' : 'N')), idObjeto: this.value.id }
-      return this.$axios.get('movimientos/bd_movimientos.php/movimientos', { params: objFilter })
-        .then(response => {
-          this.registrosSeleccionados = response.data
-        })
-        .catch(error => {
-          this.$q.dialog({ title: 'Error', message: error })
-        })
     },
     addRecord (id) {
       // se reutiliza el grid de movimientos para el form de activos y de facturas
       var record = {
         codEmpresa: this.user.codEmpresa,
         idObjeto: id,
-        tipoObjeto: (this.value.tipoFactura !== undefined ? 'F' : (this.value.tipoActivo !== undefined ? 'A' : 'N')),
-        tipoOperacion: (this.value.tipoFactura !== undefined ? 'PAGO' : (this.value.tipoActivo !== undefined ? 'VALORACION' : 'NOMINA')),
-        importe: (this.value.tipoFactura !== undefined ? this.value.totalFactura : 0),
-        descripcion: (this.value.tipoFactura !== undefined ? 'FRA ' + this.value.nroFactura + ' - ' + this.value.archivoDrive : ''),
+        tipoObjeto: 'E',
+        tipoOperacion: 'DONATIVO',
+        importe: 0,
+        descripcion: 'Donativo',
         fechaGeneracion: null,
         fecha: date.formatDate(new Date(), 'YYYY-MM-DD 00:00:00'),
         user: this.user.user.email,

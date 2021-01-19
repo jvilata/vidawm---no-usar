@@ -91,12 +91,21 @@ export default {
             cval2Y_importe: 0,
             impcompvent2Y: 0,
             comprometido: 0,
+            rentabAcum: 0,
             children: []
           }
           arr.push(obj)
           antTipoActivo = row.tipoActivo
         }
         row.children = []
+        var res = 0
+        var newValue = parseFloat(row.importe) + parseFloat(row.facturado) + parseFloat(row.impcobropago) - (parseFloat(row.minval_importe === null ? 0 : row.minval_importe) + parseFloat(row.impcompvent))
+        if (newValue !== 0 && (parseFloat(row.minval_importe === null ? 0 : row.minval_importe) + parseFloat(row.impcompras)) !== 0) {
+          res = newValue * 100 / (parseFloat(row.minval_importe === null ? 0 : row.minval_importe) + parseFloat(row.impcompras))
+        }
+        row.rentabAcum = res
+        if (row.peso === undefined) row.peso = 0
+        else row.peso = parseFloat(row.peso) * 100
         obj.importe += parseFloat(row.importe)
         obj.valant_importe += (row.valant_importe === null ? 0 : parseFloat(row.valant_importe))
         obj.minval_importe += (row.minval_importe === null ? 0 : parseFloat(row.minval_importe))
@@ -109,6 +118,13 @@ export default {
         obj.cval2Y_importe += (row.cval2Y_importe === null ? 0 : parseFloat(row.cval2Y_importe))
         obj.impcompvent2Y += parseFloat(row.impcompvent2Y)
         obj.comprometido += parseFloat(row.comprometido)
+
+        res = 0
+        newValue = parseFloat(obj.importe) + parseFloat(obj.facturado) + parseFloat(obj.impcobropago) - (parseFloat(obj.minval_importe === null ? 0 : obj.minval_importe) + parseFloat(obj.impcompvent))
+        if (newValue !== 0 && (parseFloat(obj.minval_importe === null ? 0 : obj.minval_importe) + parseFloat(obj.impcompras)) !== 0) {
+          res = newValue * 100 / (parseFloat(obj.minval_importe === null ? 0 : obj.minval_importe) + parseFloat(obj.impcompras))
+        }
+        obj.rentabAcum = res
         obj.nombre = (obj.children.length + 1) + ' activos'
         obj.children.push(row)
       })

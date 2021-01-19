@@ -57,6 +57,7 @@ const routes = [
             ]
           },
           { path: 'valoraciones', name: 'valoraciones', component: () => import('components/Valoraciones/valoracionesMain.vue'), props: true },
+          { path: 'alternativos', name: 'alternativos', component: () => import('components/Alternativos/alternativosMain.vue'), props: true },
           {
             path: 'dashboard',
             name: 'dashboard',
