@@ -32,6 +32,12 @@
                     </q-item-section>
                     <q-item-section>Generar Rentabilidades ejercicio</q-item-section>
                   </q-item>
+                  <q-item key="gene1" clickable v-close-popup @click.native="recalcularImportesMoneda" >
+                    <q-item-section avatar>
+                      <q-icon name="published_with_changes" />
+                    </q-item-section>
+                    <q-item-section>Recalcular importes moneda</q-item-section>
+                  </q-item>
                 </q-list>
               </q-menu>
             </q-btn>
@@ -212,6 +218,26 @@ export default {
         }
         return this.$axios.get('activos/bd_act_rentabEspAnual.php/duplicarRentabAnual', { params: record })
           .then(response => {
+          })
+          .catch(error => {
+            this.$q.dialog({ title: 'Error', message: error })
+          })
+      })
+    },
+    recalcularImportesMoneda () {
+      this.$q.dialog({
+        title: 'Confirmar',
+        message: '¿ Desea recalcular importes ?',
+        ok: true,
+        cancel: true,
+        persistent: true
+      }).onOk(data => {
+        var record = {
+          codEmpresa: this.user.codEmpresa
+        }
+        return this.$axios.get('movimientos/bd_movimientos.php/recalcularImportesMoneda', { params: record })
+          .then(response => {
+            this.$q.dialog({ title: 'Aviso', message: 'Importes actualizados' })
           })
           .catch(error => {
             this.$q.dialog({ title: 'Error', message: error })

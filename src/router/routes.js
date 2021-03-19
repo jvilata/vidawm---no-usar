@@ -16,6 +16,7 @@ const routes = [
         component: () => import('components/MainTabs/mainTabs.vue'),
         children: [
           { path: 'Acciones', name: 'Acciones', component: () => import('components/Acciones/accionesMain.vue'), props: true },
+          { path: 'donativosMain', name: 'donativosMain', component: () => import('components/Donativos/donativosMain.vue'), props: true },
           { path: 'Pagos', name: 'Pagos', component: () => import('components/Movimientos/pagosMain.vue'), props: true },
           { path: 'Activos', name: 'Activos', component: () => import('components/Activos/activosMain.vue'), props: true },
           {
@@ -27,6 +28,7 @@ const routes = [
               { path: 'activosForm', name: 'activosForm', component: () => import('components/Activos/activosForm.vue'), props: true },
               { path: 'activosGridRentabAnual', name: 'activosGridRentabAnual', component: () => import('components/Activos/activosGridRentabAnual.vue'), props: true },
               { path: 'activosGridMovimientos', name: 'activosGridMovimientos', component: () => import('components/Movimientos/movimientosGrid.vue'), props: true },
+              { path: 'activosAlternativosGrid', name: 'activosAlternativosGrid', component: () => import('components/Activos/activosAlternativosGrid.vue'), props: true },
               { path: 'facturasGrid', name: 'facturasGrid', component: () => import('components/Facturas/facturasGrid.vue'), props: true },
               { path: 'activosEvolucionValor', name: 'activosEvolucionValor', component: () => import('components/Activos/activosEvolucionValor.vue'), props: true },
               { path: 'activosAccionesGrid', name: 'activosAccionesGrid', component: () => import('components/Activos/activosAccionesGrid.vue'), props: true }

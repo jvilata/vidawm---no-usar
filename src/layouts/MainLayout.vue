@@ -187,15 +187,6 @@ export default {
           }
         },
         {
-          title: 'Acciones',
-          rol: '0',
-          icon: 'list',
-          link: {
-            name: 'Acciones',
-            label: 'Acciones'
-          }
-        },
-        {
           title: 'Fichajes',
           rol: '0',
           icon: 'credit_card',
@@ -238,6 +229,24 @@ export default {
           link: {
             name: 'notasMain',
             label: 'Notas de Gasto'
+          }
+        },
+        {
+          title: 'Donaciones',
+          rol: '0',
+          icon: 'redeem',
+          link: {
+            name: 'donativosMain',
+            label: 'Donaciones'
+          }
+        },
+        {
+          title: 'Acciones',
+          rol: '0',
+          icon: 'list',
+          link: {
+            name: 'Acciones',
+            label: 'Acciones'
           }
         },
         {

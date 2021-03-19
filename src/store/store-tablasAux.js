@@ -9,7 +9,7 @@ import { axiosInstance, headerFormData } from 'boot/axios.js'
 const state = {
   listaUsers: [], // [{id, codEmpresa, email, username, idPersonal}]
   listaSINO: [{ id: '1', desc: 'SI' }, { id: '0', desc: 'NO' }],
-  listaMonedas: ['EUROS', 'DOLAR'],
+  listaMonedas: [], // ['EUROS', 'DOLAR'],
   listaTipoAcc: [],
   listaTiposActivo: [],
   listaTiposProducto: [],
@@ -67,6 +67,9 @@ const mutations = {
   },
   loadEstadosJornada (state, lista) {
     state.listaEstadosJornada = lista
+  },
+  loadMonedas (state, lista) {
+    state.listaMonedas = lista
   }
 }
 // actions: accesibles desde componentes a traves de ...mapActions('tablaAux', ['loadTablasAux'])
@@ -83,6 +86,7 @@ const actions = {
     this.dispatch('tablasAux/loadTablaAux', { codTabla: 10, mutation: 'listaEstadosFactura' })
     this.dispatch('tablasAux/loadTablaAux', { codTabla: 11, mutation: 'loadTiposJornada' })
     this.dispatch('tablasAux/loadTablaAux', { codTabla: 12, mutation: 'loadEstadosJornada' })
+    this.dispatch('tablasAux/loadTablaAux', { codTabla: 13, mutation: 'loadMonedas' })
     this.dispatch('tablasAux/loadUsers')
     this.dispatch('tablasAux/loadListaMeses')
   },

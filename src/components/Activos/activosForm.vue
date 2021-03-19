@@ -131,6 +131,9 @@
               clearable
               v-model="recordToSubmit.moneda"
               :options="listaMonedas"
+              option-value="codElemento"
+              option-label="codElemento"
+              emit-value
           />
           <q-input outlined v-model="recordToSubmit.rentabEsp" label="Rent.Esp.Año" class="col-xs-6 col-sm-3"/>
           <q-input outlined v-model="recordToSubmit.rentabReal" label="R.Futura/TIR" class="col-xs-6 col-sm-3"/>

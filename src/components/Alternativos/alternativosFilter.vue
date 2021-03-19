@@ -32,6 +32,8 @@
         option-value="codElemento"
         option-label="codElemento"
         emit-value
+        multiple
+        use-chips
       />
       <q-select
         outlined
@@ -109,7 +111,8 @@ export default {
   data () {
     return {
       filterR: {
-        idActivo: []
+        idActivo: [],
+        tipoActivo: []
       },
       listaEntidadesFilter: [],
       listaActivosFilter: []

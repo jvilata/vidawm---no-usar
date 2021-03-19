@@ -88,7 +88,7 @@ export default {
         {
           name: 'rentabAcum',
           required: true,
-          label: '%Real',
+          label: '%Rent.Real',
           align: 'right',
           field: b => {
             var res = 0
@@ -101,11 +101,12 @@ export default {
           format: val => parseFloat(val).toFixed(2)
         },
         { name: 'patrimonio', required: true, label: 'Importe Actual', align: 'right', field: 'patrimonio', format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
-        { name: 'pTeorico', required: true, label: '%Ideal', align: 'right', field: 'pTeorico' },
+        { name: 'pTeorico', required: true, label: '%Part.Ideal', align: 'right', field: 'pTeorico' },
         { name: 'preal', required: true, label: '%Real', align: 'right', field: 'preal', format: val => parseFloat(val).toFixed(2) },
-        { name: 'comprometidoAnyoSig', required: true, label: 'comprom.+1Y', align: 'right', field: 'comprometidoAnyoSig', format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
-        { name: 'prealComprometidoAnyoSig', required: true, label: '%R+C 1Y', align: 'right', field: 'prealComprometidoAnyoSig', format: val => parseFloat(val).toFixed(2) },
-        { name: 'comprometido', required: true, label: 'Comprometido', align: 'right', field: 'comprometido', format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
+        { name: 'comprometido6m', required: true, label: 'comprom.+6m', align: 'right', field: 'comprometido6m', format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
+        // { name: 'prealComprometidoAnyoSig', required: true, label: '%R+C 1Y', align: 'right', field: 'prealComprometidoAnyoSig', format: val => parseFloat(val).toFixed(2) },
+        { name: 'comprometido7_24m', required: true, label: 'comprom.7-24m', align: 'right', field: 'comprometido7_24m', format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
+        { name: 'comprometido', required: true, label: 'Comprom.Total', align: 'right', field: 'comprometido', format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
         { name: 'prealComprometido', required: true, label: '%Real+Compr', align: 'right', field: 'prealComprometido', format: val => parseFloat(val).toFixed(2) },
         { name: 'pajuste', required: true, label: '%Ajuste', align: 'right', field: 'pajuste', format: val => parseFloat(val).toFixed(2) },
         { name: 'importeAjuste', required: true, label: 'Imp.Ajuste', align: 'right', field: 'importeAjuste', format: val => this.$numeral(parseFloat(val)).format('0,0.00') },

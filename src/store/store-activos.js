@@ -11,7 +11,7 @@ const mutations = {
 
 const actions = {
   loadActivos ({ commit }, codEmpresa) {
-    var objFilter = { codEmpresa: codEmpresa, estadoActivo: 1 }
+    var objFilter = { codEmpresa: codEmpresa, estadoActivo: '1,4' }
     axiosInstance.get('activos/bd_activos.php/findActivosCombo/', { params: objFilter }, { withCredentials: true })
       .then((response) => {
         if (response.data.length === 0) {

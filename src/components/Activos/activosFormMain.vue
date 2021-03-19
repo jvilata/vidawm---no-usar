@@ -62,6 +62,10 @@ export default {
           link: { name: 'activosGridMovimientos' }
         },
         {
+          title: 'Alternativos',
+          link: { name: 'activosAlternativosGrid' }
+        },
+        {
           title: 'Facturas',
           link: { name: 'facturasGrid' }
         },

@@ -191,6 +191,7 @@ export default {
         { name: 'importe', align: 'left', label: 'Importe', field: 'importe', sortable: true, format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
         { name: 'retencion', align: 'left', label: 'Retención', field: 'retencion', sortable: true, format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
         { name: 'descripcion', align: 'left', label: 'Descripcion', field: 'descripcion', sortable: true, style: 'width: 300px; whiteSpace: normal' },
+        { name: 'importeOriginal', align: 'left', label: 'Imp.Original', field: 'importeOriginal', sortable: true, format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
         { name: 'fechaGeneracion', align: 'left', label: 'F.Pag/Cob', field: 'fechaGeneracion', sortable: true, format: val => (val !== null ? date.formatDate(date.extractDate(val, 'YYYY-MM-DD HH:mm:ss'), 'DD-MM-YYYY HH:mm:ss') : '') },
         { name: 'archivoDrive', align: 'left', label: 'Archivo Drive', field: 'archivoDrive', sortable: true, style: 'width: 300px; whiteSpace: normal' },
         { name: 'user', align: 'left', label: 'user', field: 'user', sortable: true },
