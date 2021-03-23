@@ -105,7 +105,22 @@
         map-options
         use-chips
       />
+      <div class="row">
       <q-select
+        class="col-6"
+        label="Importe>0"
+        stack-label
+        outlined
+        clearable
+        v-model="filterR.importem0"
+        :options="listaSINO"
+        option-value="id"
+        option-label="desc"
+        emit-value
+        map-options
+      />
+      <q-select
+        class="col-6"
         label="Computa"
         stack-label
         outlined
@@ -117,6 +132,7 @@
         emit-value
         map-options
       />
+      </div>
       <q-card-actions align="right">
         <q-btn  flat type="submit" label="Buscar" color="primary"/>
         <q-btn  flat label="Cancel" color="primary" @click="$emit('hide')"/><!-- lo captura accionesMain -->

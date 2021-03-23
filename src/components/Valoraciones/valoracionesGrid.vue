@@ -123,7 +123,7 @@ export default {
         { name: 'minval_importe', align: 'right', label: 'Imp.Inicio', field: 'minval_importe', sortable: true, format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
         { name: 'impcompvent', align: 'right', label: 'Comp/Vent.Año', field: 'impcompvent', sortable: true, format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
         { name: 'factuInteres', align: 'right', label: 'Factur/Inter', field: row => parseFloat(row.impcobropago) + parseFloat(row.facturado), sortable: true, format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
-        { name: 'revalorizacion', align: 'right', label: 'Revalorización', field: b => parseFloat(b.importe) + parseFloat(b.facturado) + parseFloat(b.impcobropago) - (parseFloat(b.minval_importe) + parseFloat(b.impcompvent)), sortable: true, format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
+        { name: 'revalorizacion', align: 'right', label: 'Reval.Año', field: b => parseFloat(b.importe) + parseFloat(b.facturado) + parseFloat(b.impcobropago) - (parseFloat(b.minval_importe) + parseFloat(b.impcompvent)), sortable: true, format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
         { name: 'peso', align: 'right', label: '%Peso', field: 'peso', sortable: true, format: val => (val !== undefined ? parseFloat(val).toFixed(2) : '') },
         {
           name: 'rentabAcum',
@@ -134,7 +134,7 @@ export default {
           sortable: true,
           format: val => parseFloat(val).toFixed(2)
         },
-        { name: 'impcompras', align: 'right', label: 'Imp.Compras', field: 'impcompras', sortable: true, format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
+        // { name: 'impcompras', align: 'right', label: 'Imp.Compras', field: 'impcompras', sortable: true, format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
         { name: 'rentabilidadEsperada', align: 'right', label: '%Rent.Esper', field: 'rentabilidadEsperada', sortable: true },
         { name: 'revalorizacion2Y', align: 'right', label: 'Reval.2Y', field: row => parseFloat(row.importe) + parseFloat(row.facturado2Y) + parseFloat(row.impcobropago2Y) - (parseFloat(row.cval2Y_importe === null ? 0 : row.cval2Y_importe) + parseFloat(row.impcompvent2Y)), sortable: true, format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
         {
@@ -152,6 +152,8 @@ export default {
           },
           format: val => parseFloat(val).toFixed(2)
         },
+        { name: 'impcompventastotales', align: 'right', label: 'Comp/Vent Tot', field: 'impcompventastotales', sortable: true, format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
+        { name: 'revalorizacionTotal', align: 'right', label: 'Reval.Total', field: row => parseFloat(row.importe) - parseFloat(row.impcompventastotales), sortable: true, format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
         { name: 'user', align: 'left', label: 'user', field: 'user' },
         { name: 'ts', align: 'left', label: 'ts', field: 'ts' }
       ],
