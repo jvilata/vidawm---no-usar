@@ -210,7 +210,7 @@ export default {
       Object.assign(this.filterRecord, this.value.filterRecord)
       this.getRecords(this.filterRecord)
     } else { // es la primera vez que entro, cargo valores po defecto
-      this.filterRecord = { codEmpresa: '01', mes: date.formatDate(new Date(), 'MM/YYYY'), tipoOperacion: 'VALORACION', estadoActivo: ['1', '4'], importem0: '1', computa: '1' }
+      this.filterRecord = { codEmpresa: this.user.codEmpresa, mes: date.formatDate(new Date(), 'MM/YYYY'), tipoOperacion: 'VALORACION', estadoActivo: ['1', '4'], importem0: '1', computa: '1' }
       // this.getRecords(this.filterRecord)
     }
   },

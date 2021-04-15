@@ -258,7 +258,7 @@ export default {
           cancel: true,
           persistent: true
         }).onOk(() => {
-          this.borrarValoraciones()
+          this.borrarValoraciones(record)
             .then(response => {
               this.efectuarGenerarValoraciones()
             })
