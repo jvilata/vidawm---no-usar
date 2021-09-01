@@ -1,0 +1,144 @@
+[14-Oct-2020 16:55:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method bd_tablaAuxiliar::deleteBD() in /home2/vidawmco/public_html/vidawm.com/privado/php/tablaAuxiliar/bd_tablaAuxiliar.php:15
+Stack trace:
+#0 /home2/vidawmco/public_html/vidawm.com/privado/php/tablaAuxiliar/bd_tablaAuxiliar.php(132): bd_tablaAuxiliar->analiza_method()
+#1 {main}
+  thrown in /home2/vidawmco/public_html/vidawm.com/privado/php/tablaAuxiliar/bd_tablaAuxiliar.php on line 15
+[15-Oct-2020 09:21:38 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method bd_tablaAuxiliar::deleteBD() in /home2/vidawmco/public_html/vidawm.com/privado/php/tablaAuxiliar/bd_tablaAuxiliar.php:15
+Stack trace:
+#0 /home2/vidawmco/public_html/vidawm.com/privado/php/tablaAuxiliar/bd_tablaAuxiliar.php(132): bd_tablaAuxiliar->analiza_method()
+#1 {main}
+  thrown in /home2/vidawmco/public_html/vidawm.com/privado/php/tablaAuxiliar/bd_tablaAuxiliar.php on line 15
+[15-Oct-2020 09:36:06 UTC] PHP Warning:  array_keys() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 79
+[15-Oct-2020 09:36:06 UTC] PHP Warning:  array_values() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[15-Oct-2020 09:36:06 UTC] PHP Warning:  array_map(): Argument #2 should be an array in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[15-Oct-2020 09:36:06 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[15-Oct-2020 09:36:06 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 89
+[15-Oct-2020 09:36:06 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 90
+[15-Oct-2020 09:36:06 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[15-Oct-2020 09:36:06 UTC] PHP Notice:  Undefined variable: sql in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 112
+[15-Oct-2020 09:36:06 UTC] PHP Notice:  Array to string conversion in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 82
+[15-Oct-2020 09:36:56 UTC] PHP Warning:  array_keys() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 79
+[15-Oct-2020 09:36:56 UTC] PHP Warning:  array_values() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[15-Oct-2020 09:36:56 UTC] PHP Warning:  array_map(): Argument #2 should be an array in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[15-Oct-2020 09:36:56 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[15-Oct-2020 09:36:56 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 89
+[15-Oct-2020 09:36:56 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 90
+[15-Oct-2020 09:36:56 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[15-Oct-2020 09:36:56 UTC] PHP Notice:  Undefined variable: sql in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 112
+[15-Oct-2020 09:37:19 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method bd_tablaAuxiliar::deleteBD() in /home2/vidawmco/public_html/vidawm.com/privado/php/tablaAuxiliar/bd_tablaAuxiliar.php:15
+Stack trace:
+#0 /home2/vidawmco/public_html/vidawm.com/privado/php/tablaAuxiliar/bd_tablaAuxiliar.php(132): bd_tablaAuxiliar->analiza_method()
+#1 {main}
+  thrown in /home2/vidawmco/public_html/vidawm.com/privado/php/tablaAuxiliar/bd_tablaAuxiliar.php on line 15
+[15-Oct-2020 09:39:18 UTC] PHP Warning:  array_keys() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 79
+[15-Oct-2020 09:39:18 UTC] PHP Warning:  array_values() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[15-Oct-2020 09:39:18 UTC] PHP Warning:  array_map(): Argument #2 should be an array in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[15-Oct-2020 09:39:18 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[15-Oct-2020 09:39:18 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 89
+[15-Oct-2020 09:39:18 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 90
+[15-Oct-2020 09:39:18 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[15-Oct-2020 09:39:18 UTC] PHP Notice:  Undefined variable: sql in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 112
+[15-Oct-2020 09:50:08 UTC] PHP Warning:  array_keys() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 79
+[15-Oct-2020 09:50:08 UTC] PHP Warning:  array_values() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[15-Oct-2020 09:50:08 UTC] PHP Warning:  array_map(): Argument #2 should be an array in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[15-Oct-2020 09:50:08 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[15-Oct-2020 09:50:08 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 89
+[15-Oct-2020 09:50:08 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 90
+[15-Oct-2020 09:50:08 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[15-Oct-2020 09:50:08 UTC] PHP Notice:  Undefined variable: sql in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 112
+[15-Oct-2020 09:50:19 UTC] PHP Warning:  array_keys() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 79
+[15-Oct-2020 09:50:19 UTC] PHP Warning:  array_values() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[15-Oct-2020 09:50:19 UTC] PHP Warning:  array_map(): Argument #2 should be an array in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[15-Oct-2020 09:50:19 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[15-Oct-2020 09:50:19 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 89
+[15-Oct-2020 09:50:19 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 90
+[15-Oct-2020 09:50:19 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[15-Oct-2020 09:50:19 UTC] PHP Notice:  Undefined variable: sql in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 112
+[15-Oct-2020 09:50:23 UTC] PHP Warning:  array_keys() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 79
+[15-Oct-2020 09:50:23 UTC] PHP Warning:  array_values() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[15-Oct-2020 09:50:23 UTC] PHP Warning:  array_map(): Argument #2 should be an array in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[15-Oct-2020 09:50:23 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[15-Oct-2020 09:50:23 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 89
+[15-Oct-2020 09:50:23 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 90
+[15-Oct-2020 09:50:23 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[15-Oct-2020 09:50:23 UTC] PHP Notice:  Undefined variable: sql in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 112
+[11-Jan-2021 17:04:08 UTC] PHP Warning:  array_keys() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 79
+[11-Jan-2021 17:04:08 UTC] PHP Warning:  array_values() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[11-Jan-2021 17:04:08 UTC] PHP Warning:  array_map(): Argument #2 should be an array in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[11-Jan-2021 17:04:08 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[11-Jan-2021 17:04:08 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 89
+[11-Jan-2021 17:04:08 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 90
+[11-Jan-2021 17:04:08 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[11-Jan-2021 17:04:08 UTC] PHP Notice:  Undefined variable: sql in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 112
+[11-Jan-2021 17:09:08 UTC] PHP Warning:  array_keys() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 79
+[11-Jan-2021 17:09:08 UTC] PHP Warning:  array_values() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[11-Jan-2021 17:09:08 UTC] PHP Warning:  array_map(): Argument #2 should be an array in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[11-Jan-2021 17:09:08 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[11-Jan-2021 17:09:08 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 89
+[11-Jan-2021 17:09:08 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 90
+[11-Jan-2021 17:09:08 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[11-Jan-2021 17:09:08 UTC] PHP Notice:  Undefined variable: sql in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 112
+[25-Jan-2021 15:50:48 UTC] PHP Warning:  array_keys() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 79
+[25-Jan-2021 15:50:48 UTC] PHP Warning:  array_values() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[25-Jan-2021 15:50:48 UTC] PHP Warning:  array_map(): Argument #2 should be an array in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[25-Jan-2021 15:50:48 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[25-Jan-2021 15:50:48 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 89
+[25-Jan-2021 15:50:48 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 90
+[25-Jan-2021 15:50:48 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[25-Jan-2021 15:50:48 UTC] PHP Notice:  Undefined variable: sql in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 112
+[26-Jan-2021 11:18:49 UTC] PHP Warning:  array_keys() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 79
+[26-Jan-2021 11:18:49 UTC] PHP Warning:  array_values() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[26-Jan-2021 11:18:49 UTC] PHP Warning:  array_map(): Argument #2 should be an array in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[26-Jan-2021 11:18:49 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[26-Jan-2021 11:18:49 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 89
+[26-Jan-2021 11:18:49 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 90
+[26-Jan-2021 11:18:49 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[26-Jan-2021 11:18:49 UTC] PHP Notice:  Undefined variable: sql in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 112
+[28-Jan-2021 11:52:07 UTC] PHP Warning:  array_keys() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 79
+[28-Jan-2021 11:52:07 UTC] PHP Warning:  array_values() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[28-Jan-2021 11:52:07 UTC] PHP Warning:  array_map(): Argument #2 should be an array in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[28-Jan-2021 11:52:07 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[28-Jan-2021 11:52:07 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 89
+[28-Jan-2021 11:52:07 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 90
+[28-Jan-2021 11:52:07 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[28-Jan-2021 11:52:07 UTC] PHP Notice:  Undefined variable: sql in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 112
+[29-Jan-2021 13:39:02 UTC] PHP Warning:  array_keys() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 79
+[29-Jan-2021 13:39:02 UTC] PHP Warning:  array_values() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[29-Jan-2021 13:39:02 UTC] PHP Warning:  array_map(): Argument #2 should be an array in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[29-Jan-2021 13:39:02 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[29-Jan-2021 13:39:02 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 89
+[29-Jan-2021 13:39:02 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 90
+[29-Jan-2021 13:39:02 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[29-Jan-2021 13:39:02 UTC] PHP Notice:  Undefined variable: sql in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 112
+[19-Feb-2021 10:14:44 UTC] PHP Warning:  array_keys() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 79
+[19-Feb-2021 10:14:44 UTC] PHP Warning:  array_values() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[19-Feb-2021 10:14:44 UTC] PHP Warning:  array_map(): Argument #2 should be an array in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[19-Feb-2021 10:14:44 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[19-Feb-2021 10:14:44 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 89
+[19-Feb-2021 10:14:44 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 90
+[19-Feb-2021 10:14:44 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[19-Feb-2021 10:14:44 UTC] PHP Notice:  Undefined variable: sql in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 112
+[29-Mar-2021 10:04:32 UTC] PHP Warning:  array_keys() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 79
+[29-Mar-2021 10:04:32 UTC] PHP Warning:  array_values() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[29-Mar-2021 10:04:32 UTC] PHP Warning:  array_map(): Argument #2 should be an array in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[29-Mar-2021 10:04:32 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[29-Mar-2021 10:04:32 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 89
+[29-Mar-2021 10:04:32 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 90
+[29-Mar-2021 10:04:32 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[29-Mar-2021 10:04:32 UTC] PHP Notice:  Undefined variable: sql in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 112
+[19-Apr-2021 09:43:47 UTC] PHP Warning:  array_keys() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 79
+[19-Apr-2021 09:43:47 UTC] PHP Warning:  array_values() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[19-Apr-2021 09:43:47 UTC] PHP Warning:  array_map(): Argument #2 should be an array in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[19-Apr-2021 09:43:47 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[19-Apr-2021 09:43:47 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 89
+[19-Apr-2021 09:43:47 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 90
+[19-Apr-2021 09:43:47 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[19-Apr-2021 09:43:47 UTC] PHP Notice:  Undefined variable: sql in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 112
+[30-Jun-2021 12:02:33 UTC] PHP Warning:  array_keys() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 79
+[30-Jun-2021 12:02:33 UTC] PHP Warning:  array_values() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[30-Jun-2021 12:02:33 UTC] PHP Warning:  array_map(): Argument #2 should be an array in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[30-Jun-2021 12:02:33 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[30-Jun-2021 12:02:33 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 89
+[30-Jun-2021 12:02:33 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 90
+[30-Jun-2021 12:02:33 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[30-Jun-2021 12:02:33 UTC] PHP Notice:  Undefined variable: sql in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 112

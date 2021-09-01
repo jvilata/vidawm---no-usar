@@ -1,0 +1,700 @@
+[26-Jan-2019 06:51:14 UTC] PHP Warning:  A non-numeric value encountered in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 54
+[07-Apr-2019 09:18:55 UTC] PHP Warning:  require_once(bd_notas_class.php): failed to open stream: No such file or directory in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal.php on line 3
+[07-Apr-2019 09:18:55 UTC] PHP Fatal error:  require_once(): Failed opening required 'bd_notas_class.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal.php on line 3
+[07-Apr-2019 09:19:03 UTC] PHP Warning:  require_once(bd_notas_class.php): failed to open stream: No such file or directory in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal.php on line 3
+[07-Apr-2019 09:19:03 UTC] PHP Fatal error:  require_once(): Failed opening required 'bd_notas_class.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal.php on line 3
+[07-Apr-2019 09:19:22 UTC] PHP Warning:  require_once(bd_notas_class.php): failed to open stream: No such file or directory in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal.php on line 3
+[07-Apr-2019 09:19:22 UTC] PHP Fatal error:  require_once(): Failed opening required 'bd_notas_class.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal.php on line 3
+[11-May-2019 17:09:46 UTC] PHP Notice:  Undefined index: PATH_INFO in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 32
+[11-May-2019 17:09:46 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method bd_personal::() in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php:14
+Stack trace:
+#0 /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal.php(8): bd_personal->analiza_method()
+#1 {main}
+  thrown in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 14
+[11-May-2019 17:10:13 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function bd_personal::findPersonalEmail(), 0 passed in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 14 and exactly 1 expected in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php:29
+Stack trace:
+#0 /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php(14): bd_personal->findPersonalEmail()
+#1 /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal.php(8): bd_personal->analiza_method()
+#2 {main}
+  thrown in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 29
+[11-May-2019 17:11:22 UTC] PHP Notice:  Undefined variable: sql in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 32
+[13-May-2019 16:52:29 UTC] PHP Notice:  Undefined index: PATH_INFO in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 32
+[16-May-2019 16:15:58 UTC] PHP Notice:  Undefined index: email in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 30
+[16-May-2019 16:15:58 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[16-May-2019 16:18:17 UTC] PHP Notice:  Undefined index: email in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 30
+[16-May-2019 16:18:17 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[16-May-2019 16:25:20 UTC] PHP Notice:  Undefined index: email in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 30
+[16-May-2019 16:25:20 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[16-May-2019 16:26:10 UTC] PHP Notice:  Undefined index: email in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 30
+[16-May-2019 16:26:10 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[20-May-2019 16:57:32 UTC] PHP Fatal error:  Uncaught Error: Cannot pass parameter 2 by reference in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php:78
+Stack trace:
+#0 /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php(14): bd_personal->findPersonalFilter()
+#1 /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal.php(8): bd_personal->analiza_method()
+#2 {main}
+  thrown in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 78
+[20-May-2019 16:57:35 UTC] PHP Fatal error:  Uncaught Error: Cannot pass parameter 2 by reference in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php:78
+Stack trace:
+#0 /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php(14): bd_personal->findPersonalFilter()
+#1 /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal.php(8): bd_personal->analiza_method()
+#2 {main}
+  thrown in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 78
+[20-May-2019 16:57:35 UTC] PHP Fatal error:  Uncaught Error: Cannot pass parameter 2 by reference in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php:78
+Stack trace:
+#0 /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php(14): bd_personal->findPersonalFilter()
+#1 /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal.php(8): bd_personal->analiza_method()
+#2 {main}
+  thrown in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 78
+[20-May-2019 16:59:01 UTC] PHP Fatal error:  Uncaught Error: Cannot pass parameter 2 by reference in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php:78
+Stack trace:
+#0 /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php(14): bd_personal->findPersonalFilter()
+#1 /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal.php(8): bd_personal->analiza_method()
+#2 {main}
+  thrown in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 78
+[20-May-2019 17:02:23 UTC] PHP Fatal error:  Uncaught Error: Cannot pass parameter 2 by reference in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php:78
+Stack trace:
+#0 /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php(14): bd_personal->findPersonalFilter()
+#1 /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal.php(8): bd_personal->analiza_method()
+#2 {main}
+  thrown in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 78
+[20-May-2019 17:03:33 UTC] PHP Fatal error:  Uncaught Error: Cannot pass parameter 2 by reference in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php:78
+Stack trace:
+#0 /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php(14): bd_personal->findPersonalFilter()
+#1 /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal.php(8): bd_personal->analiza_method()
+#2 {main}
+  thrown in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 78
+[20-May-2019 17:03:34 UTC] PHP Fatal error:  Uncaught Error: Cannot pass parameter 2 by reference in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php:78
+Stack trace:
+#0 /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php(14): bd_personal->findPersonalFilter()
+#1 /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal.php(8): bd_personal->analiza_method()
+#2 {main}
+  thrown in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 78
+[20-May-2019 17:03:34 UTC] PHP Fatal error:  Uncaught Error: Cannot pass parameter 2 by reference in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php:78
+Stack trace:
+#0 /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php(14): bd_personal->findPersonalFilter()
+#1 /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal.php(8): bd_personal->analiza_method()
+#2 {main}
+  thrown in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 78
+[20-May-2019 17:03:41 UTC] PHP Fatal error:  Uncaught Error: Cannot pass parameter 2 by reference in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php:78
+Stack trace:
+#0 /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php(14): bd_personal->findPersonalFilter()
+#1 /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal.php(8): bd_personal->analiza_method()
+#2 {main}
+  thrown in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 78
+[20-May-2019 17:03:41 UTC] PHP Fatal error:  Uncaught Error: Cannot pass parameter 2 by reference in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php:78
+Stack trace:
+#0 /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php(14): bd_personal->findPersonalFilter()
+#1 /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal.php(8): bd_personal->analiza_method()
+#2 {main}
+  thrown in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 78
+[20-May-2019 17:04:45 UTC] PHP Fatal error:  Uncaught Error: Cannot pass parameter 2 by reference in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php:78
+Stack trace:
+#0 /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php(14): bd_personal->findPersonalFilter()
+#1 /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal.php(8): bd_personal->analiza_method()
+#2 {main}
+  thrown in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 78
+[03-Jun-2019 16:11:58 UTC] PHP Notice:  Undefined index: PATH_INFO in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 32
+[03-Jun-2019 16:12:42 UTC] PHP Notice:  Undefined index: PATH_INFO in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 32
+[03-Jun-2019 16:13:58 UTC] PHP Notice:  Undefined index: PATH_INFO in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 32
+[03-Jun-2019 16:13:58 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method bd_personal::() in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php:14
+Stack trace:
+#0 /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal.php(8): bd_personal->analiza_method()
+#1 {main}
+  thrown in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 14
+[03-Jun-2019 16:14:40 UTC] PHP Notice:  Undefined index: email in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 30
+[03-Jun-2019 16:14:40 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[03-Jun-2019 16:15:07 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[03-Jun-2019 16:15:13 UTC] PHP Notice:  Undefined index: email in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 30
+[03-Jun-2019 16:15:13 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[03-Jun-2019 16:15:19 UTC] PHP Notice:  Undefined index: email in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 30
+[03-Jun-2019 16:15:19 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[10-Jun-2019 17:47:23 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[12-Jun-2019 07:05:13 UTC] PHP Notice:  Undefined index: nif in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 188
+[12-Jun-2019 07:05:13 UTC] PHP Notice:  Undefined index: horaInicio1 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 189
+[12-Jun-2019 07:05:13 UTC] PHP Notice:  Undefined index: horaFin1 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 190
+[12-Jun-2019 07:05:13 UTC] PHP Notice:  Undefined index: horaInicio2 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 191
+[12-Jun-2019 07:05:13 UTC] PHP Notice:  Undefined index: horaFin2 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 192
+[12-Jun-2019 07:05:13 UTC] PHP Notice:  Undefined index: horasJornada in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 193
+[12-Jun-2019 07:05:22 UTC] PHP Notice:  Undefined index: nif in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 188
+[12-Jun-2019 07:05:22 UTC] PHP Notice:  Undefined index: horaInicio1 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 189
+[12-Jun-2019 07:05:22 UTC] PHP Notice:  Undefined index: horaFin1 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 190
+[12-Jun-2019 07:05:22 UTC] PHP Notice:  Undefined index: horaInicio2 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 191
+[12-Jun-2019 07:05:22 UTC] PHP Notice:  Undefined index: horaFin2 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 192
+[12-Jun-2019 07:05:22 UTC] PHP Notice:  Undefined index: horasJornada in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 193
+[06-Nov-2019 17:55:50 UTC] PHP Notice:  Undefined index: PATH_INFO in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 32
+[06-Nov-2019 17:55:50 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method bd_personal::() in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php:14
+Stack trace:
+#0 /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal.php(8): bd_personal->analiza_method()
+#1 {main}
+  thrown in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 14
+[06-Nov-2019 17:56:16 UTC] PHP Notice:  Undefined index: email in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 30
+[06-Nov-2019 17:56:16 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[07-Jan-2020 15:03:10 UTC] PHP Notice:  Undefined index: PATH_INFO in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 32
+[07-Jan-2020 15:03:31 UTC] PHP Notice:  Undefined index: PATH_INFO in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 32
+[07-Jan-2020 15:03:31 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method bd_personal::() in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php:14
+Stack trace:
+#0 /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal.php(8): bd_personal->analiza_method()
+#1 {main}
+  thrown in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 14
+[07-Jan-2020 15:03:45 UTC] PHP Notice:  Undefined index: PATH_INFO in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 32
+[07-Jan-2020 15:03:45 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method bd_personal::() in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php:14
+Stack trace:
+#0 /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal.php(8): bd_personal->analiza_method()
+#1 {main}
+  thrown in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 14
+[08-Jan-2020 12:03:42 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 12:05:15 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 12:08:21 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 12:08:46 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 12:15:35 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 12:16:12 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 12:16:47 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 12:18:56 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 12:21:32 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 12:25:01 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 12:30:38 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 12:31:23 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 12:31:25 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 12:31:27 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 12:32:44 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 12:33:03 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 12:34:46 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 12:34:48 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 12:34:52 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 12:34:56 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 12:35:49 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 12:35:52 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 12:35:55 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 12:35:57 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 12:42:09 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 12:42:12 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 12:42:14 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 12:43:11 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 12:43:22 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 12:44:05 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 12:44:08 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 12:44:15 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 12:44:17 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 12:44:21 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 12:57:29 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 12:57:38 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 12:57:41 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 12:57:45 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 12:57:53 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 12:57:55 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 13:00:36 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 13:49:00 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 13:54:54 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 13:54:56 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 13:54:59 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 13:55:32 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 14:10:23 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 14:10:25 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 14:56:02 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 15:00:19 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 15:03:09 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 15:07:19 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 15:08:33 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 15:08:39 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 15:08:45 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 15:10:10 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 15:16:49 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 15:24:21 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 15:25:01 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 15:27:11 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 18:03:16 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 18:03:22 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 18:03:34 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 18:03:52 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 18:04:04 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 18:04:28 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 18:05:55 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 18:06:01 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 18:06:07 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 18:06:13 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 18:06:19 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 18:06:25 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[08-Jan-2020 18:06:37 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[15-Jan-2020 16:44:34 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[15-Jan-2020 16:50:43 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[15-Jan-2020 16:51:29 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[15-Jan-2020 16:53:42 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[15-Jan-2020 16:55:04 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[15-Jan-2020 16:58:49 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[15-Jan-2020 17:00:53 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[15-Jan-2020 17:09:59 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[15-Jan-2020 17:17:22 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[15-Jan-2020 17:21:05 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[15-Jan-2020 17:24:11 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[15-Jan-2020 17:25:33 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[15-Jan-2020 17:27:31 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[15-Jan-2020 17:31:49 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[15-Jan-2020 17:44:55 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[15-Jan-2020 17:48:56 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[15-Jan-2020 17:53:44 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[15-Jan-2020 17:55:54 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[15-Jan-2020 17:56:16 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[15-Jan-2020 18:05:40 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[15-Jan-2020 18:10:04 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[15-Jan-2020 18:11:34 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[20-Jan-2020 14:59:47 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[20-Jan-2020 15:01:53 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[27-Feb-2020 17:47:22 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[27-Feb-2020 17:47:30 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[28-Feb-2020 08:59:41 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[28-Feb-2020 11:46:28 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[28-Feb-2020 11:46:38 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[28-Feb-2020 11:46:56 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[28-Feb-2020 18:04:44 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[28-Feb-2020 21:16:51 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[29-Feb-2020 08:08:34 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[29-Feb-2020 08:08:41 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[29-Feb-2020 08:24:58 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[29-Feb-2020 08:35:50 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[29-Feb-2020 08:36:08 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[29-Feb-2020 08:47:05 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[29-Feb-2020 08:47:12 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[29-Feb-2020 13:25:01 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[29-Feb-2020 18:25:07 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[29-Feb-2020 18:25:29 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[01-Mar-2020 08:15:28 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[01-Mar-2020 08:15:31 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[01-Mar-2020 08:16:24 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[01-Mar-2020 08:16:24 UTC] PHP Fatal error:  Uncaught Error: Cannot pass parameter 2 by reference in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php:76
+Stack trace:
+#0 /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php(14): bd_personal->findPersonalFilter()
+#1 /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal.php(8): bd_personal->analiza_method()
+#2 {main}
+  thrown in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 76
+[01-Mar-2020 08:17:23 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[01-Mar-2020 08:17:31 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[01-Mar-2020 08:26:41 UTC] PHP Notice:  Undefined index: email in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 30
+[01-Mar-2020 08:26:41 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[01-Mar-2020 08:29:08 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[01-Mar-2020 08:29:18 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[01-Mar-2020 16:09:38 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[01-Mar-2020 16:09:48 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[01-Mar-2020 18:03:31 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[01-Mar-2020 18:03:45 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[01-Mar-2020 18:41:28 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[02-Mar-2020 09:22:14 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[02-Mar-2020 11:51:26 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[02-Mar-2020 11:51:40 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[02-Mar-2020 11:52:59 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[02-Mar-2020 17:02:27 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[02-Mar-2020 17:57:19 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[02-Mar-2020 17:57:35 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[02-Mar-2020 22:22:28 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[02-Mar-2020 22:22:58 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[03-Mar-2020 08:11:25 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[03-Mar-2020 08:11:34 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[03-Mar-2020 18:08:27 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[03-Mar-2020 18:08:40 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[03-Mar-2020 18:08:51 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[03-Mar-2020 20:46:13 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[03-Mar-2020 20:46:21 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[03-Mar-2020 23:20:59 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[03-Mar-2020 23:21:20 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[05-Mar-2020 09:00:28 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[05-Mar-2020 09:00:40 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[05-Mar-2020 14:11:57 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[05-Mar-2020 14:12:13 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[05-Mar-2020 18:11:23 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[05-Mar-2020 18:11:57 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[05-Mar-2020 19:42:43 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[05-Mar-2020 19:42:49 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[06-Mar-2020 07:46:19 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[06-Mar-2020 07:46:29 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[06-Mar-2020 17:29:37 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[06-Mar-2020 17:29:49 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[06-Mar-2020 18:13:14 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[06-Mar-2020 18:13:25 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[07-Mar-2020 09:24:15 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[07-Mar-2020 09:24:24 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[07-Mar-2020 13:49:17 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[07-Mar-2020 13:49:23 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[07-Mar-2020 17:12:37 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[07-Mar-2020 17:12:47 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[07-Mar-2020 17:19:25 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[07-Mar-2020 17:19:37 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[07-Mar-2020 19:05:03 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[07-Mar-2020 19:05:09 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[08-Mar-2020 08:59:36 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[08-Mar-2020 08:59:49 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[08-Mar-2020 18:22:44 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[08-Mar-2020 18:23:07 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[09-Mar-2020 07:58:27 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[09-Mar-2020 07:58:44 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[09-Mar-2020 09:04:34 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[09-Mar-2020 09:04:39 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[09-Mar-2020 09:06:02 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[09-Mar-2020 17:49:56 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[09-Mar-2020 17:50:15 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[10-Mar-2020 08:08:58 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[10-Mar-2020 08:09:10 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[10-Mar-2020 12:07:53 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[10-Mar-2020 19:28:13 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[11-Mar-2020 16:26:26 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[12-Mar-2020 11:17:33 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[12-Mar-2020 11:18:00 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[12-Mar-2020 11:18:02 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[12-Mar-2020 11:31:11 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[12-Mar-2020 17:22:28 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[12-Mar-2020 18:59:34 UTC] PHP Notice:  Undefined index: email in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 30
+[12-Mar-2020 18:59:34 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[12-Mar-2020 18:59:51 UTC] PHP Notice:  Undefined index: email in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 30
+[12-Mar-2020 18:59:51 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[12-Mar-2020 19:07:14 UTC] PHP Notice:  Undefined index: email in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 30
+[12-Mar-2020 19:07:14 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[12-Mar-2020 19:12:09 UTC] PHP Notice:  Undefined index: email in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 30
+[12-Mar-2020 19:12:09 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[12-Mar-2020 23:37:46 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[12-Mar-2020 23:39:03 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[16-Mar-2020 00:19:16 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[16-Mar-2020 00:19:25 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[17-Mar-2020 00:27:42 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[18-Mar-2020 00:18:54 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[18-Mar-2020 00:19:04 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[19-Mar-2020 00:31:38 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[19-Mar-2020 00:31:46 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[19-Mar-2020 23:15:59 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[19-Mar-2020 23:16:07 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[21-Mar-2020 13:23:05 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[21-Mar-2020 13:32:43 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[22-Mar-2020 11:42:57 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[23-Mar-2020 00:37:10 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[23-Mar-2020 00:37:21 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[25-Mar-2020 00:48:50 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[25-Mar-2020 00:49:00 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[25-Mar-2020 00:49:53 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[25-Mar-2020 23:58:09 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[25-Mar-2020 23:58:19 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[27-Mar-2020 11:17:03 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[27-Mar-2020 11:17:04 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[27-Mar-2020 11:18:12 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[27-Mar-2020 14:05:53 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[27-Mar-2020 14:34:42 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[27-Mar-2020 17:06:04 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[27-Mar-2020 17:06:13 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[27-Mar-2020 17:06:33 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[27-Mar-2020 17:07:30 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[27-Mar-2020 17:08:22 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[27-Mar-2020 17:08:36 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[27-Mar-2020 17:12:28 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[27-Mar-2020 17:12:35 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[27-Mar-2020 17:12:37 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[27-Mar-2020 17:13:19 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[27-Mar-2020 17:15:29 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[27-Mar-2020 17:15:38 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[27-Mar-2020 17:15:42 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[27-Mar-2020 17:34:05 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[27-Mar-2020 17:35:04 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[28-Mar-2020 11:37:21 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[30-Mar-2020 13:47:57 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[30-Mar-2020 13:51:48 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[30-Mar-2020 13:52:18 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[30-Mar-2020 13:55:43 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[30-Mar-2020 13:56:20 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[30-Mar-2020 14:02:17 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[30-Mar-2020 20:31:59 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[30-Mar-2020 20:32:06 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[30-Mar-2020 20:32:52 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[30-Mar-2020 23:32:57 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[30-Mar-2020 23:33:05 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[01-Apr-2020 15:55:15 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[01-Apr-2020 15:55:25 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[01-Apr-2020 23:44:05 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[02-Apr-2020 22:30:51 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[03-Apr-2020 08:32:18 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[05-Apr-2020 22:36:44 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[05-Apr-2020 22:36:50 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[07-Apr-2020 22:12:56 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[07-Apr-2020 22:13:03 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[07-Apr-2020 22:13:37 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[09-Apr-2020 08:25:00 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[09-Apr-2020 08:25:03 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[10-Apr-2020 16:52:34 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[11-Apr-2020 11:11:57 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[11-Apr-2020 14:54:01 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[12-Apr-2020 10:39:01 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[12-Apr-2020 10:40:48 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[12-Apr-2020 18:11:16 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[13-Apr-2020 12:53:28 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[13-Apr-2020 23:17:31 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[13-Apr-2020 23:17:38 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[14-Apr-2020 07:26:48 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[14-Apr-2020 07:27:21 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[14-Apr-2020 07:29:35 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[14-Apr-2020 07:36:34 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[14-Apr-2020 07:36:48 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[14-Apr-2020 07:36:53 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[14-Apr-2020 07:38:00 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[14-Apr-2020 07:38:15 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[14-Apr-2020 07:42:01 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[14-Apr-2020 07:44:58 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[14-Apr-2020 07:47:51 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[14-Apr-2020 18:42:29 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[14-Apr-2020 18:46:28 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[14-Apr-2020 18:46:33 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[14-Apr-2020 22:14:12 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[14-Apr-2020 22:14:22 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[15-Apr-2020 09:02:40 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[15-Apr-2020 09:02:44 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[15-Apr-2020 09:03:42 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[15-Apr-2020 09:03:47 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[15-Apr-2020 10:13:04 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[15-Apr-2020 13:21:03 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[16-Apr-2020 16:00:39 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[16-Apr-2020 16:01:24 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[16-Apr-2020 16:01:27 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[16-Apr-2020 16:03:28 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[16-Apr-2020 16:03:31 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[16-Apr-2020 16:05:16 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[16-Apr-2020 16:05:32 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[16-Apr-2020 17:15:28 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[16-Apr-2020 17:15:30 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[17-Apr-2020 08:01:23 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[17-Apr-2020 08:01:44 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[17-Apr-2020 16:22:00 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[17-Apr-2020 16:22:04 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[17-Apr-2020 18:39:09 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[17-Apr-2020 18:39:12 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[17-Apr-2020 18:55:07 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[18-Apr-2020 06:34:43 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[18-Apr-2020 06:34:47 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[18-Apr-2020 15:20:34 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[18-Apr-2020 15:20:38 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[19-Apr-2020 07:15:12 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[19-Apr-2020 07:15:16 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[19-Apr-2020 19:45:37 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[19-Apr-2020 19:45:43 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[19-Apr-2020 23:53:41 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[19-Apr-2020 23:53:50 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[20-Apr-2020 06:59:22 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[20-Apr-2020 06:59:28 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[20-Apr-2020 15:08:53 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[20-Apr-2020 15:08:56 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[20-Apr-2020 16:11:46 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[20-Apr-2020 16:12:10 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[20-Apr-2020 23:32:03 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[20-Apr-2020 23:32:10 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[21-Apr-2020 08:06:47 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[21-Apr-2020 08:06:53 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[21-Apr-2020 17:14:59 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[21-Apr-2020 17:15:07 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[21-Apr-2020 23:19:27 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[21-Apr-2020 23:19:38 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[22-Apr-2020 07:19:21 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[22-Apr-2020 07:19:26 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[22-Apr-2020 10:44:26 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[22-Apr-2020 10:50:31 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[22-Apr-2020 10:55:52 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[22-Apr-2020 17:48:31 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[22-Apr-2020 17:48:37 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[23-Apr-2020 07:07:59 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[23-Apr-2020 07:08:02 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[23-Apr-2020 07:19:10 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[23-Apr-2020 07:19:14 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[23-Apr-2020 08:00:26 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[23-Apr-2020 08:00:33 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[23-Apr-2020 10:26:36 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[23-Apr-2020 16:57:25 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[23-Apr-2020 16:57:30 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[23-Apr-2020 22:48:39 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[23-Apr-2020 22:48:52 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[24-Apr-2020 08:12:01 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[24-Apr-2020 08:12:27 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[24-Apr-2020 08:33:49 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[24-Apr-2020 08:39:14 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[24-Apr-2020 08:39:22 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[24-Apr-2020 17:24:05 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[24-Apr-2020 17:24:10 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[26-Apr-2020 08:34:07 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[26-Apr-2020 08:34:11 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[26-Apr-2020 22:54:54 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[26-Apr-2020 22:55:04 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[27-Apr-2020 08:12:53 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[27-Apr-2020 08:12:58 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[27-Apr-2020 10:53:37 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[27-Apr-2020 10:53:42 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[27-Apr-2020 14:43:57 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[27-Apr-2020 17:22:14 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[27-Apr-2020 17:22:20 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[27-Apr-2020 19:10:39 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[28-Apr-2020 07:44:25 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[28-Apr-2020 07:44:31 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[28-Apr-2020 17:25:11 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[28-Apr-2020 17:25:23 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[28-Apr-2020 21:10:20 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[28-Apr-2020 21:10:27 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[29-Apr-2020 04:50:20 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[29-Apr-2020 04:50:25 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[29-Apr-2020 07:48:21 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[29-Apr-2020 07:48:28 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[29-Apr-2020 08:08:08 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[29-Apr-2020 08:08:26 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[29-Apr-2020 08:42:18 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[29-Apr-2020 08:42:22 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[29-Apr-2020 16:54:50 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[29-Apr-2020 16:54:56 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[29-Apr-2020 22:58:38 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[29-Apr-2020 22:58:50 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[30-Apr-2020 07:01:51 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[30-Apr-2020 07:01:56 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[30-Apr-2020 17:35:03 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[30-Apr-2020 17:35:09 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[30-Apr-2020 18:10:17 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[30-Apr-2020 18:10:26 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[01-May-2020 00:26:24 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[01-May-2020 00:26:24 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[01-May-2020 00:26:51 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[01-May-2020 00:27:02 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[01-May-2020 00:27:09 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[01-May-2020 07:22:59 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[01-May-2020 07:23:04 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[01-May-2020 12:54:38 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[01-May-2020 12:54:41 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[01-May-2020 17:35:27 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[01-May-2020 17:35:48 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[02-May-2020 18:45:22 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[02-May-2020 18:45:24 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[03-May-2020 22:48:58 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[03-May-2020 22:49:04 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[04-May-2020 07:16:39 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[04-May-2020 07:16:43 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[04-May-2020 17:24:43 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[04-May-2020 17:27:17 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[04-May-2020 20:06:05 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[04-May-2020 20:06:08 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[04-May-2020 22:29:43 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[04-May-2020 22:29:52 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[05-May-2020 07:25:49 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[05-May-2020 07:25:57 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[05-May-2020 17:17:57 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[05-May-2020 17:18:03 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[05-May-2020 17:53:57 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[05-May-2020 17:54:02 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[05-May-2020 17:57:48 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[05-May-2020 17:58:05 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[05-May-2020 18:00:42 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[05-May-2020 23:19:34 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[05-May-2020 23:19:44 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[06-May-2020 07:48:20 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[06-May-2020 07:48:36 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[06-May-2020 10:21:05 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[06-May-2020 10:21:08 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[06-May-2020 14:58:07 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[06-May-2020 18:09:02 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[06-May-2020 18:09:09 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[06-May-2020 23:34:53 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[06-May-2020 23:35:00 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[07-May-2020 06:45:42 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[07-May-2020 06:45:46 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[07-May-2020 11:12:22 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[07-May-2020 11:12:44 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[07-May-2020 11:14:52 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[07-May-2020 17:13:58 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[07-May-2020 17:14:14 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[07-May-2020 17:15:01 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[07-May-2020 17:15:04 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[07-May-2020 17:15:12 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[07-May-2020 17:15:46 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[07-May-2020 17:16:04 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[07-May-2020 22:14:27 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[08-May-2020 07:27:00 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[08-May-2020 07:27:08 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[08-May-2020 12:42:54 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[08-May-2020 17:15:45 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[08-May-2020 17:15:54 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[09-May-2020 14:13:58 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[09-May-2020 14:14:00 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[10-May-2020 09:28:25 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[10-May-2020 09:34:21 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[10-May-2020 14:44:49 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[10-May-2020 14:44:52 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[11-May-2020 07:44:10 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[11-May-2020 07:44:16 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[11-May-2020 16:55:48 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[11-May-2020 16:55:54 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[11-May-2020 19:09:35 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[11-May-2020 19:09:48 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[11-May-2020 19:09:52 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[12-May-2020 07:27:43 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[12-May-2020 07:27:48 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[07-Oct-2020 10:06:42 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[07-Oct-2020 10:07:46 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[07-Oct-2020 10:08:23 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[07-Oct-2020 10:08:28 UTC] PHP Notice:  Undefined offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 37
+[16-Oct-2020 15:02:41 UTC] PHP Fatal error:  Uncaught Error: Cannot pass parameter 2 by reference in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php:76
+Stack trace:
+#0 /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php(14): bd_personal->findPersonalFilter()
+#1 /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal.php(8): bd_personal->analiza_method()
+#2 {main}
+  thrown in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 76
+[16-Oct-2020 15:02:45 UTC] PHP Fatal error:  Uncaught Error: Cannot pass parameter 2 by reference in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php:76
+Stack trace:
+#0 /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php(14): bd_personal->findPersonalFilter()
+#1 /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal.php(8): bd_personal->analiza_method()
+#2 {main}
+  thrown in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 76
+[16-Oct-2020 15:02:55 UTC] PHP Fatal error:  Uncaught Error: Cannot pass parameter 2 by reference in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php:76
+Stack trace:
+#0 /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php(14): bd_personal->findPersonalFilter()
+#1 /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal.php(8): bd_personal->analiza_method()
+#2 {main}
+  thrown in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 76
+[16-Oct-2020 15:03:18 UTC] PHP Fatal error:  Uncaught Error: Cannot pass parameter 2 by reference in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php:76
+Stack trace:
+#0 /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php(14): bd_personal->findPersonalFilter()
+#1 /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal.php(8): bd_personal->analiza_method()
+#2 {main}
+  thrown in /home2/vidawmco/public_html/vidawm.com/privado/php/personal/bd_personal_class.php on line 76
+[17-Oct-2020 16:13:32 UTC] PHP Warning:  array_keys() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 79
+[17-Oct-2020 16:13:32 UTC] PHP Warning:  array_values() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[17-Oct-2020 16:13:32 UTC] PHP Warning:  array_map(): Argument #2 should be an array in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[17-Oct-2020 16:13:32 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[17-Oct-2020 16:13:32 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 89
+[17-Oct-2020 16:13:32 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 90
+[17-Oct-2020 16:13:32 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[17-Oct-2020 16:13:32 UTC] PHP Notice:  Undefined variable: sql in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 112
+[17-Oct-2020 16:13:32 UTC] PHP Warning:  A non-numeric value encountered in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 60
+[17-Oct-2020 16:14:53 UTC] PHP Warning:  array_keys() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 79
+[17-Oct-2020 16:14:53 UTC] PHP Warning:  array_values() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[17-Oct-2020 16:14:53 UTC] PHP Warning:  array_map(): Argument #2 should be an array in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[17-Oct-2020 16:14:53 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[17-Oct-2020 16:14:53 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 89
+[17-Oct-2020 16:14:53 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 90
+[17-Oct-2020 16:14:53 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[17-Oct-2020 16:14:53 UTC] PHP Notice:  Undefined variable: sql in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 112
+[17-Oct-2020 16:22:03 UTC] PHP Warning:  array_keys() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 79
+[17-Oct-2020 16:22:03 UTC] PHP Warning:  array_values() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[17-Oct-2020 16:22:03 UTC] PHP Warning:  array_map(): Argument #2 should be an array in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[17-Oct-2020 16:22:03 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[17-Oct-2020 16:22:03 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 89
+[17-Oct-2020 16:22:03 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 90
+[17-Oct-2020 16:22:03 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[17-Oct-2020 16:22:03 UTC] PHP Notice:  Undefined variable: sql in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 112
+[17-Oct-2020 16:22:11 UTC] PHP Warning:  array_keys() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 79
+[17-Oct-2020 16:22:11 UTC] PHP Warning:  array_values() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[17-Oct-2020 16:22:11 UTC] PHP Warning:  array_map(): Argument #2 should be an array in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[17-Oct-2020 16:22:11 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[17-Oct-2020 16:22:11 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 89
+[17-Oct-2020 16:22:11 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 90
+[17-Oct-2020 16:22:11 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[17-Oct-2020 16:22:11 UTC] PHP Notice:  Undefined variable: sql in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 112
+[17-Oct-2020 16:22:52 UTC] PHP Warning:  array_keys() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 79
+[17-Oct-2020 16:22:52 UTC] PHP Warning:  array_values() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[17-Oct-2020 16:22:52 UTC] PHP Warning:  array_map(): Argument #2 should be an array in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[17-Oct-2020 16:22:52 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[17-Oct-2020 16:22:52 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 89
+[17-Oct-2020 16:22:52 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 90
+[17-Oct-2020 16:22:52 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[17-Oct-2020 16:22:52 UTC] PHP Notice:  Undefined variable: sql in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 112
+[22-Oct-2020 16:37:59 UTC] PHP Warning:  array_keys() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 79
+[22-Oct-2020 16:37:59 UTC] PHP Warning:  array_values() expects parameter 1 to be array, null given in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[22-Oct-2020 16:37:59 UTC] PHP Warning:  array_map(): Argument #2 should be an array in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 83
+[22-Oct-2020 16:37:59 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[22-Oct-2020 16:37:59 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 89
+[22-Oct-2020 16:37:59 UTC] PHP Notice:  Uninitialized string offset: 0 in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 90
+[22-Oct-2020 16:37:59 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 88
+[22-Oct-2020 16:37:59 UTC] PHP Notice:  Undefined variable: sql in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 112

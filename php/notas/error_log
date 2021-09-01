@@ -1,0 +1,80 @@
+[11-Mar-2019 15:50:58 UTC] PHP Fatal error:  Uncaught Error: Class 'bd_notas' not found in /home2/vidawmco/public_html/vidawm.com/privado/php/notas/bd_notas.php:6
+Stack trace:
+#0 {main}
+  thrown in /home2/vidawmco/public_html/vidawm.com/privado/php/notas/bd_notas.php on line 6
+[11-Mar-2019 15:50:58 UTC] PHP Fatal error:  Uncaught Error: Class 'bd_notas' not found in /home2/vidawmco/public_html/vidawm.com/privado/php/notas/bd_notas.php:6
+Stack trace:
+#0 {main}
+  thrown in /home2/vidawmco/public_html/vidawm.com/privado/php/notas/bd_notas.php on line 6
+[11-Mar-2019 15:50:58 UTC] PHP Fatal error:  Uncaught Error: Class 'bd_notas' not found in /home2/vidawmco/public_html/vidawm.com/privado/php/notas/bd_notas.php:6
+Stack trace:
+#0 {main}
+  thrown in /home2/vidawmco/public_html/vidawm.com/privado/php/notas/bd_notas.php on line 6
+[11-Mar-2019 15:50:59 UTC] PHP Fatal error:  Uncaught Error: Class 'bd_notas' not found in /home2/vidawmco/public_html/vidawm.com/privado/php/notas/bd_notas.php:6
+Stack trace:
+#0 {main}
+  thrown in /home2/vidawmco/public_html/vidawm.com/privado/php/notas/bd_notas.php on line 6
+[02-Mar-2020 17:02:29 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[02-Mar-2020 17:02:46 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[12-Mar-2020 11:17:42 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[12-Mar-2020 11:18:06 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[12-Mar-2020 11:18:18 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[12-Mar-2020 11:18:31 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[12-Mar-2020 11:18:42 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[12-Mar-2020 11:18:54 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[12-Mar-2020 11:19:06 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[12-Mar-2020 11:19:20 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[12-Mar-2020 11:19:30 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[12-Mar-2020 11:19:43 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[12-Mar-2020 11:20:00 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[12-Mar-2020 11:20:20 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[12-Mar-2020 11:23:32 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[12-Mar-2020 11:23:42 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[12-Mar-2020 11:23:57 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[12-Mar-2020 11:24:09 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[12-Mar-2020 11:24:32 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[12-Mar-2020 11:24:32 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[12-Mar-2020 11:27:33 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[12-Mar-2020 11:27:36 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[12-Mar-2020 11:27:41 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[12-Mar-2020 11:27:52 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[12-Mar-2020 11:31:17 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[12-Mar-2020 11:32:01 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[12-Mar-2020 11:32:51 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[12-Mar-2020 11:33:15 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[03-Apr-2020 08:32:41 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[03-Apr-2020 08:32:45 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[03-Apr-2020 08:45:10 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[03-Apr-2020 08:47:10 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[07-May-2020 11:11:03 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[07-May-2020 11:11:09 UTC] PHP Notice:  Undefined index: HTTP_ORIGIN in /home2/vidawmco/public_html/vidawm.com/privado/php/users/users.php on line 175
+[18-Oct-2020 06:38:26 UTC] PHP Notice:  Undefined index: totalNota in /home2/vidawmco/public_html/vidawm.com/privado/php/notas/bd_notas_class.php on line 128
+[18-Oct-2020 06:38:26 UTC] PHP Notice:  Undefined index: archivoDrive in /home2/vidawmco/public_html/vidawm.com/privado/php/notas/bd_notas_class.php on line 128
+[18-Oct-2020 06:38:26 UTC] PHP Notice:  Undefined index: carpeta in /home2/vidawmco/public_html/vidawm.com/privado/php/notas/bd_notas_class.php on line 129
+[18-Oct-2020 06:38:26 UTC] PHP Notice:  Undefined index: comentarios in /home2/vidawmco/public_html/vidawm.com/privado/php/notas/bd_notas_class.php on line 129
+[18-Oct-2020 06:39:02 UTC] PHP Notice:  Undefined index: archivoDrive in /home2/vidawmco/public_html/vidawm.com/privado/php/notas/bd_notas_class.php on line 128
+[18-Oct-2020 06:39:02 UTC] PHP Notice:  Undefined index: carpeta in /home2/vidawmco/public_html/vidawm.com/privado/php/notas/bd_notas_class.php on line 129
+[18-Oct-2020 06:39:02 UTC] PHP Notice:  Undefined index: comentarios in /home2/vidawmco/public_html/vidawm.com/privado/php/notas/bd_notas_class.php on line 129
+[18-Oct-2020 06:59:31 UTC] PHP Warning:  A non-numeric value encountered in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 60
+[18-Oct-2020 06:59:32 UTC] PHP Warning:  A non-numeric value encountered in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 60
+[18-Oct-2020 06:59:32 UTC] PHP Notice:  Undefined index: codEmpresa in /home2/vidawmco/public_html/vidawm.com/privado/php/notas/bd_notas_class.php on line 127
+[18-Oct-2020 06:59:32 UTC] PHP Notice:  Undefined index: nroNota in /home2/vidawmco/public_html/vidawm.com/privado/php/notas/bd_notas_class.php on line 127
+[18-Oct-2020 06:59:32 UTC] PHP Notice:  Undefined index: idPersonal in /home2/vidawmco/public_html/vidawm.com/privado/php/notas/bd_notas_class.php on line 127
+[18-Oct-2020 06:59:32 UTC] PHP Notice:  Undefined index: fecha in /home2/vidawmco/public_html/vidawm.com/privado/php/notas/bd_notas_class.php on line 128
+[18-Oct-2020 06:59:32 UTC] PHP Notice:  Undefined index: totalNota in /home2/vidawmco/public_html/vidawm.com/privado/php/notas/bd_notas_class.php on line 128
+[18-Oct-2020 06:59:32 UTC] PHP Notice:  Undefined index: archivoDrive in /home2/vidawmco/public_html/vidawm.com/privado/php/notas/bd_notas_class.php on line 128
+[18-Oct-2020 06:59:32 UTC] PHP Notice:  Undefined index: estadoNota in /home2/vidawmco/public_html/vidawm.com/privado/php/notas/bd_notas_class.php on line 128
+[18-Oct-2020 06:59:32 UTC] PHP Notice:  Undefined index: carpeta in /home2/vidawmco/public_html/vidawm.com/privado/php/notas/bd_notas_class.php on line 129
+[18-Oct-2020 06:59:32 UTC] PHP Notice:  Undefined index: comentarios in /home2/vidawmco/public_html/vidawm.com/privado/php/notas/bd_notas_class.php on line 129
+[18-Oct-2020 07:00:35 UTC] PHP Warning:  A non-numeric value encountered in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 60
+[18-Oct-2020 07:00:35 UTC] PHP Warning:  A non-numeric value encountered in /home2/vidawmco/public_html/vidawm.com/privado/php/lib/bd_api_pdo.php on line 60
+[18-Oct-2020 07:00:35 UTC] PHP Notice:  Undefined index: codEmpresa in /home2/vidawmco/public_html/vidawm.com/privado/php/notas/bd_notas_class.php on line 127
+[18-Oct-2020 07:00:35 UTC] PHP Notice:  Undefined index: nroNota in /home2/vidawmco/public_html/vidawm.com/privado/php/notas/bd_notas_class.php on line 127
+[18-Oct-2020 07:00:35 UTC] PHP Notice:  Undefined index: idPersonal in /home2/vidawmco/public_html/vidawm.com/privado/php/notas/bd_notas_class.php on line 127
+[18-Oct-2020 07:00:35 UTC] PHP Notice:  Undefined index: fecha in /home2/vidawmco/public_html/vidawm.com/privado/php/notas/bd_notas_class.php on line 128
+[18-Oct-2020 07:00:35 UTC] PHP Notice:  Undefined index: totalNota in /home2/vidawmco/public_html/vidawm.com/privado/php/notas/bd_notas_class.php on line 128
+[18-Oct-2020 07:00:35 UTC] PHP Notice:  Undefined index: archivoDrive in /home2/vidawmco/public_html/vidawm.com/privado/php/notas/bd_notas_class.php on line 128
+[18-Oct-2020 07:00:35 UTC] PHP Notice:  Undefined index: estadoNota in /home2/vidawmco/public_html/vidawm.com/privado/php/notas/bd_notas_class.php on line 128
+[18-Oct-2020 07:00:35 UTC] PHP Notice:  Undefined index: carpeta in /home2/vidawmco/public_html/vidawm.com/privado/php/notas/bd_notas_class.php on line 129
+[18-Oct-2020 07:00:35 UTC] PHP Notice:  Undefined index: comentarios in /home2/vidawmco/public_html/vidawm.com/privado/php/notas/bd_notas_class.php on line 129
+[25-Feb-2021 10:43:58 UTC] PHP Notice:  Undefined index: idPersonal in /home2/vidawmco/public_html/vidawm.com/privado/php/notas/bd_notas_class.php on line 230

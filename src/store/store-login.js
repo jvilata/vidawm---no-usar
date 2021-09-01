@@ -54,7 +54,7 @@ const actions = {
                 LocalStorage.set('email', loginData.email)
                 LocalStorage.set('password', loginData.password)
                 commit('setUser', { codEmpresa: formData.get('codEmpresa'), nomEmpresa: formData.get('nomEmpresa'), user: user.data, pers: response.data[0] }) // llamo a mutation->setUser, en user tengo el login y en pers los datos personales
-                this.dispatch('tablasAux/loadTablasAux') // cargar tablas auxiliares
+                this.dispatch('tablasAux/loadTablasAux', formData.get('codEmpresa')) // cargar tablas auxiliares
                 this.dispatch('entidades/loadEntidadSelf', formData.get('codEmpresa')) // cargar entidadSelf
                 this.dispatch('entidades/loadEntidadAsesor', formData.get('codEmpresa')) // cargar entidadAsesor
                 this.$router.push('/sinTabs')

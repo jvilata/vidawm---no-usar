@@ -75,11 +75,11 @@ const mutations = {
 // actions: accesibles desde componentes a traves de ...mapActions('tablaAux', ['loadTablasAux'])
 // actualmente se esta llamando desde components/mainTabs.vue, es decir, cuando se pasa la validacion de usuario
 const actions = {
-  loadTablasAux ({ commit }) {
+  loadTablasAux ({ commit }, codEmp) {
     this.dispatch('tablasAux/loadTablaAux', { codTabla: 9, mutation: 'loadTipoAcc' })
     this.dispatch('tablasAux/loadTablaAux', { codTabla: 1, mutation: 'loadListaRoles' })
     this.dispatch('tablasAux/loadTablaAux', { codTabla: 5, mutation: 'loadTipoOperacion' })
-    this.dispatch('tablasAux/loadTablaAux', { codTabla: 4, mutation: 'loadTiposActivo' })
+    this.dispatch('tablasAux/loadTablaAux', { codTabla: 4, codEmpresa: codEmp, mutation: 'loadTiposActivo' })
     this.dispatch('tablasAux/loadTablaAux', { codTabla: 6, mutation: 'loadTiposProducto' })
     this.dispatch('tablasAux/loadTablaAux', { codTabla: 3, mutation: 'loadEstadosActivo' })
     this.dispatch('tablasAux/loadTablaAux', { codTabla: 7, mutation: 'listaTiposFactura' })
@@ -110,7 +110,9 @@ const actions = {
       })
   },
   loadTablaAux ({ commit }, tabAux) { // tabAux: { codTabla: x, mutation: 'mutation' }
-    axiosInstance.get(`tablaAuxiliar/bd_tablaAuxiliar.php/findTablaAuxFilter?codTabla=${tabAux.codTabla}`, {}, { withCredentials: true }) // tipo acciones
+    var parametros = {}
+    if (tabAux.codEmpresa !== undefined) parametros.codEmpresa = tabAux.codEmpresa
+    axiosInstance.get(`tablaAuxiliar/bd_tablaAuxiliar.php/findTablaAuxFilter?codTabla=${tabAux.codTabla}`, { params: parametros }, { withCredentials: true }) // tipo acciones
       .then((response) => {
         if (response.data.length === 0) {
           this.dispatch('mensajeLog/addMensaje', tabAux.mutation + 'No existen datos', { root: true })

@@ -1,0 +1,77 @@
+[20-Jun-2020 15:59:23 UTC] PHP Notice:  Undefined variable: php_errormsg in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php on line 42
+[20-Jun-2020 15:59:23 UTC] PHP Fatal error:  Uncaught Exception: Error loading 'http://gestion.edicom.es/fichajes/login.asp',  in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php:42
+Stack trace:
+#0 /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php(54): redirect_post('http://gestion....', Array)
+#1 {main}
+  thrown in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php on line 42
+[20-Jun-2020 16:00:19 UTC] PHP Notice:  Undefined variable: php_errormsg in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php on line 42
+[20-Jun-2020 16:00:19 UTC] PHP Fatal error:  Uncaught Exception: Error loading 'http://gestion.edicom.es/fichajes/login.asp',  in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php:42
+Stack trace:
+#0 /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php(54): redirect_post('http://gestion....', Array)
+#1 {main}
+  thrown in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php on line 42
+[20-Jun-2020 16:04:47 UTC] PHP Notice:  Undefined variable: php_errormsg in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php on line 42
+[20-Jun-2020 16:04:47 UTC] PHP Fatal error:  Uncaught Exception: Error loading 'http://gestion.edicom.es/fichajes/login.asp',  in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php:42
+Stack trace:
+#0 /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php(54): redirect_post('http://gestion....', Array)
+#1 {main}
+  thrown in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php on line 42
+[20-Jun-2020 16:10:41 UTC] PHP Notice:  Undefined variable: php_errormsg in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php on line 43
+[20-Jun-2020 16:10:41 UTC] PHP Fatal error:  Uncaught Exception: Error loading 'http://gestion.edicom.es/fichajes/login.asp',  in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php:43
+Stack trace:
+#0 /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php(55): redirect_post('http://gestion....', Array)
+#1 {main}
+  thrown in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php on line 43
+[20-Jun-2020 16:18:08 UTC] PHP Notice:  Undefined variable: php_errormsg in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php on line 43
+[20-Jun-2020 16:18:08 UTC] PHP Fatal error:  Uncaught Exception: Error loading 'https://gestion.edicom.es/fichajes/login.asp',  in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php:43
+Stack trace:
+#0 /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php(55): redirect_post('https://gestion...', Array)
+#1 {main}
+  thrown in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php on line 43
+[20-Jun-2020 16:19:32 UTC] PHP Notice:  Undefined variable: php_errormsg in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php on line 43
+[20-Jun-2020 16:19:32 UTC] PHP Fatal error:  Uncaught Exception: Error loading 'https://gestion.edicom.es/fichajes/login.asp',  in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php:43
+Stack trace:
+#0 /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php(55): redirect_post('https://gestion...', Array)
+#1 {main}
+  thrown in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php on line 43
+[20-Jun-2020 16:20:30 UTC] PHP Warning:  file_get_contents(): SSL operation failed with code 1. OpenSSL Error messages:
+error:14090086:SSL routines:ssl3_get_server_certificate:certificate verify failed in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php on line 14
+[20-Jun-2020 16:20:30 UTC] PHP Warning:  file_get_contents(): Failed to enable crypto in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php on line 14
+[20-Jun-2020 16:20:30 UTC] PHP Warning:  file_get_contents(https://gestion.edicom.es/fichajes/login.asp): failed to open stream: operation failed in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php on line 14
+[20-Jun-2020 16:20:39 UTC] PHP Warning:  file_get_contents(): SSL operation failed with code 1. OpenSSL Error messages:
+error:14090086:SSL routines:ssl3_get_server_certificate:certificate verify failed in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php on line 14
+[20-Jun-2020 16:20:39 UTC] PHP Warning:  file_get_contents(): Failed to enable crypto in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php on line 14
+[20-Jun-2020 16:20:39 UTC] PHP Warning:  file_get_contents(https://gestion.edicom.es/fichajes/login.asp): failed to open stream: operation failed in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php on line 14
+[20-Jun-2020 16:22:52 UTC] PHP Warning:  file_get_contents(): SSL operation failed with code 1. OpenSSL Error messages:
+error:14090086:SSL routines:ssl3_get_server_certificate:certificate verify failed in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php on line 14
+[20-Jun-2020 16:22:52 UTC] PHP Warning:  file_get_contents(): Failed to enable crypto in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php on line 14
+[20-Jun-2020 16:22:52 UTC] PHP Warning:  file_get_contents(https://gestion.edicom.es/fichajes/login.asp): failed to open stream: operation failed in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php on line 14
+[20-Jun-2020 16:24:07 UTC] PHP Warning:  file_get_contents(): SSL operation failed with code 1. OpenSSL Error messages:
+error:14090086:SSL routines:ssl3_get_server_certificate:certificate verify failed in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php on line 14
+[20-Jun-2020 16:24:07 UTC] PHP Warning:  file_get_contents(): Failed to enable crypto in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php on line 14
+[20-Jun-2020 16:24:07 UTC] PHP Warning:  file_get_contents(https://...@edicom.es&amp;password=JiZWYWxlbmNpYTE5Njc=): failed to open stream: operation failed in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php on line 14
+[20-Jun-2020 16:24:43 UTC] PHP Warning:  file_get_contents(): SSL operation failed with code 1. OpenSSL Error messages:
+error:14090086:SSL routines:ssl3_get_server_certificate:certificate verify failed in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php on line 14
+[20-Jun-2020 16:24:43 UTC] PHP Warning:  file_get_contents(): Failed to enable crypto in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php on line 14
+[20-Jun-2020 16:24:43 UTC] PHP Warning:  file_get_contents(https://gestion.edicom.es/fichajes/login.asp): failed to open stream: operation failed in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php on line 14
+[20-Jun-2020 16:26:34 UTC] PHP Warning:  file_get_contents(): SSL operation failed with code 1. OpenSSL Error messages:
+error:14090086:SSL routines:ssl3_get_server_certificate:certificate verify failed in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php on line 14
+[20-Jun-2020 16:26:34 UTC] PHP Warning:  file_get_contents(): Failed to enable crypto in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php on line 14
+[20-Jun-2020 16:26:34 UTC] PHP Warning:  file_get_contents(https://gestion.edicom.es/fichajes/login.asp): failed to open stream: operation failed in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php on line 14
+[20-Jun-2020 16:41:04 UTC] PHP Warning:  file_get_contents(): SSL operation failed with code 1. OpenSSL Error messages:
+error:14090086:SSL routines:ssl3_get_server_certificate:certificate verify failed in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php on line 21
+[20-Jun-2020 16:41:04 UTC] PHP Warning:  file_get_contents(): Failed to enable crypto in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php on line 21
+[20-Jun-2020 16:41:04 UTC] PHP Warning:  file_get_contents(https://gestion.edicom.es/fichajes/login.asp): failed to open stream: operation failed in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php on line 21
+[20-Jun-2020 16:41:11 UTC] PHP Warning:  file_get_contents(): SSL operation failed with code 1. OpenSSL Error messages:
+error:14090086:SSL routines:ssl3_get_server_certificate:certificate verify failed in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php on line 21
+[20-Jun-2020 16:41:11 UTC] PHP Warning:  file_get_contents(): Failed to enable crypto in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php on line 21
+[20-Jun-2020 16:41:11 UTC] PHP Warning:  file_get_contents(https://gestion.edicom.es/fichajes/login.asp): failed to open stream: operation failed in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php on line 21
+[20-Jun-2020 16:42:47 UTC] PHP Warning:  file_get_contents(): SSL operation failed with code 1. OpenSSL Error messages:
+error:14090086:SSL routines:ssl3_get_server_certificate:certificate verify failed in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php on line 21
+[20-Jun-2020 16:42:47 UTC] PHP Warning:  file_get_contents(): Failed to enable crypto in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php on line 21
+[20-Jun-2020 16:42:47 UTC] PHP Warning:  file_get_contents(https://gestion.edicom.es/fichajes/login.asp): failed to open stream: operation failed in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php on line 21
+[20-Jun-2020 16:47:09 UTC] PHP Warning:  file_get_contents(): SSL operation failed with code 1. OpenSSL Error messages:
+error:14090086:SSL routines:ssl3_get_server_certificate:certificate verify failed in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php on line 21
+[20-Jun-2020 16:47:09 UTC] PHP Warning:  file_get_contents(): Failed to enable crypto in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php on line 21
+[20-Jun-2020 16:47:09 UTC] PHP Warning:  file_get_contents(https://gestion.edicom.es/fichajes/login.asp): failed to open stream: operation failed in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php on line 21
+[20-Jun-2020 17:09:58 UTC] PHP Parse error:  syntax error, unexpected 'curl_error' (T_STRING) in /home2/vidawmco/public_html/vidawm.com/privado/php/pru.php on line 21
