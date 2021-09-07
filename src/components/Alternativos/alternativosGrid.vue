@@ -164,72 +164,107 @@ export default {
       obj = {
         id: Math.floor((Math.random() * 999999) + 999999),
         tipoRegistro: 1, // 1: fila detalle, 2: fila cabecera
+        descripcion: 'Compro.Inic.'
+      }
+      arr.push(obj) // 10
+
+      obj = {
+        id: Math.floor((Math.random() * 999999) + 999999),
+        tipoRegistro: 1, // 1: fila detalle, 2: fila cabecera
         descripcion: 'Imp.Comp.Enero'
       }
-      arr.push(obj)
+      arr.push(obj) // 0
 
       obj = {
         id: Math.floor((Math.random() * 999999) + 999999),
         tipoRegistro: 1, // 1: fila detalle, 2: fila cabecera
         descripcion: 'Comprometido'
       }
-      arr.push(obj)
+      arr.push(obj) // 1
 
       obj = {
         id: Math.floor((Math.random() * 999999) + 999999),
         tipoRegistro: 1, // 1: fila detalle, 2: fila cabecera
         descripcion: 'Comp.Acum.'
       }
-      arr.push(obj)
+      arr.push(obj) // 2
 
       obj = {
         id: Math.floor((Math.random() * 999999) + 999999),
         tipoRegistro: 1, // 1: fila detalle, 2: fila cabecera
         descripcion: 'Distribuido'
       }
-      arr.push(obj)
+      arr.push(obj) // 3
 
       obj = {
         id: Math.floor((Math.random() * 999999) + 999999),
         tipoRegistro: 1, // 1: fila detalle, 2: fila cabecera
         descripcion: 'Distrib.Acum.'
       }
-      arr.push(obj)
+      arr.push(obj) // 4
 
       obj = {
         id: Math.floor((Math.random() * 999999) + 999999),
         tipoRegistro: 1, // 1: fila detalle, 2: fila cabecera
         descripcion: 'Importe 31/12'
       }
-      arr.push(obj)
+      arr.push(obj) // 5
 
       obj = {
         id: Math.floor((Math.random() * 999999) + 999999),
         tipoRegistro: 1, // 1: fila detalle, 2: fila cabecera
         descripcion: 'Múltiplo 31/12'
       }
-      arr.push(obj)
+      arr.push(obj) // 6
 
       obj = {
         id: Math.floor((Math.random() * 999999) + 999999),
         tipoRegistro: 1, // 1: fila detalle, 2: fila cabecera
         descripcion: 'TIR 31/12'
       }
-      arr.push(obj)
+      arr.push(obj) // 7
 
       obj = {
         id: Math.floor((Math.random() * 999999) + 999999),
         tipoRegistro: 1, // 1: fila detalle, 2: fila cabecera
         descripcion: 'Saldo Vivo'
       }
-      arr.push(obj)
+      arr.push(obj) // 8
 
       obj = {
         id: Math.floor((Math.random() * 999999) + 999999),
         tipoRegistro: 1, // 1: fila detalle, 2: fila cabecera
         descripcion: 'Capital at Risk'
       }
-      arr.push(obj)
+      arr.push(obj) // 9
+
+      obj = {
+        id: Math.floor((Math.random() * 999999) + 999999),
+        tipoRegistro: 1, // 1: fila detalle, 2: fila cabecera
+        descripcion: 'Valoración Act'
+      }
+      arr.push(obj) // 11
+
+      obj = {
+        id: Math.floor((Math.random() * 999999) + 999999),
+        tipoRegistro: 1, // 1: fila detalle, 2: fila cabecera
+        descripcion: 'Comp/Vent Año'
+      }
+      arr.push(obj) // 12
+
+      obj = {
+        id: Math.floor((Math.random() * 999999) + 999999),
+        tipoRegistro: 1, // 1: fila detalle, 2: fila cabecera
+        descripcion: 'Fact/Cobr'
+      }
+      arr.push(obj) // 13
+
+      obj = {
+        id: Math.floor((Math.random() * 999999) + 999999),
+        tipoRegistro: 1, // 1: fila detalle, 2: fila cabecera
+        descripcion: 'Rentab Año'
+      }
+      arr.push(obj) // 14
 
       this.registrosSeleccionados.forEach(row => {
         // para cada registro del año , insertamos registros con columnas por años: valoracion enero, comprometidos, distribuciones,valoracion31_12, multiplo,TIR,
@@ -238,47 +273,63 @@ export default {
         strEjer = row.ejercicio
         this.columnas.push({ name: 'ejer' + row.ejercicio, align: 'left', label: row.ejercicio, field: 'ejer' + row.ejercicio, format: val => this.$numeral(val).format('0,0.00') })
         row.valoracion = parseFloat(row.valoracion)
-        row.compra = parseFloat(row.compra)
+        row.compra = (row.compra === undefined ? 0 : parseFloat(row.compra))
         row.comprometido = parseFloat(row.comprometido) + row.compra
-        row.venta = parseFloat(row.venta)
+        row.venta = (row.venta === undefined ? 0 : parseFloat(row.venta))
         row.cobro = parseFloat(row.cobro)
         row.distribucion = parseFloat(row.distribucion) + row.venta + row.cobro
         flujos.push(row.distribucion - row.comprometido)
 
         if (numEjer > 1 && row.valoracion === 0) {
           row.valoracion = valAntFinAnyo // si no tenemos la valoracion real tomamos la del año anterior y marcamos como estimada
-          arr[5]['estimado' + row.ejercicio] = true // valor estimada
+          arr[6]['estimado' + row.ejercicio] = true // valor estimada
         } else {
-          arr[5]['estimado' + row.ejercicio] = false
+          arr[6]['estimado' + row.ejercicio] = false
         }
 
         if (numEjer > 1) { // a partir del 2o ejercicio
-          if (row.valoracion !== 0) arr[5]['ejer' + (parseInt(row.ejercicio) - 1)] = row.valoracion // valoracion 31/12 anyo anterior es la de enero
+          if (row.valoracion !== 0) {
+            arr[6]['ejer' + (parseInt(row.ejercicio) - 1)] = row.valoracion // valoracion 31/12 anyo anterior es la de enero
+            if ((parseInt(row.ejercicio) - 1) !== (new Date()).getFullYear()) {
+              arr[1]['ejer' + (parseInt(row.ejercicio) - 1)] = row.valoracion // valoracion 31/12 anyo anterior es la de enero
+              arr[11]['ejer' + (parseInt(row.ejercicio) - 1)] = row.valoracion
+              arr[14]['ejer' + (parseInt(row.ejercicio) - 1)] = (arr[11]['ejer' + (parseInt(row.ejercicio) - 1)] + arr[13]['ejer' + (parseInt(row.ejercicio) - 1)] - (arr[11]['ejer' + (parseInt(row.ejercicio) - 2)] + arr[12]['ejer' + (parseInt(row.ejercicio) - 1)])) * 100 / (arr[11]['ejer' + (parseInt(row.ejercicio) - 2)] + arr[12]['ejer' + (parseInt(row.ejercicio) - 1)]) // rentab
+
+              // (row.valoracion - acumComprom) * 100 / acumComprom // rentab
+            }
+          }
           if (acumComprom === 0) arr[6]['ejer' + row.ejercicio] = 0 // multiplo a 31/12
-          else arr[6]['ejer' + (parseInt(row.ejercicio) - 1)] = (arr[5]['ejer' + (parseInt(row.ejercicio) - 1)] + acumDistrib) / acumComprom // (row.valoracion + row.comprometido + acumDistrib) / acumComprom
-          // arr[7]['ejer' + (parseInt(row.ejercicio) - 1)] = ((arr[5]['ejer' + (parseInt(row.ejercicio) - 1)] + acumDistrib - acumComprom) / acumComprom) * 100 / (numEjer - 1) // TIR
+          else if ((parseInt(row.ejercicio) - 1) !== (new Date()).getFullYear()) {
+            arr[7]['ejer' + (parseInt(row.ejercicio) - 1)] = (arr[11]['ejer' + (parseInt(row.ejercicio) - 1)] + acumDistrib) / acumComprom // (row.valoracion + row.comprometido + acumDistrib) / acumComprom
+          }
         }
-        arr[0]['ejer' + row.ejercicio] = acumComprom // comprometidos hasta la fecha
-        arr[1]['ejer' + row.ejercicio] = row.comprometido // comprometidos del ejercicio
-        arr[3]['ejer' + row.ejercicio] = row.distribucion // distribuciones del ejercicio
-        arr[5]['ejer' + row.ejercicio] = row.valoracion + row.comprometido - row.distribucion // valoracion a 31/12, para el 1o ejercicio y estimadas
-        if (arr[5]['ejer' + row.ejercicio] < 0) arr[5]['ejer' + row.ejercicio] = 0
-        valAntFinAnyo = arr[5]['ejer' + row.ejercicio]
+        arr[1]['ejer' + row.ejercicio] = acumComprom // comprometidos hasta la fecha
+        arr[2]['ejer' + row.ejercicio] = row.comprometido // comprometidos del ejercicio
+        arr[4]['ejer' + row.ejercicio] = row.distribucion // distribuciones del ejercicio
+        arr[6]['ejer' + row.ejercicio] = row.valoracion + row.comprometido - row.distribucion // valoracion a 31/12, para el 1o ejercicio y estimadas
+        if (arr[6]['ejer' + row.ejercicio] < 0) arr[6]['ejer' + row.ejercicio] = 0
+        valAntFinAnyo = arr[6]['ejer' + row.ejercicio]
         acumDistrib += row.distribucion
         acumComprom += row.comprometido
-        arr[2]['ejer' + row.ejercicio] = acumComprom // acum comprometido incluido ejercicio actual
-        arr[4]['ejer' + row.ejercicio] = acumDistrib // acum distribuido incluido ejercicio actual
-        arr[7]['ejer' + row.ejercicio] = this.tir(flujos) // TIR
-        arr[8]['ejer' + row.ejercicio] = acumComprom - acumDistrib // saldo vivo
+        arr[3]['ejer' + row.ejercicio] = acumComprom // acum comprometido incluido ejercicio actual
+        arr[5]['ejer' + row.ejercicio] = acumDistrib // acum distribuido incluido ejercicio actual
+        arr[8]['ejer' + row.ejercicio] = this.tir(flujos) // TIR
+        arr[9]['ejer' + row.ejercicio] = acumComprom - acumDistrib // saldo vivo
         distribFuturas = this.registrosSeleccionados.reduce((total, row1) => { return total + (row1.ejercicio > row.ejercicio ? (parseFloat(row1.comprometido) > 0 ? parseFloat(row1.comprometido) : parseFloat(row1.compra)) : 0) }, 0)
-        arr[9]['ejer' + row.ejercicio] = arr[8]['ejer' + row.ejercicio] + distribFuturas // capital at risk
+        arr[10]['ejer' + row.ejercicio] = arr[8]['ejer' + row.ejercicio] + distribFuturas // capital at risk
+        arr[0]['ejer' + row.ejercicio] = parseFloat(row.compromisoInicial) // comprom inici
+        if (parseInt(row.ejercicio) === (new Date()).getFullYear()) {
+          arr[11]['ejer' + row.ejercicio] = parseFloat(row.valoracionAct) // valoracion
+          arr[14]['ejer' + row.ejercicio] = (parseFloat(row.valoracionAct) + parseFloat(row.cobro) - (parseFloat(row.valoracion) + parseFloat(row.compra) - parseFloat(row.venta))) * 100 / (parseFloat(row.valoracion) + parseFloat(row.compra)) // rentab
+          arr[7]['ejer' + row.ejercicio] = (arr[11]['ejer' + row.ejercicio] + acumDistrib - row.distribucion + row.venta + row.cobro) / (acumComprom - row.comprometido + row.compra)// (row.valoracion + row.comprometido + acumDistrib) / acumComprom
+        }
+        arr[12]['ejer' + row.ejercicio] = parseFloat(row.compra) - parseFloat(row.venta) // compra
+        arr[13]['ejer' + row.ejercicio] = parseFloat(row.cobro) // cobro
       })
       // ultima columna
-      arr[5]['ejer' + strEjer] = 0 // valoracion 31/12 ultimo año debe ser 0 porque hemos liquidado el fondo
-      if (acumComprom === 0) arr[6]['ejer' + strEjer] = 0 // multiplo 31/12
-      else arr[6]['ejer' + strEjer] = (arr[5]['ejer' + strEjer] + acumDistrib) / acumComprom // (row.valoracion + row.comprometido + acumDistrib) / acumComprom
-      // arr[7]['ejer' + strEjer] = ((arr[5]['ejer' + strEjer] + acumDistrib - acumComprom) / acumComprom) * 100 / (numEjer - 1 - numEjer / 4)
-
+      arr[6]['ejer' + strEjer] = 0 // valoracion 31/12 ultimo año debe ser 0 porque hemos liquidado el fondo
+      if (acumComprom === 0) arr[7]['ejer' + strEjer] = 0 // multiplo 31/12
+      else arr[7]['ejer' + strEjer] = (arr[6]['ejer' + strEjer] + acumDistrib) / acumComprom // (row.valoracion + row.comprometido + acumDistrib) / acumComprom
       this.registrosSeleccionados = arr
     },
     getRecords (filter) {
