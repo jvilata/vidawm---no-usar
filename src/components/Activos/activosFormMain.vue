@@ -21,6 +21,12 @@
               <q-badge v-if="tab.link.name==='activosGridMovimientos' && numMov>0" color="red" text-color="white" floating >
               {{ numMov }}
               </q-badge>
+              <q-badge v-if="tab.link.name==='activosClasificacionGrid' && numMov>0" color="red" text-color="white" floating >
+              {{ numClas }}
+              </q-badge>
+              <q-badge v-if="tab.link.name==='documentosGrid' && numMov>0" color="red" text-color="white" floating >
+              {{ numDoc }}
+              </q-badge>
               <q-badge v-if="tab.link.name==='facturasGrid' && numFacturas>0" color="red" text-color="white" floating >
               {{ numFacturas }}
               </q-badge>
@@ -42,6 +48,8 @@ export default {
       title: 'Activos',
       numRentab: 0,
       numMov: 0,
+      numClas: 0,
+      numDoc: 0,
       numFacturas: 0,
       numAcciones: 0,
       menuItems: [
@@ -50,8 +58,16 @@ export default {
           link: { name: 'activosForm' }
         },
         {
+          title: 'Clasificacion',
+          link: { name: 'activosClasificacionGrid' }
+        },
+        {
           title: 'Rent.Anual',
           link: { name: 'activosGridRentabAnual' }
+        },
+        {
+          title: 'Documentos',
+          link: { name: 'documentosGrid' }
         },
         {
           title: 'Evolución Valor',
@@ -83,6 +99,8 @@ export default {
     getCounters () {
       this.getNumRentab()
       this.getNumMov()
+      this.getNumDoc()
+      this.getNumClas()
       this.getFacturas()
       this.getAcciones()
     },
@@ -101,6 +119,26 @@ export default {
       return this.$axios.get('movimientos/bd_movimientos.php/movimientos', { params: objFilter })
         .then(response => {
           this.numMov = response.data.length
+        })
+        .catch(error => {
+          this.$q.dialog({ title: 'Error', message: error })
+        })
+    },
+    getNumClas () {
+      var objFilter = { idActivo: this.value.id }
+      return this.$axios.get('activos/bd_act_clasificacion.php/findAct_clasificacionFilter', { params: objFilter })
+        .then(response => {
+          this.numClas = response.data.length
+        })
+        .catch(error => {
+          this.$q.dialog({ title: 'Error', message: error })
+        })
+    },
+    getNumDoc () {
+      var objFilter = { tipoObjeto: 'A', idObjeto: this.value.id }
+      return this.$axios.get('documentos/bd_documentos.php/documentos', { params: objFilter })
+        .then(response => {
+          this.numDoc = response.data.length
         })
         .catch(error => {
           this.$q.dialog({ title: 'Error', message: error })

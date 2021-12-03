@@ -264,14 +264,6 @@ export default {
             name: 'userMain',
             label: 'Usuarios'
           }
-        },
-        {
-          title: 'App Clásica',
-          icon: 'mobile_off',
-          link: {
-            name: 'openClassic',
-            label: 'App Clásica'
-          }
         }
       ]
     }
@@ -301,18 +293,8 @@ export default {
         } else { // estamos en un disp movil
           window.cordova.InAppBrowser.open(strUrl, '_system') // openURL
         }
-      } else if (link.name === 'openClassic') {
-        this.openClassic()
       } else {
         this.addTab([link.name, link.label, {}, 1])
-      }
-    },
-    openClassic () {
-      var strUrl = 'https://vidawm.com/privado/index_sencha.html'
-      if (window.cordova === undefined) { // desktop
-        openURL(strUrl)
-      } else { // estamos en un disp movil
-        window.cordova.InAppBrowser.open(strUrl, '_system') // openURL
       }
     },
     desconectar () {

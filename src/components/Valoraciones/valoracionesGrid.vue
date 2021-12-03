@@ -154,6 +154,7 @@ export default {
         },
         { name: 'impcompventastotales', align: 'right', label: 'Comp/Vent Tot', field: 'impcompventastotales', sortable: true, format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
         { name: 'revalorizacionTotal', align: 'right', label: 'Reval.Total', field: row => parseFloat(row.importe) - parseFloat(row.impcompventastotales), sortable: true, format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
+        { name: 'multiplo', align: 'right', label: 'Multiplo', field: 'multiplo', sortable: true, format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
         { name: 'user', align: 'left', label: 'user', field: 'user' },
         { name: 'ts', align: 'left', label: 'ts', field: 'ts' }
       ],

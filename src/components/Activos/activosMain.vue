@@ -34,7 +34,7 @@
           @hide="expanded = !expanded"
         />
       </q-dialog>
-
+      <!-- q-btn class="col-1" label="cargar" color="primary" @click="cargarRecords"/ -->
       <!-- formulario tabla de resultados de busqueda -->
       <activosGrid
         v-model="registrosSeleccionados"
@@ -46,6 +46,7 @@
 import { mapState, mapActions } from 'vuex'
 import activosFilter from 'components/Activos/activosFilter.vue'
 import activosGrid from 'components/Activos/activosGrid.vue'
+import { date } from 'quasar'
 export default {
   props: ['value', 'id', 'keyValue'], // se pasan como parametro desde mainTabs. value = { registrosSeleccionados: [], filterRecord: {} }
   data () {
@@ -75,6 +76,48 @@ export default {
         })
         .catch(error => {
           this.$q.dialog({ title: 'Error', message: error })
+        })
+    },
+    limpiarComillas (s) {
+      var res = ''
+      for (var i = 0; i < s.length; i++) {
+        if (s.charAt(i) !== '"') res += s.charAt(i)
+      }
+      return res
+    },
+    llamarFun (record) {
+      this.$axios.post('activos/bd_act_clasificacion.php/act_clasificacion', JSON.stringify(record))
+        .then(response => {
+          console.log(response.data.id)
+        })
+    },
+    cargarRecords () {
+      var objFilter = {}
+      var t = 0
+      return this.$axios.get('activos/bd_activos.php/findActivosFilter', { params: objFilter })
+        .then(response => {
+          this.registrosSeleccionados = response.data
+          this.registrosSeleccionados.forEach(row => {
+            var tipoProd = row.tipoProducto.split(',')
+            if (tipoProd.length > 0) {
+              tipoProd.forEach(tprod => {
+                if (tprod.length > 0) {
+                  var record = {
+                    idActivo: row.id,
+                    clasificacion: this.limpiarComillas(tprod),
+                    porcentaje: 100,
+                    user: this.user.user.email,
+                    ts: date.formatDate(new Date(), 'YYYY-MM-DD HH:mm:ss')
+                  }
+                  setTimeout(this.llamarFun, t, record)
+                  t = t + 300
+                }
+              })
+            }
+          })
+        })
+        .catch(error => {
+          this.$q.dialog({ title: 'Error', message: error.message })
         })
     }
   },

@@ -295,6 +295,7 @@ export default {
     },
     generarPago (record) {
       var params = {
+        codEmpresa: this.user.codEmpresa,
         nroNota: record.nroNota,
         idPersonal: record.idPersonal
       }

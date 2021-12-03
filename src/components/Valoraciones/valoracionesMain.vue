@@ -92,6 +92,8 @@ export default {
             impcompvent2Y: 0,
             comprometido: 0,
             rentabAcum: 0,
+            distribuidoHasta: 0,
+            impcompventastotales: 0,
             children: []
           }
           arr.push(obj)
@@ -113,18 +115,25 @@ export default {
         obj.facturado += (row.facturado === null ? 0 : parseFloat(row.facturado))
         obj.impcobropago += (row.impcobropago === null ? 0 : parseFloat(row.impcobropago))
         obj.impcompras += (row.impcompras === null ? 0 : parseFloat(row.impcompras))
+        // obj.ventas = obj.impcompras - obj.impcompvent
         obj.facturado2Y += parseFloat(row.facturado2Y)
         obj.impcobropago2Y += parseFloat(row.impcobropago2Y)
         obj.cval2Y_importe += (row.cval2Y_importe === null ? 0 : parseFloat(row.cval2Y_importe))
         obj.impcompvent2Y += parseFloat(row.impcompvent2Y)
         obj.comprometido += parseFloat(row.comprometido)
-
+        obj.distribuidoHasta += parseFloat(row.distribuidoHasta)
+        obj.impcompventastotales += parseFloat(row.impcompventastotales)
         res = 0
         newValue = parseFloat(obj.importe) + parseFloat(obj.facturado) + parseFloat(obj.impcobropago) - (parseFloat(obj.minval_importe === null ? 0 : obj.minval_importe) + parseFloat(obj.impcompvent))
         if (newValue !== 0 && (parseFloat(obj.minval_importe === null ? 0 : obj.minval_importe) + parseFloat(obj.impcompras)) !== 0) {
           res = newValue * 100 / (parseFloat(obj.minval_importe === null ? 0 : obj.minval_importe) + parseFloat(obj.impcompras))
         }
         obj.rentabAcum = res
+        /* if (row.nombre === 'ALANTRA - ALTERALIA VEHICULO DE DEUDA') {
+          console.log(row, obj)
+        } */
+        row.multiplo = (parseFloat(row.importe) + parseFloat(row.distribuidoHasta) + (parseFloat(row.impcompras) - parseFloat(row.impcompvent)) + parseFloat(row.impcobropago)) / (parseFloat(row.impcompventastotales))
+        obj.multiplo = (obj.importe + obj.distribuidoHasta + (obj.impcompras - obj.impcompvent) + obj.impcobropago) / (obj.impcompventastotales)
         obj.nombre = (obj.children.length + 1) + ' activos'
         obj.children.push(row)
       })

@@ -86,6 +86,11 @@ export default {
           link: { name: 'resumenTipos' }
         },
         {
+          title: 'Analisis Tipos',
+          icon: 'pie_chart',
+          link: { name: 'analisisTipos' }
+        },
+        {
           title: 'Evolución Patrimonio',
           icon: 'show_chart',
           link: { name: 'evolucionPatrimonio' }

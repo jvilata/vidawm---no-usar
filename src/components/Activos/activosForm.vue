@@ -108,7 +108,7 @@
             @keyup.enter.stop />
         <div class="row q-mb-sm">
           <!-- tipoProducto viene como string separador pr , -->
-          <q-select
+          <!-- q-select
             class="col-xs-6 col-sm-3"
             outlined
             multiple
@@ -122,9 +122,9 @@
             option-value="codElemento"
             option-label="codElemento"
             emit-value
-          />
+          / -->
           <q-select
-              class="col-xs-6 col-sm-3"
+              class="col-xs-12 col-sm-6"
               label="Moneda"
               stack-label
               outlined
@@ -241,11 +241,14 @@ export default {
       }
     },
     updateRecord () {
+      if (this.recordToSubmit.tipoProducto === '') this.recordToSubmit.tipoProducto = null
+      var tmp = this.recordToSubmit.tipoProducto
       if (this.recordToSubmit.tipoProducto !== null) this.recordToSubmit.tipoProducto = JSON.stringify(this.recordToSubmit.tipoProducto.split(',')) // convierto a array en JSON
       var formData = new FormData()
       for (var key in this.recordToSubmit) {
         formData.append(key, this.recordToSubmit[key])
       }
+      this.recordToSubmit.tipoProducto = tmp
       return this.$axios.post('activos/bd_activos.php/guardarBD', formData, headerFormData)
         .then(response => {
           this.colorBotonSave = 'primary'

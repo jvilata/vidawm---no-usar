@@ -26,8 +26,10 @@ const routes = [
             props: true,
             children: [
               { path: 'activosForm', name: 'activosForm', component: () => import('components/Activos/activosForm.vue'), props: true },
+              { path: 'activosClasificacionGrid', name: 'activosClasificacionGrid', component: () => import('components/Activos/activosClasificacionGrid.vue'), props: true },
               { path: 'activosGridRentabAnual', name: 'activosGridRentabAnual', component: () => import('components/Activos/activosGridRentabAnual.vue'), props: true },
               { path: 'activosGridMovimientos', name: 'activosGridMovimientos', component: () => import('components/Movimientos/movimientosGrid.vue'), props: true },
+              { path: 'documentosGrid', name: 'documentosGrid', component: () => import('components/Documentos/documentosGrid.vue'), props: true },
               { path: 'activosAlternativosGrid', name: 'activosAlternativosGrid', component: () => import('components/Activos/activosAlternativosGrid.vue'), props: true },
               { path: 'facturasGrid', name: 'facturasGrid', component: () => import('components/Facturas/facturasGrid.vue'), props: true },
               { path: 'activosEvolucionValor', name: 'activosEvolucionValor', component: () => import('components/Activos/activosEvolucionValor.vue'), props: true },
@@ -69,6 +71,7 @@ const routes = [
               { path: 'panelDatos', name: 'panelDatos', component: () => import('components/Dashboard/dashboardPanelDatos.vue'), props: true },
               { path: 'gridPlanif', name: 'gridPlanif', component: () => import('components/Dashboard/dashboardGridPlanifInversion.vue'), props: true },
               { path: 'resumenTipos', name: 'resumenTipos', component: () => import('components/Dashboard/dashboardResumenPatrimonioMain.vue'), props: true },
+              { path: 'analisisTipos', name: 'analisisTipos', component: () => import('components/Dashboard/dashboardPieChartFiltros.vue'), props: true },
               { path: 'evolucionPatrimonio', name: 'evolucionPatrimonio', component: () => import('components/Dashboard/dashboardEvolucionPatrimonio.vue'), props: true },
               { path: 'evolucionClases', name: 'evolucionClases', component: () => import('components/Dashboard/dashboardEvolucionClasesPatrimonio.vue'), props: true },
               { path: 'patrimonioEntidad', name: 'patrimonioEntidad', component: () => import('components/Dashboard/dashboardPatrimonioEntidad.vue'), props: true },
