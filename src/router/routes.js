@@ -33,7 +33,8 @@ const routes = [
               { path: 'activosAlternativosGrid', name: 'activosAlternativosGrid', component: () => import('components/Activos/activosAlternativosGrid.vue'), props: true },
               { path: 'facturasGrid', name: 'facturasGrid', component: () => import('components/Facturas/facturasGrid.vue'), props: true },
               { path: 'activosEvolucionValor', name: 'activosEvolucionValor', component: () => import('components/Activos/activosEvolucionValor.vue'), props: true },
-              { path: 'activosAccionesGrid', name: 'activosAccionesGrid', component: () => import('components/Activos/activosAccionesGrid.vue'), props: true }
+              { path: 'activosAccionesGrid', name: 'activosAccionesGrid', component: () => import('components/Activos/activosAccionesGrid.vue'), props: true },
+              { path: 'activosAlterCabecera', name: 'activosAlterCabecera', component: () => import('components/Activos/activosAlterCabecera.vue'), props: true }
             ]
           },
           { path: 'Entidades', name: 'Entidades', component: () => import('components/Entidades/entidadesMain.vue'), props: true },
@@ -61,7 +62,17 @@ const routes = [
             ]
           },
           { path: 'valoraciones', name: 'valoraciones', component: () => import('components/Valoraciones/valoracionesMain.vue'), props: true },
-          { path: 'alternativos', name: 'alternativos', component: () => import('components/Alternativos/alternativosMain.vue'), props: true },
+          // { path: 'alternativos', name: 'alternativos', component: () => import('components/Alternativos/alternativosMain.vue'), props: true },
+          {
+            path: 'alternativos',
+            name: 'alternativos',
+            component: () => import('components/Alternativos/alternativosFormMain.vue'),
+            props: true,
+            children: [
+              { path: 'alternativosMain', name: 'alternativosMain', component: () => import('components/Alternativos/alternativosMain.vue'), props: true },
+              { path: 'alternativosGridComp', name: 'alternativosGridComp', component: () => import('components/Alternativos/alternativosGridComp.vue'), props: true }
+            ]
+          },
           {
             path: 'dashboard',
             name: 'dashboard',
@@ -70,6 +81,7 @@ const routes = [
             children: [
               { path: 'panelDatos', name: 'panelDatos', component: () => import('components/Dashboard/dashboardPanelDatos.vue'), props: true },
               { path: 'gridPlanif', name: 'gridPlanif', component: () => import('components/Dashboard/dashboardGridPlanifInversion.vue'), props: true },
+              { path: 'gridPlanifComp', name: 'gridPlanifComp', component: () => import('components/Dashboard/dashboardGridPlanifCompromisos.vue'), props: true },
               { path: 'resumenTipos', name: 'resumenTipos', component: () => import('components/Dashboard/dashboardResumenPatrimonioMain.vue'), props: true },
               { path: 'analisisTipos', name: 'analisisTipos', component: () => import('components/Dashboard/dashboardPieChartFiltros.vue'), props: true },
               { path: 'evolucionPatrimonio', name: 'evolucionPatrimonio', component: () => import('components/Dashboard/dashboardEvolucionPatrimonio.vue'), props: true },

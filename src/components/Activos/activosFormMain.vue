@@ -78,8 +78,12 @@ export default {
           link: { name: 'activosGridMovimientos' }
         },
         {
-          title: 'Alternativos',
+          title: 'Alter.Analisis',
           link: { name: 'activosAlternativosGrid' }
+        },
+        {
+          title: 'Alter.Datos',
+          link: { name: 'activosAlterCabecera' }
         },
         {
           title: 'Facturas',

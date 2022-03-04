@@ -14,17 +14,48 @@
         use-chips
         emit-value
       />
+      <q-select
+        class="col"
+        outlined
+        clearable
+        label="Activo"
+        stack-label
+        v-model="filterR.idActivo"
+        :options="listaActivosFilter"
+        option-value="id"
+        option-label="nombre"
+        multiple
+        emit-value
+        map-options
+        @filter="filterActivos"
+        use-chips
+      />
+      <q-select class="col"
+        outlined
+        clearable
+        label="Gestor/Arrend"
+        stack-label
+        v-model="filterR.idEntidad"
+        :options="listaEntidadesFilter"
+        option-value="id"
+        option-label="nombre"
+        emit-value
+        map-options
+        @filter="filterEntidades"
+        use-input
+        hide-selected
+        fill-input
+        input-debounce="0"
+      />
       <q-select class="col"
         outlined
         clearable
         label="Tipo Producto"
         stack-label
-        v-model="filterR.tipoProducto"
-        :options="listaTiposProducto"
+        v-model="filterR.tipoProducto1"
+        :options="listaResumenTiposProducto"
         option-value="codElemento"
         option-label="codElemento"
-        multiple
-        use-chips
         emit-value
       />
       <q-btn class="col-1" label="Mostrar" color="primary" @click="getResumenPatrimonio"/>
@@ -48,34 +79,54 @@
 
 <script>
 import dashboardResumenPatrimonio from 'components/Dashboard/dashboardResumenPatrimonio.vue'
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 export default {
   props: ['value', 'keyValue'], // en 'value' tenemos la tabla de datos del grid
   data () {
     return {
       refreshRec: 0,
       filterR: {},
-      registrosResumenPatrimonio: []
+      registrosResumenPatrimonio: [],
+      listaEntidadesFilter: [],
+      listaActivosFilter: []
     }
   },
   computed: {
-    ...mapState('tablasAux', ['listaTiposActivo', 'listaTiposProducto'])
+    ...mapState('login', ['user']), // importo state.user desde store-login
+    ...mapState('tablasAux', ['listaTiposActivo', 'listaTiposProducto', 'listaResumenTiposProducto']),
+    ...mapState('entidades', ['listaEntidades']),
+    ...mapState('activos', ['listaActivos'])
   },
   methods: {
+    ...mapActions('entidades', ['loadEntidades']),
+    ...mapActions('activos', ['loadActivos']),
+    filterActivos (val, update, abort) {
+      update(() => {
+        const needle = val.toLowerCase()
+        this.listaActivosFilter = this.listaActivos.filter(v => v.nombre.toLowerCase().indexOf(needle) > -1)
+      })
+    },
+    filterEntidades (val, update, abort) {
+      update(() => {
+        const needle = val.toLowerCase()
+        this.listaEntidadesFilter = this.listaEntidades.filter(v => v.nombre.toLowerCase().indexOf(needle) > -1)
+      })
+    },
     getResumenPatrimonio () {
       var objFilter = Object.assign({}, this.filterR)
       objFilter.mes = this.value.mes
       objFilter.codEmpresa = this.value.codEmpresa
+      objFilter.idActivo = (objFilter.idActivo && objFilter.idActivo !== null ? objFilter.idActivo.join() : null) // paso de array a concatenacion de strings (join)
       objFilter.tipoActivo = (objFilter.tipoActivo && objFilter.tipoActivo !== null ? objFilter.tipoActivo.join() : null) // paso de array a concatenacion de strings (join)
-      // objFilter.estadoActivo = (objFilter.estadoActivo && objFilter.estadoActivo !== null ? objFilter.estadoActivo.join() : null) // paso de array a concatenacion de strings (join)
-      objFilter.tipoProducto = (objFilter.tipoProducto && objFilter.tipoProducto !== null ? objFilter.tipoProducto.join() : null) // paso de array a concatenacion de strings (join)
+      // desglosar TipoProducto
+      objFilter.tipoProducto = objFilter.tipoProducto1.substring(0, objFilter.tipoProducto1.indexOf('.') + 1)
+      // objFilter.tipoProducto = (objFilter.tipoProducto && objFilter.tipoProducto !== null ? objFilter.tipoProducto.join() : null) // paso de array a concatenacion de strings (join)
 
       // donut resumen patrimonio
       this.$axios.get('movimientos/bd_movimientos.php/findanalisisPatrimonio/', { params: objFilter })
         .then(response => {
           this.registrosResumenPatrimonio = response.data
           this.refreshRec++ // para que refresque el componente
-          console.log('si')
         })
         .catch(error => {
           this.$q.dialog({ title: 'Error', message: error })
@@ -83,7 +134,8 @@ export default {
     }
   },
   mounted () {
-    // this.getResumenPatrimonio(this.value) // carga datos donut resumen patrim
+    if (this.listaEntidades.length <= 0) this.loadEntidades() // carga store listaEntidades
+    if (this.listaActivos.length <= 0) this.loadActivos(this.user.codEmpresa) // carga store listaActivos
   },
   components: {
     dashboardResumenPatrimonio: dashboardResumenPatrimonio

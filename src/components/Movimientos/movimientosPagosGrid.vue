@@ -219,6 +219,7 @@ export default {
         importe: record.importe,
         tipoOperacion: record.tipoOperacion,
         descripcion: record.descripcion,
+        archivoDrive: record.archivoDrive,
         fecha: record.fecha,
         fechaGeneracion: record.fechaGeneracion,
         user: this.user.user.email,

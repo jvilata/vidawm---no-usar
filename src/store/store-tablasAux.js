@@ -13,6 +13,7 @@ const state = {
   listaTipoAcc: [],
   listaTiposActivo: [],
   listaTiposProducto: [],
+  listaResumenTiposProducto: [],
   listaEstadosActivo: [],
   listaTipoOPeracion: [],
   listaTiposFactura: [],
@@ -21,6 +22,7 @@ const state = {
   listaEmpresas: [],
   listaTiposJornada: [],
   listaEstadosJornada: [],
+  listaStatusAlt: [],
   listaRoles: [],
   listaMeses: [] // meses de movimientos: {mes: 01/2020}, {mes: 02/2020}
 }
@@ -38,6 +40,9 @@ const mutations = {
   loadTiposActivo (state, tiposAcc) {
     state.listaTiposActivo = tiposAcc
   },
+  loadStatusAlt (state, statusAlt) {
+    state.listaStatusAlt = statusAlt
+  },
   loadEstadosActivo (state, tiposAcc) {
     state.listaEstadosActivo = tiposAcc
   },
@@ -46,6 +51,9 @@ const mutations = {
   },
   loadTiposProducto (state, tiposAcc) {
     state.listaTiposProducto = tiposAcc
+  },
+  loadResumenTiposProducto (state, tiposAcc) {
+    state.listaResumenTiposProducto = tiposAcc
   },
   listaTiposFactura (state, tiposAcc) {
     state.listaTiposFactura = tiposAcc
@@ -87,6 +95,8 @@ const actions = {
     this.dispatch('tablasAux/loadTablaAux', { codTabla: 11, mutation: 'loadTiposJornada' })
     this.dispatch('tablasAux/loadTablaAux', { codTabla: 12, mutation: 'loadEstadosJornada' })
     this.dispatch('tablasAux/loadTablaAux', { codTabla: 13, mutation: 'loadMonedas' })
+    this.dispatch('tablasAux/loadTablaAux', { codTabla: 14, mutation: 'loadStatusAlt' })
+    this.dispatch('tablasAux/loadTablaAux', { codTabla: 15, mutation: 'loadResumenTiposProducto' })
     this.dispatch('tablasAux/loadUsers')
     this.dispatch('tablasAux/loadListaMeses')
   },

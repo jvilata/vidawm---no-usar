@@ -1,4 +1,21 @@
 <template>
+  <div>
+    <div class="q-ml-md q-mr-md row">
+      <q-select class="col"
+        outlined
+        clearable
+        label="Tipo Activo"
+        stack-label
+        v-model="filterR.tipoActivo1"
+        :options="listaTiposActivo"
+        option-value="codElemento"
+        option-label="codElemento"
+        multiple
+        use-chips
+        emit-value
+      />
+      <q-btn class="col-1" label="Mostrar" color="primary" @click="getPatrimonioEntidad(filterR)"/>
+    </div>
   <div class="row">
     <div class="col" >
       <q-item class="q-ma-md q-pa-xs bg-indigo-1 text-grey-8">
@@ -13,15 +30,18 @@
       </q-item>
     </div>
   </div>
+  </div>
 </template>
 <script>
 // doc in: https://github.com/apexcharts/vue-apexcharts , https://apexcharts.com/
 import { numeralInstance } from 'boot/numeral.js'
 import { Loading } from 'quasar'
+import { mapState, mapActions } from 'vuex'
 export default {
   props: ['value'],
   data: function () {
     return {
+      filterR: {},
       chartOptions: {
         labels: [],
         chart: {
@@ -70,8 +90,14 @@ export default {
       series: [] // { name:'nom serie', type: 'line', data: [] }
     }
   },
+  computed: {
+    ...mapState('tablasAux', ['listaTiposActivo', 'listaTiposProducto'])
+  },
   methods: {
+    ...mapActions('activos', ['loadActivos']),
     getPatrimonioEntidad (objFilter) {
+      objFilter.tipoActivo = (objFilter.tipoActivo1 && objFilter.tipoActivo1 !== null ? objFilter.tipoActivo1.join() : null) // paso de array a concatenacion de strings (join)
+
       Loading.show()
       // donut resumen patrimonio
       this.$axios.get('movimientos/bd_movimientos.php/findcevolucionPatrimonioEntidad/', { params: objFilter })
@@ -89,6 +115,7 @@ export default {
       /* this.value.sort(function (a, b) { // ordeno el array por etiquetavalor
         return (a.etiquetavalor !== null ? a.etiquetavalor.localeCompare(b.etiquetavalor) : 0)
       }) */
+      this.series = []
       var etiqAnt = ''
       var arr = []
       this.registrosPatrimonioEntidad.forEach(row => {
@@ -121,7 +148,8 @@ export default {
     }
   },
   mounted () {
-    this.getPatrimonioEntidad(this.value) // carga datos  patrim entidad
+    Object.assign(this.filterR, this.value)
+    this.getPatrimonioEntidad(this.filterR) // carga datos  patrim entidad
   }
 }
 </script>

@@ -10,7 +10,8 @@ import Vue from 'vue'
 // state: accesibles en lectura desde componentes a traves de ...mapState('tabs', ['tabs'])
 const state = {
   ltab: '', // tab actual
-  tabs: {} // {name: 'nombre tab', params:{ id:'idtab', value: { tab data record } }}
+  tabs: {}, // {name: 'nombre tab', params:{ id:'idtab', value: { tab data record } }}
+  dataTabs: {}
 }
 // mutations: solo están accesibles a las actions a traves de commit, p.e., commit('addTab', tab)
 const mutations = {
@@ -36,6 +37,15 @@ const mutations = {
   },
   setltab: (state, value) => {
     state.ltab = value
+  },
+  addDataTab: (state, tab) => {
+    state.dataTabs[tab.id] = {}
+    Object.assign(state.dataTabs[tab.id], tab)
+    Object.assign(state.dataTabs[tab.id].filterRecord, tab.filterRecord)
+    Object.assign(state.dataTabs[tab.id].registrosSeleccionados, tab.registrosSeleccionados)
+  },
+  removeDataTab: (state, id) => {
+    Vue.delete(state.dataTabs, id)
   }
 }
 // actions: accesibles desde componentes a traves de ...mapActions('tabs', ['addTab'])
@@ -58,6 +68,12 @@ const actions = {
     if (tab.params.id !== this.$router.app._route.params.id) {
       this.$router.push(state.tabs[tab.params.id])
     }
+  },
+  addDataTab ({ commit }, tab) { // updated: { tab, record }
+    commit('addDataTab', tab)
+  },
+  removeDataTab ({ commit }, tab) { // updated: { tab, record }
+    commit('removeDataTab', tab)
   },
   updateTabData ({ commit }, [tab, record]) { // updated: { tab, record }
     commit('updateTabData', [tab, record])

@@ -27,7 +27,7 @@ export default {
         tooltip: {
           y: {
             formatter: function (val) {
-              return numeralInstance(parseFloat(val)).format('0,0')
+              return numeralInstance(parseFloat(val)).format('0,0.00')
             }
           }
         },

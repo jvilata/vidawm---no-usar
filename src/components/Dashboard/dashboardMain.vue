@@ -81,6 +81,11 @@ export default {
           link: { name: 'gridPlanif' }
         },
         {
+          title: 'Planif.Comprom',
+          icon: 'list',
+          link: { name: 'gridPlanifComp' }
+        },
+        {
           title: 'Resumen Tipos',
           icon: 'pie_chart',
           link: { name: 'resumenTipos' }

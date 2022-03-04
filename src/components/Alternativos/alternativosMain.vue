@@ -141,7 +141,7 @@ export default {
       this.getRecords(this.filterRecord)
     } else { // es la primera vez que entro, cargo valores po defecto
       this.filterRecord = { codEmpresa: this.user.codEmpresa, anyoDesde: (new Date()).getFullYear() - 5, estadoActivo: ['1', '4'], computa: '1' }
-      // this.getRecords(this.filterRecord)
+      this.getRecords(this.filterRecord)
     }
   },
   destroyed () {
