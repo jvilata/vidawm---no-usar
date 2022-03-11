@@ -16,7 +16,7 @@
       <template v-slot:header="props">
         <!-- CABECERA DE LA TABLA -->
         <q-tr :props="props">
-          <q-th>
+          <q-th >
             <q-btn icon="more_vert"  class="q-ma-xs" color="primary" dense>
               <q-menu ref="menu1">
                 <q-list dense>
@@ -57,7 +57,7 @@
         <q-tr :props="props" :key="`m_${props.row.id}`" @mouseover="rowId=`m_${props.row.id}`">
           <q-td>
             <!-- columna de acciones: editar, borrar, etc -->
-            <div style="max-width: 20px">
+            <div style="max-width: 50px">
             <!--edit icon . Decomentamos si necesitamos accion especifica de edicion -->
             <q-btn flat v-if="rowId===`m_${props.row.id}`"
               @click.stop="editRecord(props.row, props.row.id)"
@@ -76,6 +76,14 @@
               color="red"
               icon="delete">
               <q-tooltip>Borrar</q-tooltip>
+            </q-btn>
+            <q-btn flat v-if="rowId===`m_${props.row.id}`"
+              @click.stop="duplicarActivo(props.row, props.row.id)"
+              round
+              dense
+              size="sm"
+              icon="file_copy">
+              <q-tooltip>Duplicar</q-tooltip>
             </q-btn>
             </div>
           </q-td>
@@ -200,6 +208,42 @@ export default {
     },
     editRecord (rowChanges, id) { // no lo uso aqui pero lod ejo como demo
       this.addTab(['activosFormMain', 'Activo-' + rowChanges.id, rowChanges, rowChanges.id])
+    },
+    duplicarActivo (record, id) {
+      this.$q.dialog({
+        title: 'Confirmar',
+        message: '¿ Duplicar este activo ?',
+        ok: true,
+        cancel: true,
+        persistent: true
+      }).onOk(() => {
+        Object.assign(record, {
+          nombre: 'Copy - ' + record.nombre,
+          user: this.user.user.email,
+          ts: date.formatDate(new Date(), 'YYYY-MM-DD HH:mm:ss')
+        })
+        record.id = -1 // para que inserte nuevo
+        var formData = new FormData()
+        for (var key in record) {
+          formData.append(key, record[key])
+        }
+        return this.$axios.post('activos/bd_activos.php/guardarBD', formData, headerFormData)
+          .then(response => {
+            record.id = response.data.id
+            this.value.push(record)
+            var param1 = {
+              id: id,
+              idnew: record.id
+            }
+            this.$axios.get('activos/bd_activos.php/duplicarActivo', { params: param1 })
+              .then(response => {
+                this.editRecord(record, record.id)
+              })
+          })
+          .catch(error => {
+            this.$q.dialog({ title: 'Error', message: error })
+          })
+      })
     },
     generarRentab () {
       this.$q.dialog({
