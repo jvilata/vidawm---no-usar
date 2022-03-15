@@ -169,7 +169,7 @@ export default {
     },
     getRecords () {
       // se reutiliza el grid de movimientos para el form de activos y de facturas
-      var objFilter = { tipoObjeto: (this.value.tipoFactura !== undefined ? 'F' : (this.value.tipoActivo !== undefined ? 'A' : 'N')), idObjeto: this.value.id }
+      var objFilter = { tipoObjeto: (this.value.tipoFactura !== undefined ? 'F' : (this.value.tipoActivo !== undefined ? 'A' : (this.value.tipoEntidad !== undefined ? 'E' : 'N'))), idObjeto: this.value.id }
       return this.$axios.get('documentos/bd_documentos.php/documentos', { params: objFilter })
         .then(response => {
           this.registrosSeleccionados = response.data
@@ -183,7 +183,7 @@ export default {
       var record = {
         codEmpresa: this.user.codEmpresa,
         idObjeto: id,
-        tipoObjeto: (this.value.tipoFactura !== undefined ? 'F' : (this.value.tipoActivo !== undefined ? 'A' : 'N')),
+        tipoObjeto: (this.value.tipoFactura !== undefined ? 'F' : (this.value.tipoActivo !== undefined ? 'A' : (this.value.tipoEntidad !== undefined ? 'E' : 'N'))),
         asunto: 'nuevo documento',
         url: '',
         user: this.user.user.email,

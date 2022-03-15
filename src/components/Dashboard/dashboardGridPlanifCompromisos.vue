@@ -258,7 +258,7 @@ export default {
                               altFija = parseFloat(element.dividendos) + element.importeAjusteY0
                               element.aInvertirY0 = cCompAltFija * altFija
                               element.patrimonioY0 = parseFloat(element.patrimonio) + (element.comprometidoY0 === undefined ? 0 : element.comprometidoY0) +
-                                cCompAltFija * cDistAltRFija
+                                cCompAltFija * altFija
                               element.comprometidototY1 = element.comprometidototY0 - (element.comprometidoY0 === undefined ? 0 : element.comprometidoY0) +
                                 (1 - cCompAltFija) * altFija
                             } else if (['CAP.RIESGO'].includes(element.tipoActivo)) {

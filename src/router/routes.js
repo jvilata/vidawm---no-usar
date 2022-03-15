@@ -45,6 +45,7 @@ const routes = [
             props: true,
             children: [
               { path: 'entidadesForm', name: 'entidadesForm', component: () => import('components/Entidades/entidadesForm.vue'), props: true },
+              { path: 'entdocumentosGrid', name: 'entdocumentosGrid', component: () => import('components/Documentos/documentosGrid.vue'), props: true },
               { path: 'facturasEntGrid', name: 'facturasEntGrid', component: () => import('components/Facturas/facturasGrid.vue'), props: true },
               { path: 'entidadesEvolucionValor', name: 'entidadesEvolucionValor', component: () => import('components/Entidades/entidadesEvolucionValor.vue'), props: true },
               { path: 'entidadesAccionesGrid', name: 'entidadesAccionesGrid', component: () => import('components/Entidades/entidadesAccionesGrid.vue'), props: true }

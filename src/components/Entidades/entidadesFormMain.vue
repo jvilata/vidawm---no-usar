@@ -18,6 +18,9 @@
               <q-badge v-if="tab.link.name==='facturasEntGrid' && numFacturas>0" color="red" text-color="white" floating >
               {{ numFacturas }}
               </q-badge>
+              <q-badge v-if="tab.link.name==='entdocumentosGrid' && numDoc>0" color="red" text-color="white" floating >
+              {{ numDoc }}
+              </q-badge>
               <q-badge v-if="tab.link.name==='entidadesAccionesGrid' && numAcciones>0" color="red" text-color="white" floating >
               {{ numAcciones }}
               </q-badge>
@@ -36,12 +39,17 @@ export default {
       title: 'Entidades',
       numRentab: 0,
       numMov: 0,
+      numDoc: 0,
       numFacturas: 0,
       numAcciones: 0,
       menuItems: [
         {
           title: 'General',
           link: { name: 'entidadesForm' }
+        },
+        {
+          title: 'Documentos',
+          link: { name: 'entdocumentosGrid' }
         },
         {
           title: 'Evolución Valor',
@@ -65,6 +73,17 @@ export default {
     getCounters () {
       this.getFacturas()
       this.getAcciones()
+      this.getNumDoc()
+    },
+    getNumDoc () {
+      var objFilter = { tipoObjeto: 'E', idObjeto: this.value.id }
+      return this.$axios.get('documentos/bd_documentos.php/documentos', { params: objFilter })
+        .then(response => {
+          this.numDoc = response.data.length
+        })
+        .catch(error => {
+          this.$q.dialog({ title: 'Error', message: error })
+        })
     },
     getFacturas () {
       var objFilter = { codEmpresa: this.user.codEmpresa, tipoObjeto: 'E', idObjeto: this.value.id }

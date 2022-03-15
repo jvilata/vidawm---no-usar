@@ -21,10 +21,10 @@
               <q-badge v-if="tab.link.name==='activosGridMovimientos' && numMov>0" color="red" text-color="white" floating >
               {{ numMov }}
               </q-badge>
-              <q-badge v-if="tab.link.name==='activosClasificacionGrid' && numMov>0" color="red" text-color="white" floating >
+              <q-badge v-if="tab.link.name==='activosClasificacionGrid' && numClas>0" color="red" text-color="white" floating >
               {{ numClas }}
               </q-badge>
-              <q-badge v-if="tab.link.name==='documentosGrid' && numMov>0" color="red" text-color="white" floating >
+              <q-badge v-if="tab.link.name==='documentosGrid' && numDoc>0" color="red" text-color="white" floating >
               {{ numDoc }}
               </q-badge>
               <q-badge v-if="tab.link.name==='facturasGrid' && numFacturas>0" color="red" text-color="white" floating >
