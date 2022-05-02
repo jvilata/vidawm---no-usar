@@ -125,6 +125,7 @@ export default {
         { name: 'factuInteres', align: 'right', label: 'Factur/Inter', field: row => parseFloat(row.impcobropago) + parseFloat(row.facturado), sortable: true, format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
         { name: 'revalorizacion', align: 'right', label: 'Reval.Año', field: b => parseFloat(b.importe) + parseFloat(b.facturado) + parseFloat(b.impcobropago) - (parseFloat(b.minval_importe) + parseFloat(b.impcompvent)), sortable: true, format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
         { name: 'peso', align: 'right', label: '%Peso', field: 'peso', sortable: true, format: val => (val !== undefined ? parseFloat(val).toFixed(2) : '') },
+        { name: 'pesoGlobal', align: 'right', label: '%PesoGlobal', field: 'pesoGlobal', sortable: true, format: val => (val !== undefined ? parseFloat(val).toFixed(2) : '') },
         {
           name: 'rentabAcum',
           required: true,

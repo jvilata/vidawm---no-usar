@@ -108,6 +108,8 @@ export default {
         row.rentabAcum = res
         if (row.peso === undefined) row.peso = 0
         else row.peso = parseFloat(row.peso) * 100
+        if (row.pesoGlobal === undefined) row.pesoGlobal = 0
+        else row.pesoGlobal = parseFloat(row.pesoGlobal) * 100
         obj.importe += parseFloat(row.importe)
         obj.valant_importe += (row.valant_importe === null ? 0 : parseFloat(row.valant_importe))
         obj.minval_importe += (row.minval_importe === null ? 0 : parseFloat(row.minval_importe))
