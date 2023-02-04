@@ -2,4 +2,4 @@ las copias de seguridad de datos onedrive, fuentes apps y datos sql así como de
 en el google drive del usuario molino@campinglosalamos.com / 
 también se guardan copias en:
  el disco D local
- webempresa, directorios copia de gestur y sql de privado 
+ webempresa, directorios copia de gestur y copia de privado 

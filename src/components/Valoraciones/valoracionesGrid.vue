@@ -100,10 +100,11 @@
 </template>
 
 <script>
-import { date } from 'quasar'
+import { date, exportFile, openURL } from 'quasar'
 import { mapActions, mapState } from 'vuex'
 import valoracionesGenerar from 'components/Valoraciones/valoracionesGenerar.vue'
 import valoracionesBorrar from 'components/Valoraciones/valoracionesBorrar.vue'
+
 export default {
   props: ['value', 'filter'], // en 'value' tenemos la tabla de datos del grid
   data () {
@@ -124,8 +125,8 @@ export default {
         { name: 'impcompvent', align: 'right', label: 'Comp/Vent.Año', field: 'impcompvent', sortable: true, format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
         { name: 'factuInteres', align: 'right', label: 'Factur/Inter', field: row => parseFloat(row.impcobropago) + parseFloat(row.facturado), sortable: true, format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
         { name: 'revalorizacion', align: 'right', label: 'Reval.Año', field: b => parseFloat(b.importe) + parseFloat(b.facturado) + parseFloat(b.impcobropago) - (parseFloat(b.minval_importe) + parseFloat(b.impcompvent)), sortable: true, format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
-        { name: 'peso', align: 'right', label: '%Peso', field: 'peso', sortable: true, format: val => (val !== undefined ? parseFloat(val).toFixed(2) : '') },
-        { name: 'pesoGlobal', align: 'right', label: '%PesoGlobal', field: 'pesoGlobal', sortable: true, format: val => (val !== undefined ? parseFloat(val).toFixed(2) : '') },
+        { name: 'peso', align: 'right', label: '%Peso', field: 'peso', sortable: true, format: val => (val !== undefined ? this.$numeral(parseFloat(val)).format('0,0.00') : '') },
+        { name: 'pesoGlobal', align: 'right', label: '%PesoGlobal', field: 'pesoGlobal', sortable: true, format: val => (val !== undefined ? this.$numeral(parseFloat(val)).format('0,0.00') : '') },
         {
           name: 'rentabAcum',
           required: true,
@@ -133,10 +134,10 @@ export default {
           align: 'right',
           field: 'rentabAcum',
           sortable: true,
-          format: val => parseFloat(val).toFixed(2)
+          format: val => this.$numeral(parseFloat(val)).format('0,0.00')
         },
         // { name: 'impcompras', align: 'right', label: 'Imp.Compras', field: 'impcompras', sortable: true, format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
-        { name: 'rentabilidadEsperada', align: 'right', label: '%Rent.Esper', field: 'rentabilidadEsperada', sortable: true },
+        { name: 'rentabilidadEsperada', align: 'right', label: '%Rent.Esper', field: 'rentabilidadEsperada', sortable: true, format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
         { name: 'revalorizacion2Y', align: 'right', label: 'Reval.2Y', field: row => parseFloat(row.importe) + parseFloat(row.facturado2Y) + parseFloat(row.impcobropago2Y) - (parseFloat(row.cval2Y_importe === null ? 0 : row.cval2Y_importe) + parseFloat(row.impcompvent2Y)), sortable: true, format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
         {
           name: 'rentabAcum2Y',
@@ -151,11 +152,12 @@ export default {
             }
             return res
           },
-          format: val => parseFloat(val).toFixed(2)
+          format: val => this.$numeral(parseFloat(val)).format('0,0.00')
         },
         { name: 'impcompventastotales', align: 'right', label: 'Comp/Vent Tot', field: 'impcompventastotales', sortable: true, format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
         { name: 'revalorizacionTotal', align: 'right', label: 'Reval.Total', field: row => parseFloat(row.importe) - parseFloat(row.impcompventastotales), sortable: true, format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
         { name: 'multiplo', align: 'right', label: 'Multiplo', field: 'multiplo', sortable: true, format: val => this.$numeral(parseFloat(val)).format('0,0.00') },
+        { name: 'urlinfo', align: 'right', label: 'URL', field: 'urlinfo', sortable: true },
         { name: 'user', align: 'left', label: 'user', field: 'user' },
         { name: 'ts', align: 'left', label: 'ts', field: 'ts' }
       ],
@@ -285,8 +287,63 @@ export default {
       }
       return this.$axios.post('movimientos/bd_movimientos.php/borrarValoraciones/', formData)
     },
+    wrapCsvValue (val, formatFn, row) {
+      // formatFn = undefined // quito formatos
+      let formatted = formatFn !== undefined
+        ? formatFn(val, row)
+        : val
+
+      formatted = formatted === undefined || formatted === null
+        ? ''
+        : String(formatted)
+
+      formatted = formatted.split('"').join('""')
+      /**
+       * Excel accepts \n and \r in strings, but some other CSV parsers do not
+       * Uncomment the next two lines to escape new lines
+       */
+      // .split('\n').join('\\n')
+      // .split('\r').join('\\r')
+
+      return `"${formatted}"`
+    },
+    exportTable () {
+      // naive encoding to csv format
+      var rows = this.arrayTreeObj
+      var columns1 = []
+      columns1.push({})
+      Object.assign(columns1[0], this.columns[0])
+      columns1[0].field = 'tipoActivo'
+      columns1[0].name = 'tipoActivo'
+      columns1[0].label = 'Tipo Activo'
+      columns1 = columns1.concat(this.columns)
+      const content = [columns1.map(col => this.wrapCsvValue(col.label))].concat(
+        rows.map(row => columns1.map(col => this.wrapCsvValue(
+          typeof col.field === 'function'
+            ? col.field(row)
+            : row[col.field === undefined ? col.name : col.field],
+          col.format,
+          row
+        )).join(','))
+      ).join('\r\n')
+
+      const status = exportFile(
+        'table-export.csv',
+        content,
+        'text/csv'
+      )
+
+      if (status !== true) {
+        this.$q.notify({
+          message: 'Browser denied file download...',
+          color: 'negative',
+          icon: 'warning'
+        })
+      }
+    },
     exportarExcel () {
-      this.$emit('exportarExcel')
+      this.exportTable()
+      // this.$emit('exportarExcel')
     },
     // METODOS DEL ARBOL DEL GRID
     customSort (rows, sortBy, descending) {
@@ -354,10 +411,21 @@ export default {
         vm.itemId = null
       }
     },
+    openWindow (strUrl) {
+      if (window.cordova === undefined) { // desktop
+        openURL(strUrl)
+      } else { // estamos en un disp movil
+        window.cordova.InAppBrowser.open(strUrl, '_system') // openURL
+      }
+    },
     clickColumn (colName, row) {
       if (colName === 'nombre') {
         row.id = row.idActivo
         this.addTab(['activosFormMain', 'Activo-' + row.idActivo, row, row.idActivo])
+      }
+      if (colName === 'urlinfo') {
+        row.id = row.idActivo
+        this.openWindow(row.urlinfo)
       }
     },
     setPadding (item) {
